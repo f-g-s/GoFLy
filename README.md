@@ -1,53 +1,53 @@
 # GoFly
 
-*Automatisierte Flugwetter-Prüfung für Gleitschirmflieger mit Telegram-Benachrichtigung*
+*Automated flying weather check for paraglider pilots with Telegram notifications*
 
-## Was es macht
+## What it does
 
-Prüft deine Startplätze für die nächsten 5 Tage auf passende
+Checks your launch sites for the next 5 days for suitable
 
-- Windrichtung
-- Windgeschwindigkeit
-- maximale Böen
-- Bewölkung und
-- Niederschlag / Gewitter.
+- wind direction
+- wind speed
+- maximum gusts
+- cloud cover and
+- precipitation / thunderstorm risk.
 
-Wetterdaten kommen von [Open-Meteo](https://open-meteo.com/en/docs) (DWD ICON-D2 + globales Modell):
+Weather data is sourced from [Open-Meteo](https://open-meteo.com/en/docs) (DWD ICON-D2 + global model).
 
 ## Installation
 
-- persönlichen Telegram-Token und Chat-ID herausfinden via Telegram-Bot (via [@BotFather](https://t.me/BotFather))
-- Repo lokal einrichten
+- Get your personal Telegram token and chat ID via ([@BotFather](https://t.me/BotFather))
+- Set up the repo locally
 
       npm install
 
-- `.env` anlegen und anpassen
+- Create a `.env` file and fill in your credentials
 
-      TELEGRAM_TOKEN=dein_bot_token
-      TELEGRAM_CHAT_ID=deine_chat_id
+      TELEGRAM_TOKEN=your_bot_token
+      TELEGRAM_CHAT_ID=your_chat_id
 
-- GitHub einrichten:
-Repository → Settings → Secrets and variables → Actions → Secrets erstellen: `TELEGRAM_TOKEN` und `TELEGRAM_CHAT_ID`
+- Set up GitHub secrets:
+Repository → Settings → Secrets and variables → Actions → create secrets: `TELEGRAM_TOKEN` and `TELEGRAM_CHAT_ID`
 
-## Startplatz konfigurieren (`spots.json`)
+## Configuring launch sites (`spots.json`)
 
     [
       {
-        "name": "Laucha Westhang", // Startplatz
-        "lat": 51.24727, // Koordinaten 
-        "lon": 11.68682, 
-        "windDirectionMin": 210, // Startrichtung in Grad von - bis
+        "name": "Laucha West Slope", // launch site name
+        "lat": 51.24727,             // coordinates
+        "lon": 11.68682,
+        "windDirectionMin": 210,     // wind direction range in degrees
         "windDirectionMax": 290,
-        "windSpeedMin": 10, // Windgeschwindigkeit in km/h z.B. für Soaring von - bis
+        "windSpeedMin": 10,          // wind speed in km/h, e.g. for soaring
         "windSpeedMax": 30
       }
     ]
 
-## Nutzung
+## Usage
 
-- Prüft automatisch täglich via GitHub Actions und versendet Treffer via Telegram-Nachricht (`.github/workflows/daily-check.yml`).
+- Runs automatically every day via GitHub Actions and sends matches as a Telegram message (`.github/workflows/daily-check.yml`).
 
-- Alternativ lokal zum testen
+- Alternatively, run locally for testing
 
       # Send telegram message via CLI now
       npm run script
