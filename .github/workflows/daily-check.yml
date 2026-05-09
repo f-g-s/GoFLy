@@ -20,7 +20,7 @@ jobs:
           node-version: "24"
 
       - name: Dependencies installieren
-        run: npm install dotenv
+        run: npm ci
 
       - name: Skript ausführen
         env:
