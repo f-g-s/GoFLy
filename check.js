@@ -6,7 +6,7 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 const spots = JSON.parse(readFileSync("./spots.json", "utf-8"));
 
-const DRY_RUN = false; // auf false setzen für echten Versand
+const DRY_RUN = true; // auf false setzen für echten Versand
 
 function isWindDirectionOk(direction, min, max) {
   // Handle wrap-around (e.g. 350°–10°)
@@ -17,19 +17,62 @@ function isWindDirectionOk(direction, min, max) {
   }
 }
 
-async function getWeather(lat, lon) {
+const HOURLY_PARAMS = `windspeed_80m,winddirection_80m,windgusts_10m,precipitation,weathercode,cape,cloudcover,visibility,lifted_index`;
+
+async function fetchForecast(lat, lon, days, model = "") {
   const url =
     `https://api.open-meteo.com/v1/forecast` +
     `?latitude=${lat}&longitude=${lon}` +
-    `&hourly=windspeed_10m,winddirection_10m,windgusts_10m` +
+    `&hourly=${HOURLY_PARAMS}` +
     `&daily=sunrise,sunset` +
     `&windspeed_unit=kmh` +
-    `&forecast_days=7` +
-    `&timezone=Europe%2FBerlin`;
+    `&forecast_days=${days}` +
+    `&timezone=Europe%2FBerlin` +
+    (model ? `&models=${model}` : "");
 
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Open-Meteo error: ${res.status}`);
   return res.json();
+}
+
+async function getWeather(lat, lon) {
+  const [shortTerm, longTerm] = await Promise.all([
+    fetchForecast(lat, lon, 2, "dwd_icon_d2"),
+    fetchForecast(lat, lon, 7),
+  ]);
+
+  // Merge: ICON-D2 dates override auto-model dates
+  const iconDates = new Set(shortTerm.daily.time);
+  const mergedDailyTime = longTerm.daily.time;
+  const mergedHourlyTime = longTerm.hourly.time;
+
+  // Build merged hourly data: use shortTerm for its dates, longTerm for the rest
+  const hourlyKeys = Object.keys(longTerm.hourly);
+  const merged = { daily: { ...longTerm.daily }, hourly: {} };
+
+  for (const key of hourlyKeys) {
+    merged.hourly[key] = mergedHourlyTime.map((t, i) => {
+      const date = t.slice(0, 10);
+      if (iconDates.has(date)) {
+        const j = shortTerm.hourly.time.indexOf(t);
+        return j !== -1 ? shortTerm.hourly[key][j] : longTerm.hourly[key][i];
+      }
+      return longTerm.hourly[key][i];
+    });
+  }
+
+  // Merge daily sunrise/sunset: prefer shortTerm for its dates
+  for (const key of ["sunrise", "sunset"]) {
+    merged.daily[key] = mergedDailyTime.map((date, i) => {
+      if (iconDates.has(date)) {
+        const j = shortTerm.daily.time.indexOf(date);
+        return j !== -1 ? shortTerm.daily[key][j] : longTerm.daily[key][i];
+      }
+      return longTerm.daily[key][i];
+    });
+  }
+
+  return merged;
 }
 
 function getHoursForDate(data, dateStr) {
@@ -52,9 +95,15 @@ function getHoursForDate(data, dateStr) {
     result.push({
       time: t,
       hour,
-      windSpeed: data.hourly.windspeed_10m[i],
-      windDirection: data.hourly.winddirection_10m[i],
-      windGusts: data.hourly.windgusts_10m[i],
+      windSpeed80m: data.hourly.windspeed_80m[i],
+      windDirection80m: data.hourly.winddirection_80m[i],
+      windGusts10m: data.hourly.windgusts_10m[i],
+      precipitation: data.hourly.precipitation[i],
+      weatherCode: data.hourly.weathercode[i],
+      cape: data.hourly.cape[i],
+      cloudCover: data.hourly.cloudcover[i],
+      visibility: data.hourly.visibility[i],
+      liftedIndex: data.hourly.lifted_index[i],
     });
   }
   console.log(`=== Rohdaten Stunden (${dateStr}, Fenster ${windowStart}–${windowEnd} Uhr) ===`);
@@ -70,9 +119,9 @@ function getCompassDir(deg) {
 function checkSpot(spot, hours) {
   const goodHours = hours.filter(
     (h) =>
-      isWindDirectionOk(h.windDirection, spot.windDirectionMin, spot.windDirectionMax) &&
-      h.windSpeed <= spot.windSpeedMax &&
-      h.windGusts <= spot.windSpeedMax * 1.3
+      isWindDirectionOk(h.windDirection80m, spot.windDirectionMin, spot.windDirectionMax) &&
+      h.windSpeed80m <= spot.windSpeedMax &&
+      h.windGusts10m <= spot.windSpeedMax * 1.3
   );
   console.log(`=== ${spot.name}: ${goodHours.length} von ${hours.length} Stunden gut ===`);
   console.log(JSON.stringify(goodHours, null, 2));
@@ -139,10 +188,10 @@ async function main() {
         return ranges.join(", ");
       })();
       const avgWind = Math.round(
-        goodHours.reduce((s, h) => s + h.windSpeed, 0) / goodHours.length
+        goodHours.reduce((s, h) => s + h.windSpeed80m, 0) / goodHours.length
       );
       const avgDir = Math.round(
-        goodHours.reduce((s, h) => s + h.windDirection, 0) / goodHours.length
+        goodHours.reduce((s, h) => s + h.windDirection80m, 0) / goodHours.length
       );
 
       messages.push(
@@ -151,7 +200,7 @@ async function main() {
           `🕐 Gute Fenster: ${hourLabels}\n` +
           `💨 Wind: Ø ${avgWind} km/h aus ${getCompassDir(avgDir)}\n` +
           `🌬️ Böen: bis ${Math.round(
-            goodHours.reduce((s, h) => s + h.windGusts, 0) / goodHours.length
+            goodHours.reduce((s, h) => s + h.windGusts10m, 0) / goodHours.length
           )} km/h\n`
       );
     }
