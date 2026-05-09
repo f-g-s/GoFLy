@@ -1,24 +1,20 @@
-name: Paragliding Weather Check
-
-on:
-  schedule:
-    - cron: "0 17 * * *"  # täglich 19:00 Uhr deutscher Zeit (= 17:00 UTC)
-  workflow_dispatch:       # manueller Start möglich (zum Testen)
-
 jobs:
   check:
     runs-on: ubuntu-latest
 
     steps:
       - name: Repository auschecken
-        uses: actions/checkout@v5
+        uses: actions/checkout@v4
 
       - name: Node.js einrichten
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
           node-version: "24"
 
-      - name: Wetter prüfen & Telegram benachrichtigen
+      - name: Dependencies installieren
+        run: npm install dotenv
+
+      - name: Skript ausführen
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
