@@ -49,7 +49,7 @@ app.get("/run", (req, res) => {
   child.stdout.on("data", (data) => {
     const lines = data.toString().split("\n");
     for (const line of lines) {
-      if (line.trim()) {
+      if (line !== undefined && line !== null) {
         res.write(`data: ${JSON.stringify({ type: "log", text: line })}\n\n`);
       }
     }

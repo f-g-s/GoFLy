@@ -26,7 +26,8 @@ h1 {
 }
 
 h2 {
-    margin-top: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
     font-size: 1.5rem;
     font-weight: bold;
     color: #253247;
@@ -87,4 +88,11 @@ button:disabled {
     font-size: 1rem;
     color: #273241;
     padding: 0.25rem 0 0 0.5rem;
+}
+
+.block-sep {
+    margin: 0.5rem 2rem 0.3rem 2rem;
+    background: rgb(213 213 213);
+    height: 1px;
+    border: 0;
 }

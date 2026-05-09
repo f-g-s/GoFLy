@@ -1,11 +1,29 @@
 [
   {
-    "name": "Laucha Westhang",
+    "name": "Laucha - Westhang",
     "lat": 51.247270,
     "lon": 11.686820,
     "windDirectionMin": 210,
     "windDirectionMax": 290,
     "windSpeedMin": 10,
     "windSpeedMax": 30
+  },
+  {
+    "name": "Knobelsdorf",
+    "lat": 50.606856,
+    "lon": 11.371171,
+    "windDirectionMin": 0,
+    "windDirectionMax": 80,
+    "windSpeedMin": 0,
+    "windSpeedMax": 25
+  },
+  {
+    "name": "Heideberg - die Wiese",
+    "lat": 51.573333,
+    "lon": 11.975917,
+    "windDirectionMin": 0,
+    "windDirectionMax": 360,
+    "windSpeedMin": 10,
+    "windSpeedMax": 20
   }
 ]

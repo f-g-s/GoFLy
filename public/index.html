@@ -90,19 +90,23 @@
     function addCard(text, type) {
       const output = document.getElementById("output");
       if (type === "telegram") {
-        const spots = text.split(/\n\n+/);
+        const spots = text.split(/\n\n\n/);
         for (const spot of spots) {
           if (!spot.trim()) continue;
-          const lines = spot.trim().split("\n");
+          const parts = spot.trim().split(/\n\n/);
           const card = document.createElement("div");
           card.className = "card telegram";
           let html = "";
-          for (const line of lines) {
-            if (line.startsWith("🪂")) {
-              const escaped = escapeHtml(line.replace(/🪂\s*/, ""));
-              html += `<h2>🪂 ${escaped}</h2>`;
-            } else {
-              html += `<p class="meta">${escapeHtml(line)}</p>`;
+          for (let pi = 0; pi < parts.length; pi++) {
+            if (pi > 0) html += `<hr class="block-sep">`;
+            const lines = parts[pi].trim().split("\n");
+            for (const line of lines) {
+              if (line.startsWith("🪂")) {
+                const escaped = escapeHtml(line.replace(/🪂\s*/, ""));
+                html += `<h2>🪂 ${escaped}</h2>`;
+              } else {
+                html += `<p class="meta">${escapeHtml(line)}</p>`;
+              }
             }
           }
           card.innerHTML = html;
