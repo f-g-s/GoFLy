@@ -19,7 +19,7 @@ Wetterdaten kommen von [Open-Meteo](https://open-meteo.com/en/docs) (DWD ICON-D2
 - persönlichen Telegram-Token und Chat-ID herausfinden via Telegram-Bot (via [@BotFather](https://t.me/BotFather))
 - Repo lokal einrichten
 
-      $ npm install
+      npm install
 
 - `.env` anlegen und anpassen
 
@@ -43,14 +43,14 @@ Repository → Settings → Secrets and variables → Actions → Secrets erstel
       }
     ]
 
-## Ausführen
+## Nutzung
 
-    # Send telegram message via CLI
-    npm run script
+- Prüft automatisch täglich via GitHub Actions und versendet Treffer via Telegram-Nachricht (`.github/workflows/daily-check.yml`).
 
-    # Send and view results via web UI (http://localhost:5000)
-    npm run dev
+- Alternativ lokal zum testen
 
-### Automatisierung
+      # Send telegram message via CLI now
+      npm run script
 
-Prüft automatisch täglich via GitHub Actions und versendet Telegram-Nachricht (`.github/workflows/daily-check.yml`).
+      # Send and view results via web UI now (http://localhost:5000)
+      npm run dev
