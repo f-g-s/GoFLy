@@ -1,70 +1,56 @@
 # GoFly
 
-Automatisierte Flugwetter-Prüfung für Gleitschirmflieger mit Telegram-Benachrichtigung.
+*Automatisierte Flugwetter-Prüfung für Gleitschirmflieger mit Telegram-Benachrichtigung*
 
 ## Was es macht
 
-Prüft für die nächsten 7 Tage die Wetterbedingungen an konfigurierten Spots und zeigt geeignete Zeitfenster an. 
+Prüft deine Startplätze für die nächsten 5 Tage auf passende
 
 - Windrichtung
 - Windgeschwindigkeit
-- Böen
-- Niederschlag / Gewitter
+- maximale Böen
+- Bewölkung und
+- Niederschlag / Gewitter.
 
-Wetterdaten kommen von [Open-Meteo](https://open-meteo.com/) (DWD ICON-D2 + globales Modell):
-
-## Voraussetzungen
-
-- Node.js 18+
-- Telegram-Bot (via [@BotFather](https://t.me/BotFather))
+Wetterdaten kommen von [Open-Meteo](https://open-meteo.com/en/docs) (DWD ICON-D2 + globales Modell):
 
 ## Installation
 
-```bash
-npm install
-```
+- persönlichen Telegram-Token und Chat-ID herausfinden via Telegram-Bot (via [@BotFather](https://t.me/BotFather))
+- Repo lokal einrichten
 
-`.env` anlegen:
+      $ npm install
 
-```
-TELEGRAM_TOKEN=dein_bot_token
-TELEGRAM_CHAT_ID=deine_chat_id
-```
+- `.env` anlegen und anpassen
 
-**In GitHub einrichten:**  
-Repository → Settings → Secrets and variables → Actions → folgende Secrets anlegen:
+      TELEGRAM_TOKEN=dein_bot_token
+      TELEGRAM_CHAT_ID=deine_chat_id
 
-- `TELEGRAM_TOKEN`
-- `TELEGRAM_CHAT_ID`
+- GitHub einrichten:
+Repository → Settings → Secrets and variables → Actions → Secrets erstellen: `TELEGRAM_TOKEN` und `TELEGRAM_CHAT_ID`
 
-## Spots konfigurieren (`spots.json`)
+## Startplatz konfigurieren (`spots.json`)
 
-```json
-[
-  {
-    "name": "Laucha Westhang",
-    "lat": 51.24727,
-    "lon": 11.68682,
-    "windDirectionMin": 210,
-    "windDirectionMax": 290,
-    "windSpeedMin": 10, // soaring
-    "windSpeedMax": 30
-  }
-]
-```
+    [
+      {
+        "name": "Laucha Westhang", // Startplatz
+        "lat": 51.24727, // Koordinaten 
+        "lon": 11.68682, 
+        "windDirectionMin": 210, // Startrichtung in Grad von - bis
+        "windDirectionMax": 290,
+        "windSpeedMin": 10, // Windgeschwindigkeit in km/h z.B. für Soaring von - bis
+        "windSpeedMax": 30
+      }
+    ]
 
 ## Ausführen
 
-```bash
-# Web (http://localhost:5000)
-npm run dev
+    # Send telegram message via CLI
+    npm run script
 
-# CLI
-node check.js
-```
+    # Send and view results via web UI (http://localhost:5000)
+    npm run dev
 
-## Automatisierung
+### Automatisierung
 
 Prüft automatisch täglich via GitHub Actions und versendet Telegram-Nachricht (`.github/workflows/daily-check.yml`).
-
-
