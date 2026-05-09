@@ -1,13 +1,10 @@
+import "dotenv/config";
 import { readFileSync } from "fs";
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 const spots = JSON.parse(readFileSync("./spots.json", "utf-8"));
-
-// Check hours: tomorrow 10:00–17:00
-const CHECK_HOUR_START = 10;
-const CHECK_HOUR_END = 17;
 
 function isWindDirectionOk(direction, min, max) {
   // Handle wrap-around (e.g. 350°–10°)
@@ -23,6 +20,7 @@ async function getWeather(lat, lon) {
     `https://api.open-meteo.com/v1/forecast` +
     `?latitude=${lat}&longitude=${lon}` +
     `&hourly=windspeed_10m,winddirection_10m,windgusts_10m` +
+    `&daily=sunrise,sunset` +
     `&windspeed_unit=kmh` +
     `&forecast_days=2` +
     `&timezone=Europe%2FBerlin`;
@@ -36,14 +34,21 @@ function getTomorrowHours(data) {
   const times = data.hourly.time;
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
-  const dateStr = tomorrow.toISOString().slice(0, 10); // "YYYY-MM-DD"
+  const dateStr = tomorrow.toISOString().slice(0, 10);
+
+  const dayIndex = data.daily.time.indexOf(dateStr);
+  const sunrise = new Date(data.daily.sunrise[dayIndex]);
+  const sunset = new Date(data.daily.sunset[dayIndex]);
+
+  const windowStart = sunrise.getHours() + 2;
+  const windowEnd = sunset.getHours() - 1;
 
   const result = [];
   for (let i = 0; i < times.length; i++) {
     const t = times[i];
     if (!t.startsWith(dateStr)) continue;
     const hour = parseInt(t.slice(11, 13));
-    if (hour < CHECK_HOUR_START || hour > CHECK_HOUR_END) continue;
+    if (hour < windowStart || hour > windowEnd) continue;
     result.push({
       time: t,
       hour,
@@ -60,9 +65,8 @@ function checkSpot(spot, hours) {
     (h) =>
       isWindDirectionOk(h.windDirection, spot.windDirectionMin, spot.windDirectionMax) &&
       h.windSpeed <= spot.windSpeedMax &&
-      h.windGusts <= spot.windSpeedMax * 1.3 // allow gusts up to 30% over limit
+      h.windGusts <= spot.windSpeedMax * 1.3
   );
-
   return goodHours;
 }
 
