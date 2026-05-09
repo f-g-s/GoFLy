@@ -2,6 +2,8 @@
 
 Automatisierte Flugwetter-Prüfung für Gleitschirmflieger mit Telegram-Benachrichtigung.
 
+<img width="562" height="466" alt="image" src="https://github.com/user-attachments/assets/1eeddeff-264c-4121-a4c9-04c593b267b6" />
+
 ## Was es macht
 
 Prüft für die nächsten 7 Tage die Wetterbedingungen an konfigurierten Spots und zeigt geeignete Zeitfenster an. 
