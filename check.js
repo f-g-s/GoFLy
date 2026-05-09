@@ -6,7 +6,7 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 const spots = JSON.parse(readFileSync("./spots.json", "utf-8"));
 
-const DRY_RUN = true; // auf false setzen für echten Versand
+const DRY_RUN = false; // auf false setzen für echten Versand
 
 function isWindDirectionOk(direction, min, max) {
   // Handle wrap-around (e.g. 350°–10°)
@@ -17,7 +17,7 @@ function isWindDirectionOk(direction, min, max) {
   }
 }
 
-const HOURLY_PARAMS = `windspeed_80m,winddirection_80m,windgusts_10m,precipitation,weathercode,cape,cloudcover,visibility,lifted_index`;
+const HOURLY_PARAMS = `windspeed_80m,winddirection_80m,windgusts_10m,precipitation,precipitation_probability,weathercode,cape,cloudcover,visibility,lifted_index`;
 
 async function fetchForecast(lat, lon, days, model = "") {
   const url =
@@ -83,7 +83,7 @@ function getHoursForDate(data, dateStr) {
   const sunrise = new Date(data.daily.sunrise[dayIndex]);
   const sunset = new Date(data.daily.sunset[dayIndex]);
 
-  const windowStart = sunrise.getHours();
+  const windowStart = sunrise.getMinutes() > 0 ? sunrise.getHours() + 1 : sunrise.getHours();
   const windowEnd = sunset.getHours();
 
   const result = [];
@@ -99,6 +99,7 @@ function getHoursForDate(data, dateStr) {
       windDirection80m: data.hourly.winddirection_80m[i],
       windGusts10m: data.hourly.windgusts_10m[i],
       precipitation: data.hourly.precipitation[i],
+      precipitationProbability: data.hourly.precipitation_probability[i],
       weatherCode: data.hourly.weathercode[i],
       cape: data.hourly.cape[i],
       cloudCover: data.hourly.cloudcover[i],
@@ -121,7 +122,12 @@ function checkSpot(spot, hours) {
     (h) =>
       isWindDirectionOk(h.windDirection80m, spot.windDirectionMin, spot.windDirectionMax) &&
       h.windSpeed80m <= spot.windSpeedMax &&
-      h.windGusts10m <= spot.windSpeedMax * 1.3
+      h.windSpeed80m >= spot.windSpeedMin &&
+      h.windGusts10m <= h.windSpeed80m + 10 &&
+      h.windGusts10m <= 30 &&
+      h.cape < 1000 &&
+      h.liftedIndex > 0 &&
+      h.precipitationProbability <= 20
   );
   console.log(`=== ${spot.name}: ${goodHours.length} von ${hours.length} Stunden gut ===`);
   console.log(JSON.stringify(goodHours, null, 2));
@@ -194,14 +200,27 @@ async function main() {
         goodHours.reduce((s, h) => s + h.windDirection80m, 0) / goodHours.length
       );
 
+      const avgPrecip = (goodHours.reduce((s, h) => s + h.precipitation, 0) / goodHours.length).toFixed(1);
+      const avgCape = Math.round(goodHours.reduce((s, h) => s + h.cape, 0) / goodHours.length);
+      const avgCloud = Math.round(goodHours.reduce((s, h) => s + h.cloudCover, 0) / goodHours.length);
+      const avgVis = Math.round(goodHours.reduce((s, h) => s + h.visibility, 0) / goodHours.length / 1000);
+      const avgLi = (goodHours.reduce((s, h) => s + h.liftedIndex, 0) / goodHours.length).toFixed(1);
+
+      const thunderRisk =
+        avgCape > 1000 || avgLi < 0 ? "Hoch" :
+        avgCape > 500  || avgLi < 1 ? "Mittel" :
+                                       "Gering";
+
       messages.push(
         `🪂 <b>${spot.name}</b>\n` +
           `📅 ${dateLabel}\n` +
-          `🕐 Gute Fenster: ${hourLabels}\n` +
+          `🕐 Zeitraum: ${hourLabels}\n` +
           `💨 Wind: Ø ${avgWind} km/h aus ${getCompassDir(avgDir)}\n` +
-          `🌬️ Böen: bis ${Math.round(
-            goodHours.reduce((s, h) => s + h.windGusts10m, 0) / goodHours.length
-          )} km/h\n`
+          `🌬️ Böen: bis ${Math.max(...goodHours.map(h => h.windGusts10m))} km/h\n` +
+          `🌧️ Niederschlag: Ø ${avgPrecip} mm\n` +
+          `☁️ Bewölkung: Ø ${avgCloud}%\n` +
+          `👁️ Sicht: Ø ${avgVis} km\n` +
+          `⛈️ Gewitterrisiko: ${thunderRisk}`
       );
     }
   }

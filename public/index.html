@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoFly – Wettercheck</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🪂 GoFly Wettercheck</h1>
+  <button id="btn" onclick="runCheck()">Daten abrufen</button>
+  <div id="output"></div>
+
+  <script>
+    // Live-reload
+    const lr = new EventSource("/livereload");
+    lr.onmessage = (e) => { if (e.data === "reload") location.reload(); };
+    function runCheck() {
+      const btn = document.getElementById("btn");
+      const output = document.getElementById("output");
+
+      btn.disabled = true;
+      output.innerHTML = "";
+
+      const es = new EventSource("/run");
+      let telegramBuffer = "";
+      let inTelegram = false;
+
+      es.onmessage = (e) => {
+        const msg = JSON.parse(e.data);
+
+        if (msg.type === "done") {
+          es.close();
+          btn.disabled = false;
+          // Flush remaining telegram buffer
+          if (telegramBuffer.trim()) {
+            addCard(telegramBuffer.trim(), "telegram");
+            telegramBuffer = "";
+          }
+          return;
+        }
+
+        const text = msg.text;
+
+        if (msg.type === "error") {
+          addCard(text, "error");
+          return;
+        }
+
+        // Detect Telegram message block
+        if (text.startsWith("=== Telegram-Nachricht ===")) {
+          inTelegram = true;
+          telegramBuffer = "";
+          return;
+        }
+        if (text.startsWith("[DRY RUN]") || text === "Nachricht gesendet." || text.startsWith("Keine geeigneten")) {
+          if (telegramBuffer.trim()) {
+            addCard(telegramBuffer.trim(), "telegram");
+            telegramBuffer = "";
+          }
+          inTelegram = false;
+          if (text.startsWith("Keine geeigneten")) {
+            addCard(text, "log");
+          }
+          return;
+        }
+        if (inTelegram) {
+          telegramBuffer += text + "\n";
+          return;
+        }
+
+        // ignore all other debug output
+      };
+
+      es.onerror = () => {
+        es.close();
+        btn.disabled = false;
+        addCard("Fehler beim Abrufen der Daten.", "error");};
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/&lt;b&gt;/g, "<b>")
+        .replace(/&lt;\/b&gt;/g, "</b>");
+    }
+
+    function addCard(text, type) {
+      const output = document.getElementById("output");
+      if (type === "telegram") {
+        const spots = text.split(/\n\n+/);
+        for (const spot of spots) {
+          if (!spot.trim()) continue;
+          const lines = spot.trim().split("\n");
+          const card = document.createElement("div");
+          card.className = "card telegram";
+          let html = "";
+          for (const line of lines) {
+            if (line.startsWith("🪂")) {
+              const escaped = escapeHtml(line.replace(/🪂\s*/, ""));
+              html += `<h2>🪂 ${escaped}</h2>`;
+            } else {
+              html += `<p class="meta">${escapeHtml(line)}</p>`;
+            }
+          }
+          card.innerHTML = html;
+          output.appendChild(card);
+        }
+      } else {
+        const card = document.createElement("div");
+        card.className = `card ${type}`;
+        card.textContent = text;
+        output.appendChild(card);
+      }
+    }
+  </script>
+</body>
+</html>

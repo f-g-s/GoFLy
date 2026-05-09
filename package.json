@@ -2,6 +2,7 @@
   "type": "module",
   "dependencies": {
     "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "node-fetch": "^3.3.2"
   },
   "name": "gofly",
@@ -9,6 +10,7 @@
   "description": "",
   "main": "check.js",
   "scripts": {
+    "dev": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
