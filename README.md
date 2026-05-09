@@ -1,62 +1,70 @@
 # GoFly
 
-Automatisierte Flugwetter-Prüfung für Gleitschirmflieger – mit Telegram-Benachrichtigung.
+Automatisierte Flugwetter-Prüfung für Gleitschirmflieger mit Telegram-Benachrichtigung.
 
 ## Was es macht
 
-Das Script prüft für die nächsten 7 Tage die Windbedingungen an konfigurierten Spots. Wenn die Bedingungen gut sind, wird eine Telegram-Nachricht gesendet mit
+Prüft für die nächsten 7 Tage die Wetterbedingungen an konfigurierten Spots und zeigt geeignete Zeitfenster an. 
 
-- Startplatz
-- Datum
-- Zeitfenster
-- Wind /-Richtung
+- Windrichtung
+- Windgeschwindigkeit
 - Böen
+- Niederschlag / Gewitter
 
-Die Wetterdaten kommen von [Open-Meteo API](https://open-meteo.com/).
+Wetterdaten kommen von [Open-Meteo](https://open-meteo.com/) (DWD ICON-D2 + globales Modell):
 
 ## Voraussetzungen
 
 - Node.js 18+
-- Ein Telegram-Bot (erstellt via [@BotFather](https://t.me/BotFather))
+- Telegram-Bot (via [@BotFather](https://t.me/BotFather))
 
 ## Installation
 
-    npm install
-
-`.env`-Datei anlegen:
-
-    TELEGRAM_TOKEN=dein_bot_token
-    TELEGRAM_CHAT_ID=deine_chat_id
-
-## Spots konfigurieren
-
-In `spots.json` können beliebig viele Spots eingetragen werden:
-
-    [
-        {
-            "name": "Laucha Westhang",
-            "lat": 51.24727,
-            "lon": 11.68682,
-            "windDirectionMin": 240,
-            "windDirectionMax": 300,
-            "windSpeedMax": 25
-        }
-    ]
-
-## Ausführen
-
 ```bash
-node check.js
+npm install
 ```
 
-Zum Testen ohne echten Telegram-Versand `DRY_RUN = true` in `check.js` lassen.
+`.env` anlegen:
 
-## Automatisierung
+```
+TELEGRAM_TOKEN=dein_bot_token
+TELEGRAM_CHAT_ID=deine_chat_id
+```
 
-Das Script läuft automatisch täglich um **17:00 UTC** (18/19 Uhr MEZ/MESZ) via GitHub Actions (`.github/workflows/daily-check.yml`). Es kann auch manuell im GitHub-Tab „Actions" gestartet werden.
-
-**Einmalig in GitHub einrichten:**  
+**In GitHub einrichten:**  
 Repository → Settings → Secrets and variables → Actions → folgende Secrets anlegen:
 
 - `TELEGRAM_TOKEN`
 - `TELEGRAM_CHAT_ID`
+
+## Spots konfigurieren (`spots.json`)
+
+```json
+[
+  {
+    "name": "Laucha Westhang",
+    "lat": 51.24727,
+    "lon": 11.68682,
+    "windDirectionMin": 210,
+    "windDirectionMax": 290,
+    "windSpeedMin": 10, // soaring
+    "windSpeedMax": 30
+  }
+]
+```
+
+## Ausführen
+
+```bash
+# Web (http://localhost:5000)
+npm run dev
+
+# CLI
+node check.js
+```
+
+## Automatisierung
+
+Prüft automatisch täglich via GitHub Actions und versendet Telegram-Nachricht (`.github/workflows/daily-check.yml`).
+
+
