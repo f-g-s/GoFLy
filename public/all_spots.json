@@ -1,0 +1,6095 @@
+[
+  {
+    "name": "Criesbach Startplatz 1",
+    "lat": 49.309994,
+    "lon": 9.628861,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Criesbach Startplatz 2",
+    "lat": 49.310039,
+    "lon": 9.629792,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Criesbach Startplatz 3",
+    "lat": 49.310494,
+    "lon": 9.633125,
+    "windDirectionMin": 150,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mühlenberg NW-Startplatz",
+    "lat": 48.800061,
+    "lon": 9.403639,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mühlenberg Startplatz",
+    "lat": 48.799808,
+    "lon": 9.403292,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Aasrücken Startplatz",
+    "lat": 48.751158,
+    "lon": 9.730456,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Adolzfurt Startplatz",
+    "lat": 49.160552,
+    "lon": 9.471306,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Aitern Startplatz",
+    "lat": 47.81135,
+    "lon": 7.898161,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Altglashütten / Kapellenhof Startplatz",
+    "lat": 47.848936,
+    "lon": 8.103619,
+    "windDirectionMin": 285,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Althof (alte HG-Rampe)",
+    "lat": 48.823333,
+    "lon": 8.4025,
+    "windDirectionMin": 240,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Althof Tannschach (Naturstartplatz)",
+    "lat": 48.822091,
+    "lon": 8.403143,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Althof Übungshang",
+    "lat": 48.826139,
+    "lon": 8.39188,
+    "windDirectionMin": 240,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Jordanbad Startplatz",
+    "lat": 48.079154,
+    "lon": 9.832506,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Armutswiesen Übungshang Startplatz",
+    "lat": 48.855376,
+    "lon": 9.699726,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Aussichtswiese Startplatz",
+    "lat": 49.392238,
+    "lon": 9.083195,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Meistern -  Kienhalde Startplatz",
+    "lat": 48.735592,
+    "lon": 8.552038,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Balgheim Startplatz",
+    "lat": 48.066063,
+    "lon": 8.782024,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bannholz - Kleingartach Startplatz",
+    "lat": 49.098866,
+    "lon": 8.987599,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Waldstetten/Skihütte Startplatz",
+    "lat": 48.751838,
+    "lon": 9.814991,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bernau - Innerlehen Startplatz Lehenköpfle",
+    "lat": 47.798512,
+    "lon": 8.025513,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rank / Modellflieger",
+    "lat": 47.817304,
+    "lon": 8.034954,
+    "windDirectionMin": 105,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heinsheim Startplatz",
+    "lat": 49.25305,
+    "lon": 9.1492,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Braunenberg Startplatz",
+    "lat": 48.859928,
+    "lon": 10.134636,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitmoos Übungshang",
+    "lat": 47.838288,
+    "lon": 7.861007,
+    "windDirectionMin": 330,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitnau Startplatz Branden",
+    "lat": 47.869761,
+    "lon": 7.833658,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitnau Startplatz Breitnauer Kopf",
+    "lat": 47.856148,
+    "lon": 7.836362,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Burg Lichtenberg Startplatz SSW",
+    "lat": 49.013056,
+    "lon": 9.317778,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obere Rieth Startplatz",
+    "lat": 49.045151,
+    "lon": 8.802713,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dernbach Nord Übungshang Start",
+    "lat": 49.246117,
+    "lon": 8.014844,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dernbach Süd Übungshang Start",
+    "lat": 49.248772,
+    "lon": 8.013806,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dertingen Startplatz",
+    "lat": 49.772222,
+    "lon": 9.616153,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Drehkopf Startplatz",
+    "lat": 47.860224,
+    "lon": 8.092954,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Drei-Kreis-Eck Startplatz",
+    "lat": 48.183974,
+    "lon": 8.179626,
+    "windDirectionMin": 195,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dreifaltigkeitsberg Startplatz",
+    "lat": 48.083921,
+    "lon": 8.760138,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eberfirst Startplatz 1 (HG-Rampe)",
+    "lat": 49.187948,
+    "lon": 9.32294,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eberfirst Startplatz 2 (GS)",
+    "lat": 49.189328,
+    "lon": 9.322194,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eck Startplatz",
+    "lat": 47.688214,
+    "lon": 7.91831,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gaishalden Startplatz",
+    "lat": 47.684342,
+    "lon": 7.932514,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ehrsberg Startplatz",
+    "lat": 47.750809,
+    "lon": 7.907882,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eichberg/Stutz Startplatz",
+    "lat": 47.848219,
+    "lon": 8.514347,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Einkorn Startplatz Süd-West",
+    "lat": 49.089831,
+    "lon": 9.775986,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Einkorn Startplatz West",
+    "lat": 49.090063,
+    "lon": 9.775643,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Feldberg-Skischanze Startplatz",
+    "lat": 47.85584,
+    "lon": 8.021521,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Feldberg-Wiesenquelle Startplatz",
+    "lat": 47.856668,
+    "lon": 8.024686,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Finkenhof Startplatz",
+    "lat": 49.334687,
+    "lon": 9.092173,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Krunkelbachhütte / Spießhorn",
+    "lat": 47.8269,
+    "lon": 8.033838,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fluggebiet Todtnau Startplatz Silberberg",
+    "lat": 47.838136,
+    "lon": 7.993156,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schulungsgelände Gschwend",
+    "lat": 47.801864,
+    "lon": 7.955911,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fridingen (Bergsteig/Riesen) Startplatz",
+    "lat": 48.018068,
+    "lon": 8.913656,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fröhnd Ittenschwander Horn Startplatz",
+    "lat": 47.763333,
+    "lon": 7.859167,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fröhnd Schneckenkopf Startplatz",
+    "lat": 47.770833,
+    "lon": 7.91,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fürstenberg Nordost Startplatz",
+    "lat": 47.891111,
+    "lon": 8.565417,
+    "windDirectionMin": 285,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fürstenberg Nord Startplatz",
+    "lat": 47.892728,
+    "lon": 8.561917,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fürstenberg Startplatz Süd",
+    "lat": 47.889327,
+    "lon": 8.562684,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Galgenberg Startplatz",
+    "lat": 47.970965,
+    "lon": 7.678776,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gänsberg Startplatz",
+    "lat": 48.818685,
+    "lon": 9.587376,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Geddelsbacher Hang Startplatz",
+    "lat": 49.151826,
+    "lon": 9.495447,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberes Griet Startplatz",
+    "lat": 49.157846,
+    "lon": 9.517368,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gschasi Startplatz",
+    "lat": 48.186185,
+    "lon": 8.128686,
+    "windDirectionMin": 195,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heidelsheimer Weg Startplatz",
+    "lat": 49.11231,
+    "lon": 8.694305,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heue / Bergalingen Startplatz",
+    "lat": 47.619645,
+    "lon": 7.939124,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hintereck Startplatz",
+    "lat": 48.049167,
+    "lon": 8.124444,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochblauen Nord",
+    "lat": 47.778467,
+    "lon": 7.7,
+    "windDirectionMin": 330,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochblauen Startplatz Ost",
+    "lat": 47.776703,
+    "lon": 7.7,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochblauen Startplatz Südwest",
+    "lat": 47.776583,
+    "lon": 7.7,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochfirst Startplatz",
+    "lat": 47.901401,
+    "lon": 8.183506,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hockenberg Startplatz",
+    "lat": 49.606816,
+    "lon": 9.488196,
+    "windDirectionMin": 240,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohenkarpfen Startplatz",
+    "lat": 48.042881,
+    "lon": 8.717994,
+    "windDirectionMin": 330,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohenneuffen - Nord Startplatz",
+    "lat": 48.556713,
+    "lon": 9.404682,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohenneuffen West Startplatz",
+    "lat": 48.549549,
+    "lon": 9.404452,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohrein Startplatz",
+    "lat": 48.741189,
+    "lon": 9.694725,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hornisgrinde - Katzenkopf Startplatz",
+    "lat": 48.59692,
+    "lon": 8.196231,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnle Startplatz",
+    "lat": 49.100725,
+    "lon": 9.072383,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnle / Jagsthausen Startplatz",
+    "lat": 49.313728,
+    "lon": 9.437049,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnleberg Süd-Startplatz",
+    "lat": 48.127417,
+    "lon": 8.044444,
+    "windDirectionMin": 150,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnleberg Nord-Ost Startplatz",
+    "lat": 48.129325,
+    "lon": 8.03868,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hubertushütte Geisingen Startplatz",
+    "lat": 47.943889,
+    "lon": 8.632778,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hundsberg Startplatz",
+    "lat": 49.127093,
+    "lon": 9.410105,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ipf Startplatz",
+    "lat": 48.87048,
+    "lon": 10.357071,
+    "windDirectionMin": 195,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kirgel Startplatz",
+    "lat": 48.994094,
+    "lon": 9.758466,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kleinheppacher Kopf Startplatz",
+    "lat": 48.833177,
+    "lon": 9.378129,
+    "windDirectionMin": 105,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Klippeneck Schlepp",
+    "lat": 48.113408,
+    "lon": 8.772258,
+    "windDirectionMin": 15,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Klosterreichenbach Startplatz",
+    "lat": 48.522062,
+    "lon": 8.40321,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kohleckle Berghaupten Startplatz",
+    "lat": 48.413621,
+    "lon": 7.966386,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kolbingen Startplatz",
+    "lat": 48.044222,
+    "lon": 8.894422,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Königstuhl Startplatz",
+    "lat": 49.403929,
+    "lon": 8.726803,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Krautheim Startplatz",
+    "lat": 49.39518,
+    "lon": 9.649214,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lauf Startplatz",
+    "lat": 48.62508,
+    "lon": 8.162649,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lehens Startplatz Helfenberg",
+    "lat": 49.063583,
+    "lon": 9.308444,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lindenberg Startplatz",
+    "lat": 47.998539,
+    "lon": 8.007199,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Loffenau Weststart Teufelsmühle Startplatz",
+    "lat": 48.756675,
+    "lon": 8.407178,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Loffenau Nordwest Teufelsmühle Startplatz",
+    "lat": 48.758272,
+    "lon": 8.406039,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Merkur Startplatz Nordost",
+    "lat": 48.764663,
+    "lon": 8.281571,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Merkur Startplatz West",
+    "lat": 48.764725,
+    "lon": 8.279422,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Messelberg Startplatz",
+    "lat": 48.679542,
+    "lon": 9.838943,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Moos Startplatz",
+    "lat": 48.462799,
+    "lon": 8.113638,
+    "windDirectionMin": 240,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Möslehang Startplatz",
+    "lat": 47.830789,
+    "lon": 8.058901,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mulfingen Startplatz",
+    "lat": 49.334232,
+    "lon": 9.812346,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neidlingen Startplatz",
+    "lat": 48.577474,
+    "lon": 9.593161,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obere Tonhalde Startplatz",
+    "lat": 48.36025,
+    "lon": 9.484111,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberer Gemeindeberg/Unterer Gemeindeberg Startplatz",
+    "lat": 48.925008,
+    "lon": 9.738253,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberkochen Startplatz",
+    "lat": 48.780807,
+    "lon": 10.090847,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberried Startplatz",
+    "lat": 47.920339,
+    "lon": 7.954444,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Omerskopf Startplatz",
+    "lat": 48.64075,
+    "lon": 8.171511,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oppenau Nordost / Ibacher Holzplatz",
+    "lat": 48.44755,
+    "lon": 8.147113,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schäfersfeld Startplatz",
+    "lat": 48.435706,
+    "lon": 8.152043,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sandkopf Startplatz",
+    "lat": 48.496489,
+    "lon": 8.232828,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rossbühl Startplatz",
+    "lat": 48.48696,
+    "lon": 8.239123,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sandkopf Startplatz",
+    "lat": 48.496489,
+    "lon": 8.232828,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oppenauer Köpfle Startplatz",
+    "lat": 48.476944,
+    "lon": 8.182778,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ostalb - Skipiste Langert Startplatz",
+    "lat": 48.814833,
+    "lon": 10.078196,
+    "windDirectionMin": 0,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Prinzbach Startplatz",
+    "lat": 48.329721,
+    "lon": 8.009012,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rabenfelsen Startplatz",
+    "lat": 48.613796,
+    "lon": 9.796285,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rebberg",
+    "lat": 47.767772,
+    "lon": 8.968234,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Reichental Startplatz",
+    "lat": 48.727421,
+    "lon": 8.423654,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Renhardsweiler Startplatz",
+    "lat": 47.998055,
+    "lon": 9.57096,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rotstein Startplatz",
+    "lat": 48.779884,
+    "lon": 10.114902,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sasbachwalden-Schloßberg Startplatz",
+    "lat": 48.609582,
+    "lon": 8.152279,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schauinsland Startplatz Rotlache",
+    "lat": 47.909744,
+    "lon": 7.889599,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schienerberg Startplatz",
+    "lat": 47.707806,
+    "lon": 8.900222,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schmecker Startplatz",
+    "lat": 49.487469,
+    "lon": 9.893038,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schnaithalde Startplatz",
+    "lat": 48.296481,
+    "lon": 9.057594,
+    "windDirectionMin": 240,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schreckhof Startplatz",
+    "lat": 49.360534,
+    "lon": 9.107537,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schreckhof (Westhang) Startplatz",
+    "lat": 49.36249,
+    "lon": 9.104726,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schriesheim Startplatz",
+    "lat": 49.464505,
+    "lon": 8.678824,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auenheim Schutzwall Startplatz",
+    "lat": 48.599758,
+    "lon": 7.826258,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Guckinsdorf Startplatz",
+    "lat": 48.4687,
+    "lon": 8.149989,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schulungsgelände Heuberger-Kreuz",
+    "lat": 48.119133,
+    "lon": 8.800883,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schulungshang Niederwinden",
+    "lat": 48.135,
+    "lon": 8.025833,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Skihang Wirtsberg Startplatz",
+    "lat": 48.746752,
+    "lon": 9.993374,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Skilift Stierhütte Übungshang",
+    "lat": 47.866767,
+    "lon": 8.13347,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Skiliftgelände Hausen a.d.L. Startplatz",
+    "lat": 48.298926,
+    "lon": 9.187961,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sommerberg Startplatz",
+    "lat": 48.740356,
+    "lon": 8.534716,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sommerberg Startplatz",
+    "lat": 48.612489,
+    "lon": 9.724299,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Startplatz Kandel (Kandel-West und Rampe)",
+    "lat": 48.065232,
+    "lon": 8.015234,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gummen-Hütte-Kandel (Südstart - Oberer und Unterer Startplatz)",
+    "lat": 48.056843,
+    "lon": 8.013089,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Spitzfelsen Startplatz",
+    "lat": 48.293004,
+    "lon": 8.202233,
+    "windDirectionMin": 285,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Steingrubenberg Südwestseite Übungshang",
+    "lat": 48.025036,
+    "lon": 8.039588,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stettberg Startplatz",
+    "lat": 48.5875,
+    "lon": 10.224556,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stettelberg Startplatz",
+    "lat": 47.8135,
+    "lon": 9.075608,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stöckerkopf Startplatz",
+    "lat": 48.49556,
+    "lon": 8.368341,
+    "windDirectionMin": 330,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stöckerkopfwiese Übungshang",
+    "lat": 48.498862,
+    "lon": 8.367633,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tafelbühl Startplatz",
+    "lat": 48.12778,
+    "lon": 8.083824,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tafelbühl West Startplatz",
+    "lat": 48.128889,
+    "lon": 8.080833,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tannschach Startplatz",
+    "lat": 48.821825,
+    "lon": 8.404412,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Teufelsberg Startplatz",
+    "lat": 49.00302,
+    "lon": 9.043769,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Türkheim Startplatz",
+    "lat": 48.590481,
+    "lon": 9.805489,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pfulb Startplatz",
+    "lat": 48.528322,
+    "lon": 9.538471,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Übungshang Dobel",
+    "lat": 48.794171,
+    "lon": 8.5008,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lombach Startplatz",
+    "lat": 48.428333,
+    "lon": 8.460833,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schwärzenbach Übungshang",
+    "lat": 47.946361,
+    "lon": 8.219361,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Urenschwang Startplatz",
+    "lat": 48.367769,
+    "lon": 9.636769,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Urphar Startplatz Nordwest",
+    "lat": 49.741433,
+    "lon": 9.56455,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "V-Tal Startplatz",
+    "lat": 48.700528,
+    "lon": 9.808178,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Vogtmaiers Kanzel Startplatz",
+    "lat": 48.456893,
+    "lon": 8.260838,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wanne Startplatz",
+    "lat": 48.446053,
+    "lon": 9.227456,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiherkopf Startplatz",
+    "lat": 47.803544,
+    "lon": 7.778359,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weikersheim Startplatz",
+    "lat": 49.483231,
+    "lon": 9.888382,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weingartshälden Startplatz",
+    "lat": 49.324233,
+    "lon": 9.399562,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wieden-Warbach Startplatz",
+    "lat": 47.833872,
+    "lon": 7.875438,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wiesensteig Startplatz",
+    "lat": 48.570523,
+    "lon": 9.616395,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Winzingen Übungshang",
+    "lat": 48.719221,
+    "lon": 9.81969,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wirtsberg Startplatz",
+    "lat": 48.747911,
+    "lon": 9.989342,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wittental Startplatz",
+    "lat": 47.990292,
+    "lon": 7.957672,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Zundelberg Startplatz",
+    "lat": 48.054562,
+    "lon": 8.749151,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obere Kalle Startplatz",
+    "lat": 47.550997,
+    "lon": 10.146452,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Untere Kalle Startplatz",
+    "lat": 47.546437,
+    "lon": 10.147461,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bärenfalle Startplatz",
+    "lat": 47.555415,
+    "lon": 10.14274,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Alpspitze Startplatz Grüner Strich",
+    "lat": 47.600694,
+    "lon": 10.499668,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Alpspitze Startplatz Steiler Hund",
+    "lat": 47.597308,
+    "lon": 10.499281,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 97.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Alpspitze Übungshang",
+    "lat": 47.615913,
+    "lon": 10.49926,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Altenberg Startplatz",
+    "lat": 50.167686,
+    "lon": 10.015575,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Amihang Übungshang",
+    "lat": 47.480617,
+    "lon": 11.09308,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Arnsberg Startplatz",
+    "lat": 50.398506,
+    "lon": 9.956617,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auf dem Bichel / Auf der Höhe Startplatz",
+    "lat": 47.621033,
+    "lon": 10.519709,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Balsberg Startplatz",
+    "lat": 47.723678,
+    "lon": 12.446179,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bärngschwendt 600 / Skiabfahrt Unternberg Startplatz",
+    "lat": 47.7275,
+    "lon": 12.626667,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jenner Startplatz HG",
+    "lat": 47.576587,
+    "lon": 13.024676,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jenner / Mitterkaser-Alm",
+    "lat": 47.576468,
+    "lon": 13.034538,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Startplatz Kleiner Jenner West",
+    "lat": 47.579778,
+    "lon": 13.025194,
+    "windDirectionMin": 90,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Startplatz Kleiner Jenner Ost",
+    "lat": 47.579855,
+    "lon": 13.025665,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Berghalde Übungshang Startplatz",
+    "lat": 47.756651,
+    "lon": 11.386492,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Berleberg Startplatz",
+    "lat": 47.753405,
+    "lon": 10.469198,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bertoldshofen Startplatz",
+    "lat": 47.787988,
+    "lon": 10.66545,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Blomberg Startplatz NO, NW",
+    "lat": 47.73446,
+    "lon": 11.50721,
+    "windDirectionMin": 285,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Blomberg Startplatz Ost",
+    "lat": 47.730881,
+    "lon": 11.512663,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Böhming Startplatz",
+    "lat": 48.944566,
+    "lon": 11.350079,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brandleiten Übungshang",
+    "lat": 47.793452,
+    "lon": 11.389389,
+    "windDirectionMin": 285,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brauneck Startplatz Gipfel Nord",
+    "lat": 47.664139,
+    "lon": 11.524472,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brauneck Startplatz Umsetzer",
+    "lat": 47.667273,
+    "lon": 11.538498,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brauneck Startplatz Süd",
+    "lat": 47.663465,
+    "lon": 11.52365,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brauneck Startplatz Garland Ost",
+    "lat": 47.663791,
+    "lon": 11.526251,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitenberg Startplatz Engele",
+    "lat": 47.547697,
+    "lon": 10.556614,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitenberg Startplatz Kesselmoos",
+    "lat": 47.546915,
+    "lon": 10.558988,
+    "windDirectionMin": 330,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitenberg Startplatz Stütze 9",
+    "lat": 47.546792,
+    "lon": 10.563058,
+    "windDirectionMin": 330,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Breitenberg Startplatz HG",
+    "lat": 47.548669,
+    "lon": 10.569008,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Buchberg Startplatz",
+    "lat": 49.514663,
+    "lon": 12.029793,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Buchberg Startplatz",
+    "lat": 50.130132,
+    "lon": 9.882814,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Buchberg Übungshang",
+    "lat": 47.733407,
+    "lon": 11.74387,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Büchelstein Startplatz",
+    "lat": 48.808156,
+    "lon": 13.175588,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Buchenberg Startplatz 1",
+    "lat": 47.606481,
+    "lon": 10.810418,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Buchenberg Startplatz 2",
+    "lat": 47.606651,
+    "lon": 10.811116,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bucherhang Startplatz",
+    "lat": 47.693415,
+    "lon": 11.720824,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bühl Übungshang",
+    "lat": 49.453957,
+    "lon": 11.973446,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Burgberg Kreuz Startplatz",
+    "lat": 49.167612,
+    "lon": 11.955107,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bürgstadt / Wannenberg Startplatz",
+    "lat": 49.721156,
+    "lon": 9.288462,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dieberg Startplatz",
+    "lat": 49.328688,
+    "lon": 12.867436,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Egg/Happareute Startplatz",
+    "lat": 47.626434,
+    "lon": 9.954952,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Elpersheim Süd Startplatz",
+    "lat": 49.475556,
+    "lon": 9.859444,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Engleshof Startplatz",
+    "lat": 49.595587,
+    "lon": 12.211465,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eschlkam Startplatz",
+    "lat": 49.292357,
+    "lon": 12.928591,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ettenberg Startplatz",
+    "lat": 47.679417,
+    "lon": 13.029669,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Finkennest Übungshang",
+    "lat": 47.583057,
+    "lon": 10.01701,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Frahelser Buckl Übungshang",
+    "lat": 49.198952,
+    "lon": 13.034506,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Froschsee Startplatz",
+    "lat": 47.757199,
+    "lon": 12.693682,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fürmannalm / Irlberg Anger Startplatz",
+    "lat": 47.793063,
+    "lon": 12.840358,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gänsberg West-Startplatz",
+    "lat": 50.142222,
+    "lon": 10.057222,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gänsberg SüdWest-Startplatz",
+    "lat": 50.141111,
+    "lon": 10.056667,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Golan Höhe - Denklingen Startplatz",
+    "lat": 47.903915,
+    "lon": 10.866723,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Görauer Anger Startplatz",
+    "lat": 50.053736,
+    "lon": 11.316969,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Edelweiß Startplatz",
+    "lat": 49.994526,
+    "lon": 9.757061,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Übungshang Großgstatter",
+    "lat": 47.746619,
+    "lon": 12.638833,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Großheubach / Busigberg Startplatz",
+    "lat": 49.73398,
+    "lon": 9.20723,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Grün Startplatz Nordhang",
+    "lat": 50.17797,
+    "lon": 11.361279,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Grün Startplatz Plösenthal",
+    "lat": 50.180859,
+    "lon": 11.35069,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Grüner Weg Startplatz",
+    "lat": 47.456165,
+    "lon": 10.258471,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Grünten Startplatz West",
+    "lat": 47.56561,
+    "lon": 10.308764,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Habach Startplatz",
+    "lat": 47.719762,
+    "lon": 11.27944,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hainberg Startplatz",
+    "lat": 50.162604,
+    "lon": 11.525774,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Harbatshofen Startplatz",
+    "lat": 47.605396,
+    "lon": 9.992815,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hauchenberg Startplatz",
+    "lat": 47.620512,
+    "lon": 10.157032,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hausberg Startplatz",
+    "lat": 47.465048,
+    "lon": 11.096234,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hausstein Startplatz",
+    "lat": 48.870962,
+    "lon": 13.073307,
+    "windDirectionMin": 82.5,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heckerbugl Startplatz",
+    "lat": 48.89204,
+    "lon": 11.893434,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hesselberg Nordhang Startplatz",
+    "lat": 49.067132,
+    "lon": 10.535803,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hesselberg Südhang Startplatz",
+    "lat": 49.066647,
+    "lon": 10.531683,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heuberg Startplatz",
+    "lat": 47.725873,
+    "lon": 12.183924,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heuberg Startplatz",
+    "lat": 50.068035,
+    "lon": 9.458928,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kandahar-Express - Kreuzjoch Startplatz",
+    "lat": 47.452778,
+    "lon": 11.079917,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hexenkessel - Kreuzeck Startplatz",
+    "lat": 47.4525,
+    "lon": 11.068333,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 97.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tröglhang Startplatz",
+    "lat": 47.455722,
+    "lon": 11.081306,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gehwinde Startplatz",
+    "lat": 47.470646,
+    "lon": 10.332614,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hinang-Schöllang Startplatz",
+    "lat": 47.470516,
+    "lon": 10.302429,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hinterholzhausen Startplatz",
+    "lat": 48.419109,
+    "lon": 12.00845,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Spieser Startplatz",
+    "lat": 47.527156,
+    "lon": 10.389361,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hirschberg Startplatz",
+    "lat": 47.518033,
+    "lon": 10.376758,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hittenkirchen Übungshang",
+    "lat": 47.82489,
+    "lon": 12.342259,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochfelln Nordstart",
+    "lat": 47.76276,
+    "lon": 12.560226,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochfelln Oststart",
+    "lat": 47.761675,
+    "lon": 12.559551,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochfelln Oststart",
+    "lat": 47.761675,
+    "lon": 12.559551,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochgrat Startplatz",
+    "lat": 47.494154,
+    "lon": 10.072918,
+    "windDirectionMin": 150,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochplatte Startplatz (Rachelhang)",
+    "lat": 47.767383,
+    "lon": 12.42102,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gipfelstation Nordwest",
+    "lat": 47.747332,
+    "lon": 12.248248,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gipfelstation Norden",
+    "lat": 47.748428,
+    "lon": 12.250437,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hochzellberg Startplatz",
+    "lat": 49.075506,
+    "lon": 13.130185,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hoferer Höhe Startplatz",
+    "lat": 48.463611,
+    "lon": 13.0775,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Höhenberg Startplatz",
+    "lat": 49.268889,
+    "lon": 11.486944,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hoher Bogen Startplatz Ahornriegel N",
+    "lat": 49.235,
+    "lon": 12.941944,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hoher Bogen Startplatz Ahornriegel NO",
+    "lat": 49.236317,
+    "lon": 12.942556,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hoher Bogen - Eschlkam Übungshang",
+    "lat": 49.266965,
+    "lon": 12.952639,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Homburg Startplatz",
+    "lat": 50.026076,
+    "lon": 9.797728,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnle Startplatz",
+    "lat": 47.645103,
+    "lon": 11.053938,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnle Startplatz Bergwachthütte",
+    "lat": 47.647884,
+    "lon": 11.052439,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hörnle Baurer Wiese Übungshang",
+    "lat": 47.656217,
+    "lon": 11.03633,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tannbankerl Übungshang",
+    "lat": 47.65353,
+    "lon": 11.049896,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hündle Startplatz",
+    "lat": 47.544556,
+    "lon": 10.05275,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hundsbach Startplatz",
+    "lat": 50.018756,
+    "lon": 9.871387,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Imberger Horn Startplatz GS",
+    "lat": 47.489101,
+    "lon": 10.363423,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Iseler Startplatz",
+    "lat": 47.502378,
+    "lon": 10.412222,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jachenhausen Startplatz",
+    "lat": 48.987399,
+    "lon": 11.699581,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jägerkamp/Nagelspitz Startplatz",
+    "lat": 47.679201,
+    "lon": 11.90403,
+    "windDirectionMin": 60,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Steinbühler Gesenke Startplatz",
+    "lat": 49.173086,
+    "lon": 12.951306,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kampenwand Startplatz 1 oben (Hotelhang)",
+    "lat": 47.753283,
+    "lon": 12.352767,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kampenwand Startplatz 2 unten (Hirschenstein)",
+    "lat": 47.757133,
+    "lon": 12.351983,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kapf/Paradies Startplatz",
+    "lat": 47.548407,
+    "lon": 10.001421,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kohlberg Übungshang",
+    "lat": 49.593855,
+    "lon": 12.03166,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Königsheide Startplatz",
+    "lat": 49.998137,
+    "lon": 11.770154,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kreuzberg Familienabfahrt",
+    "lat": 50.380351,
+    "lon": 9.992451,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kreuzberg Startplatz Drachen",
+    "lat": 50.376124,
+    "lon": 9.984426,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kreuzberg Südost Startplatz",
+    "lat": 50.364641,
+    "lon": 9.98109,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Laber Startplatz östl. der Bergstation",
+    "lat": 47.586274,
+    "lon": 11.103573,
+    "windDirectionMin": 330,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lisberg Startplatz",
+    "lat": 49.884957,
+    "lon": 10.735487,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Marktschellenberg Startplatz",
+    "lat": 47.673333,
+    "lon": 13.033056,
+    "windDirectionMin": 82.5,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mäusberg Startplatz",
+    "lat": 49.990608,
+    "lon": 9.721699,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Michelsberg Startplatz",
+    "lat": 50.251616,
+    "lon": 10.160583,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mittag Startplatz Süd",
+    "lat": 47.535761,
+    "lon": 10.215692,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mittag Startplatz West",
+    "lat": 47.53765,
+    "lon": 10.216537,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mittag Hauptstartplatz NO",
+    "lat": 47.537572,
+    "lon": 10.218712,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mittag Startplatz NO Terrasse Gipfelstation",
+    "lat": 47.537304,
+    "lon": 10.2178,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mittelstaufen Startplatz",
+    "lat": 47.755367,
+    "lon": 12.833061,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bartelmahd Startplatz",
+    "lat": 47.750866,
+    "lon": 12.837009,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Zwieselalm Hauptstartplatz",
+    "lat": 47.747548,
+    "lon": 12.814586,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Moarbichl Hochgern Startplatz",
+    "lat": 47.749722,
+    "lon": 12.506419,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nebelhorn Gipfel Terassen-SP 1 (südl. Gipfelstation)",
+    "lat": 47.421225,
+    "lon": 10.342172,
+    "windDirectionMin": 105,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nebelhorn Gipfel SW (Winter-SP 2)",
+    "lat": 47.420722,
+    "lon": 10.342389,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nebelhorn Geißfuß",
+    "lat": 47.4175,
+    "lon": 10.326389,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nebelhorn Zeigersattel SW-NW (SP 4)",
+    "lat": 47.411517,
+    "lon": 10.348994,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nebelhorn Probsthaus (SP 3, Bergstation)",
+    "lat": 47.413225,
+    "lon": 10.346244,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neubürg Startplatz Nordost",
+    "lat": 49.89188,
+    "lon": 11.40261,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neubürg Startplatz Nordwest",
+    "lat": 49.891963,
+    "lon": 11.401678,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neubürg Startplatz Südost",
+    "lat": 49.890523,
+    "lon": 11.401738,
+    "windDirectionMin": 150,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neubürg Startplatz Südwest",
+    "lat": 49.89053,
+    "lon": 11.400762,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neubürg Startplatz West",
+    "lat": 49.891471,
+    "lon": 11.40132,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neukenroth Startplatz",
+    "lat": 50.32575,
+    "lon": 11.269786,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberaltenbernheim Übungshang",
+    "lat": 49.462379,
+    "lon": 10.508294,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obereichstätt Startplatz 1",
+    "lat": 48.896704,
+    "lon": 11.13505,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obereichstätt Startplatz 2",
+    "lat": 48.892938,
+    "lon": 11.140609,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberemmendorf Startplatz",
+    "lat": 48.989488,
+    "lon": 11.443645,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obergrainet Startplatz",
+    "lat": 48.801281,
+    "lon": 13.67167,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ödberg Startplatz",
+    "lat": 47.739087,
+    "lon": 11.775822,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ofenthaler Berg Startplatz",
+    "lat": 50.125447,
+    "lon": 9.909967,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osser Startplatz",
+    "lat": 49.203972,
+    "lon": 13.099051,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osterbuchberg Übungshang",
+    "lat": 47.804444,
+    "lon": 12.520833,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osterfelder Ost-Startplatz (Hauptstartplatz)",
+    "lat": 47.4382,
+    "lon": 11.050017,
+    "windDirectionMin": 60,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osterfelder Nord-Startplatz HG",
+    "lat": 47.439303,
+    "lon": 11.051881,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osterfelder Nord-Startplatz GS",
+    "lat": 47.439444,
+    "lon": 11.052222,
+    "windDirectionMin": 285,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osthang Startplatz",
+    "lat": 49.025328,
+    "lon": 11.910513,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pensenwiesen Startplatz",
+    "lat": 49.937558,
+    "lon": 11.659853,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pig Mountain Startplatz",
+    "lat": 49.012823,
+    "lon": 12.401247,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pig Mountain Übungshang",
+    "lat": 49.013864,
+    "lon": 12.399144,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Predigtstuhl Startplatz Schreck",
+    "lat": 47.688917,
+    "lon": 12.889667,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Predigtstuhl Startplatz Hochschlegel",
+    "lat": 47.692042,
+    "lon": 12.882553,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Predigtstuhl Startplatz Schlegelmulde",
+    "lat": 47.695422,
+    "lon": 12.882242,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Premberg Startplatz",
+    "lat": 49.234778,
+    "lon": 12.073159,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pröller Startplatz Gipfel Nordhang",
+    "lat": 49.022265,
+    "lon": 12.821484,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pröllerfeld / Tremmelhauserhöhe Übungshang",
+    "lat": 49.051736,
+    "lon": 12.052903,
+    "windDirectionMin": 285,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Radspitze Startplatz",
+    "lat": 50.235392,
+    "lon": 11.434028,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rampoldplatte Startplatz",
+    "lat": 47.725556,
+    "lon": 12.041667,
+    "windDirectionMin": 60,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ratholz Startplatz",
+    "lat": 47.573025,
+    "lon": 10.133511,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rauschberg Startplatz",
+    "lat": 47.733056,
+    "lon": 12.685556,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rehlehalde / Schöner Berg Startplatz",
+    "lat": 47.865926,
+    "lon": 10.580177,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Röhrenhalde Übungshang",
+    "lat": 47.685759,
+    "lon": 10.498089,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Roschlaub/Obstgarten Startplatz",
+    "lat": 50.014361,
+    "lon": 11.030194,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rothenberg Startplatz",
+    "lat": 49.556983,
+    "lon": 11.355872,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heckenkopf - Rauschen / Faulbach Startplatz",
+    "lat": 49.782303,
+    "lon": 9.466116,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Röttberg / Hasloch Startplatz",
+    "lat": 49.790948,
+    "lon": 9.506414,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Salmaser Höhe/Salmas Startplatz",
+    "lat": 47.569938,
+    "lon": 10.088946,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Scheffau Startplatz",
+    "lat": 47.674375,
+    "lon": 13.063817,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Scheiber / Tiroler Stadl Startplatz",
+    "lat": 47.556864,
+    "lon": 10.553269,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schillenberg/Alte Rieder Straße/Gschlatt Startplatz",
+    "lat": 47.760993,
+    "lon": 10.61953,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schloß Banz Startplatz",
+    "lat": 50.134596,
+    "lon": 10.998366,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schmalzlalm Startplatz",
+    "lat": 49.043514,
+    "lon": 12.453147,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schneitweg Startplatz",
+    "lat": 49.129478,
+    "lon": 12.172301,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schrattenbach Startplatz",
+    "lat": 47.848389,
+    "lon": 10.297667,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schulungsgelände Gländfeld",
+    "lat": 48.903056,
+    "lon": 13.088611,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schulungsgelände Tegernsee, Schafstatt, Startplatz",
+    "lat": 47.761749,
+    "lon": 11.758841,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sinswang Startplatz",
+    "lat": 47.567276,
+    "lon": 9.996748,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sommerberg Startplatz",
+    "lat": 49.036667,
+    "lon": 12.747083,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Steurer Startplatz",
+    "lat": 47.474519,
+    "lon": 10.108194,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Steurer Übungshang",
+    "lat": 47.467912,
+    "lon": 10.107171,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sulzberg Startplatz",
+    "lat": 47.745092,
+    "lon": 12.062479,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tauchersreuth Startplatz",
+    "lat": 49.547167,
+    "lon": 11.2125,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tegelberg SP Bergstation Tegelbergbahn",
+    "lat": 47.559851,
+    "lon": 10.779857,
+    "windDirectionMin": 15,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tegelberg SP Grüble",
+    "lat": 47.563496,
+    "lon": 10.782781,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tegelberg SP Rohrkopfsattel",
+    "lat": 47.568071,
+    "lon": 10.780292,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Thalhäusl Übungshang",
+    "lat": 47.759074,
+    "lon": 11.980161,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tiefenbach Übungshang",
+    "lat": 48.620241,
+    "lon": 13.381009,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tiertalberg Startplatz",
+    "lat": 49.894333,
+    "lon": 9.8379,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Trimburg Startplatz",
+    "lat": 50.136069,
+    "lon": 9.981889,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Im Eldern - Übungshang",
+    "lat": 47.623638,
+    "lon": 10.646797,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schwanden Übungshang",
+    "lat": 47.58755,
+    "lon": 10.029689,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sonnen Übungshang",
+    "lat": 47.655903,
+    "lon": 11.045356,
+    "windDirectionMin": 285,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Unternberg Nord Startplatz",
+    "lat": 47.728333,
+    "lon": 12.638333,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Unternberg Startplatz Süd",
+    "lat": 47.726667,
+    "lon": 12.635278,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Unternberg Bärngschwendt Übungshang Startplatz",
+    "lat": 47.74325,
+    "lon": 12.630278,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Unterschwarzach Startplatz",
+    "lat": 49.861632,
+    "lon": 11.713915,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Veitsberg Startplatz",
+    "lat": 50.063283,
+    "lon": 11.000533,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Vogelsang Ost-Startplatz",
+    "lat": 47.663267,
+    "lon": 12.0346,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Vogelsang West Startplatz",
+    "lat": 47.66526,
+    "lon": 12.035372,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Voithenberg Startplatz",
+    "lat": 49.334715,
+    "lon": 12.792377,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Voxbrunn Übungshang",
+    "lat": 48.888844,
+    "lon": 12.047892,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Walberla Startplatz",
+    "lat": 49.719707,
+    "lon": 11.151853,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wallberg Startplatz Hauptgipfel",
+    "lat": 47.665857,
+    "lon": 11.796738,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wallberg Startplatz Westgipfel",
+    "lat": 47.665437,
+    "lon": 11.795596,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wallberg Startplatz Hintermaurer Alm",
+    "lat": 47.663827,
+    "lon": 11.794939,
+    "windDirectionMin": 195,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wallberg Startplatz Kircherl",
+    "lat": 47.66103,
+    "lon": 11.790605,
+    "windDirectionMin": 330,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wank Ost und Nordost-Startplatz",
+    "lat": 47.508316,
+    "lon": 11.14373,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wank West-Startplatz Rampe",
+    "lat": 47.507635,
+    "lon": 11.142963,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wank Nord-Startplatz",
+    "lat": 47.506667,
+    "lon": 11.148056,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wank Süd (Hauptstartplatz für GS)",
+    "lat": 47.506794,
+    "lon": 11.147314,
+    "windDirectionMin": 60,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wank Startplatz Rosswank",
+    "lat": 47.504243,
+    "lon": 11.155556,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiherkopf / Hörnerbahn Startplatz",
+    "lat": 47.465161,
+    "lon": 10.201328,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiherkopf / Hörnerbahn Startplatz Mittelstation",
+    "lat": 47.461443,
+    "lon": 10.214792,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weingarten (Unternberg) Startplatz",
+    "lat": 47.741475,
+    "lon": 12.638722,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Windberg Übungshang",
+    "lat": 48.941389,
+    "lon": 12.742682,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Winzerer Höhen Startplatz",
+    "lat": 49.035351,
+    "lon": 12.056529,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wittelsbacher Turm Startplatz",
+    "lat": 50.163113,
+    "lon": 10.075557,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wolfsschlucht Übungshang",
+    "lat": 49.463456,
+    "lon": 11.866259,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wolfsteinberg Startplatz",
+    "lat": 49.290845,
+    "lon": 11.491575,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wöllmannsbach Übungshang",
+    "lat": 49.277222,
+    "lon": 12.052222,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Teufelsberg Startplatz",
+    "lat": 52.502195,
+    "lon": 13.247023,
+    "windDirectionMin": 315,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Volkspark Lübars",
+    "lat": 52.610556,
+    "lon": 13.368492,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fischbek Übungshang",
+    "lat": 53.464075,
+    "lon": 9.845145,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Alter Steinbruch Startplatz",
+    "lat": 49.695182,
+    "lon": 8.775973,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Geisberg Startplatz",
+    "lat": 49.691176,
+    "lon": 8.770008,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Göbbelsberge Startplatz",
+    "lat": 51.120833,
+    "lon": 9.053889,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Hoppern SP",
+    "lat": 51.295149,
+    "lon": 8.590857,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am kleinen Holze Startplatz",
+    "lat": 51.287783,
+    "lon": 8.596967,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Knippe Übungsgelände",
+    "lat": 51.299416,
+    "lon": 8.60105,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Lüsebrinke Übungshang",
+    "lat": 51.330329,
+    "lon": 8.712086,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Schützenkreuz Übungshang",
+    "lat": 49.545833,
+    "lon": 8.743056,
+    "windDirectionMin": 240,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Saalenweg Startplatz",
+    "lat": 51.118134,
+    "lon": 9.191729,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "An der Schieferkuhle Übungshang",
+    "lat": 51.318056,
+    "lon": 8.651111,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Arnoldshain Startplatz",
+    "lat": 50.254504,
+    "lon": 8.447328,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auf dem Wakenfelde Startplatz",
+    "lat": 51.289164,
+    "lon": 8.62474,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Beedenkirchen Startplatz",
+    "lat": 49.729167,
+    "lon": 8.731111,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bierbach Startplatz Ost",
+    "lat": 49.760992,
+    "lon": 8.850419,
+    "windDirectionMin": 285,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bierbach Startplatz Nord-West",
+    "lat": 49.760092,
+    "lon": 8.860789,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Der Riedberg Startplatz",
+    "lat": 49.781389,
+    "lon": 8.801389,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eisenberg Westhang Startplatz",
+    "lat": 51.015847,
+    "lon": 8.619886,
+    "windDirectionMin": 240,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eppenhain Startplatz",
+    "lat": 50.172778,
+    "lon": 8.383889,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erbach-Erlenbach Startplatz West",
+    "lat": 49.645006,
+    "lon": 9.019694,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erbach Startplatz",
+    "lat": 49.648278,
+    "lon": 9.014944,
+    "windDirectionMin": 262.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erlau Ost-SP",
+    "lat": 49.742767,
+    "lon": 8.821997,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erlau Holunderhof ÜH",
+    "lat": 49.740844,
+    "lon": 8.824517,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erlau SW-Startplatz GS",
+    "lat": 49.744653,
+    "lon": 8.834208,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erlau SW-Startplatz HG",
+    "lat": 49.744653,
+    "lon": 8.834208,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Eschbach Startplatz",
+    "lat": 50.35395,
+    "lon": 8.523653,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gadern-Höhenweg Startplatz",
+    "lat": 49.582115,
+    "lon": 8.804684,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Güttersbach SP Ost",
+    "lat": 49.7494,
+    "lon": 8.83085,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Güttersbach SP Süd",
+    "lat": 49.750936,
+    "lon": 8.835275,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hahnberg Startplatz",
+    "lat": 51.103912,
+    "lon": 9.062261,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hallgarten Startplatz 2, Toplandeplatz",
+    "lat": 50.038556,
+    "lon": 8.032917,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hallgarten Startplatz 1",
+    "lat": 50.037819,
+    "lon": 8.037703,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heubach Übungshang",
+    "lat": 50.382856,
+    "lon": 9.69419,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohensolms Skilifthang Startplatz",
+    "lat": 50.655833,
+    "lon": 8.516944,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hoher Meissner Uengsterode Startplatz",
+    "lat": 51.245639,
+    "lon": 9.846333,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hoher Meissner Vockerode Startplatz",
+    "lat": 51.209706,
+    "lon": 9.873877,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Übungshang Ketteläcker",
+    "lat": 51.221024,
+    "lon": 8.927765,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Korbach Startplatz",
+    "lat": 51.258667,
+    "lon": 8.828556,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Martinsthal Startplatz",
+    "lat": 50.054365,
+    "lon": 8.134793,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Melibokus Startplatz",
+    "lat": 49.725291,
+    "lon": 8.635734,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Messbacher Höhenweg Startplatz",
+    "lat": 49.748439,
+    "lon": 8.813331,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Momart Übungshang",
+    "lat": 49.726497,
+    "lon": 9.038656,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Naunheim Startplatz Im Dippertal",
+    "lat": 50.592222,
+    "lon": 8.527222,
+    "windDirectionMin": 82.5,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nieder-Liebersbach Übungshang",
+    "lat": 49.595556,
+    "lon": 8.710556,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nonrod NO Übungshang",
+    "lat": 49.749186,
+    "lon": 8.820731,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nonroder Höhe Startplatz",
+    "lat": 49.754862,
+    "lon": 8.825604,
+    "windDirectionMin": 240,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nonroder Höhe Hangstart",
+    "lat": 49.754917,
+    "lon": 8.825836,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ober-Ostern Startplatz",
+    "lat": 49.682119,
+    "lon": 8.843186,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Reichenbach Startplatz",
+    "lat": 50.277778,
+    "lon": 8.374722,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ronneburg die Hell (Übungshang Süd)",
+    "lat": 50.237083,
+    "lon": 9.060861,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ronneburg die Hell (Übungshang)",
+    "lat": 50.236871,
+    "lon": 9.060802,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Skihang Hartenrod Startplatz",
+    "lat": 50.748349,
+    "lon": 8.453979,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Südhang Wasserkuppe",
+    "lat": 50.49735,
+    "lon": 9.93722,
+    "windDirectionMin": 150,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Abtsrodaer Kuppe",
+    "lat": 50.503164,
+    "lon": 9.939065,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wasserkuppe Westhang",
+    "lat": 50.496804,
+    "lon": 9.931211,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pferdskopf",
+    "lat": 50.490934,
+    "lon": 9.920526,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sonnenhang Startplatz",
+    "lat": 51.291944,
+    "lon": 8.581389,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Steinbruch Achenbach Startplatz",
+    "lat": 50.868395,
+    "lon": 8.41049,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stormbruch - Hinterm Hagen Übungshang",
+    "lat": 51.351817,
+    "lon": 8.712029,
+    "windDirectionMin": 60,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Niederlibbach Startplatz",
+    "lat": 50.201572,
+    "lon": 8.167305,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Treisberg Startplatz",
+    "lat": 50.293611,
+    "lon": 8.430556,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tringenstein Übungshang NO",
+    "lat": 50.758247,
+    "lon": 8.414256,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Tringenstein Übungshang SW",
+    "lat": 50.757292,
+    "lon": 8.415856,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Waldems-Esch Startplatz",
+    "lat": 50.247172,
+    "lon": 8.324633,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wanfried - Aue Startplatz",
+    "lat": 51.1722,
+    "lon": 10.130124,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiherkuppe Startplatz",
+    "lat": 50.511167,
+    "lon": 9.913833,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weinkopf Startplatz",
+    "lat": 51.024715,
+    "lon": 9.292245,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiten Gesäß Startplatz NW, SW",
+    "lat": 49.693036,
+    "lon": 9.043933,
+    "windDirectionMin": 195,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wellen - Auf dem Schleifstein Startplatz",
+    "lat": 51.155101,
+    "lon": 9.171229,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weyhers - Nordhang",
+    "lat": 50.473889,
+    "lon": 9.794444,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Willingen-Ettelsberg Startplatz",
+    "lat": 51.282192,
+    "lon": 8.600114,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Winterkasten Startplatz",
+    "lat": 49.701861,
+    "lon": 8.796306,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Adorf / Wirmighausen Startplatz",
+    "lat": 51.350812,
+    "lon": 8.830476,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Rammelsberg Nordwest-Startplatz",
+    "lat": 51.88971,
+    "lon": 10.430875,
+    "windDirectionMin": 240,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Rammelsberg Südwest-Startplatz",
+    "lat": 51.888465,
+    "lon": 10.428085,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Börry am Hellberg Startplatz",
+    "lat": 52.046717,
+    "lon": 9.458199,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dielmissen - Ith Startplatz",
+    "lat": 51.981219,
+    "lon": 9.626201,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohe Nordosthang Startplatz",
+    "lat": 51.955225,
+    "lon": 9.457835,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Königszinne Startplatz",
+    "lat": 51.977955,
+    "lon": 9.525919,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pegestorf Startplatz",
+    "lat": 51.940058,
+    "lon": 9.491286,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ascheloh Übungshang",
+    "lat": 52.04745,
+    "lon": 8.406558,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ascheloh-Hermannsweg Startplatz",
+    "lat": 52.050751,
+    "lon": 8.409833,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auergang SP",
+    "lat": 51.148589,
+    "lon": 8.18548,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kleff Startplatz",
+    "lat": 51.214908,
+    "lon": 7.932172,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auf der Ecke Startplatz",
+    "lat": 50.890594,
+    "lon": 8.368569,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohe Hardt Startplatz",
+    "lat": 50.860833,
+    "lon": 7.723333,
+    "windDirectionMin": 330,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bastenberg Startplatz",
+    "lat": 51.702838,
+    "lon": 9.323798,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bohnstein Startplatz",
+    "lat": 50.883678,
+    "lon": 8.350725,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bruchhauser Steine Startplatz Südwest (SP 1)",
+    "lat": 51.318167,
+    "lon": 8.544965,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bruchhauser Steine Startplatz West (SP 2)",
+    "lat": 51.316089,
+    "lon": 8.548136,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bruchhauser Steine West Startplatz",
+    "lat": 51.32,
+    "lon": 8.538611,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brunsberg Startplatz",
+    "lat": 51.747399,
+    "lon": 9.34988,
+    "windDirectionMin": 60,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Elpe Übungshang (Unterhang)",
+    "lat": 51.271306,
+    "lon": 8.438616,
+    "windDirectionMin": 15,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Elpe-Steinmarkskopf Startplatz",
+    "lat": 51.269387,
+    "lon": 8.432071,
+    "windDirectionMin": 15,
+    "windDirectionMax": 142.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Entenberg Startplatz",
+    "lat": 50.917968,
+    "lon": 8.434168,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hainberg Startplatz",
+    "lat": 51.345686,
+    "lon": 8.153958,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Halbeswig Startplatz",
+    "lat": 51.329895,
+    "lon": 8.390005,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Halde Hoheward Startplatz",
+    "lat": 51.568333,
+    "lon": 7.161222,
+    "windDirectionMin": 270,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heisterberg Startplatz",
+    "lat": 51.094722,
+    "lon": 8.173333,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Herchen Startplatz",
+    "lat": 50.779352,
+    "lon": 7.503626,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hömberg Startplatz",
+    "lat": 51.317853,
+    "lon": 8.210069,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Homberg Startplatz Südost",
+    "lat": 51.02125,
+    "lon": 8.489333,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Homberg Startplatz Nordwest",
+    "lat": 51.021111,
+    "lon": 8.488611,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Homberg Startplatz Süd",
+    "lat": 51.020417,
+    "lon": 8.487306,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Homberg-Züschen Startplatz",
+    "lat": 51.134618,
+    "lon": 8.541208,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kahle Pön Startplatz",
+    "lat": 51.261834,
+    "lon": 8.672054,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kötzhelle Startplatz NNW (2)",
+    "lat": 51.108081,
+    "lon": 7.794934,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kötzhelle Startplatz NW (1)",
+    "lat": 51.108249,
+    "lon": 7.797179,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kuhhelle Startplatz",
+    "lat": 51.127222,
+    "lon": 8.091944,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mellbeck Startplatz",
+    "lat": 51.311667,
+    "lon": 7.186389,
+    "windDirectionMin": 240,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Netphen Startplatz",
+    "lat": 50.920323,
+    "lon": 8.078009,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Niederrheinkogel - Halde Norddeutschland SW-Start",
+    "lat": 51.469253,
+    "lon": 6.566386,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Niederrheinkogel - Halde Norddeutschland Übungshang",
+    "lat": 51.471389,
+    "lon": 6.568333,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nordhelle Startplatz (Drachen)",
+    "lat": 51.150214,
+    "lon": 7.754834,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 52.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nordhelle Werdohl Startplatz",
+    "lat": 51.246747,
+    "lon": 7.749318,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sengenberg Startplatz",
+    "lat": 51.378306,
+    "lon": 8.415389,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obermarsberg Startplatz",
+    "lat": 51.441,
+    "lon": 8.851,
+    "windDirectionMin": 337.5,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obermaubach Startplatz",
+    "lat": 50.713993,
+    "lon": 6.450412,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Obermelbecke-Kerschlade Startplatz",
+    "lat": 51.167423,
+    "lon": 8.044803,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rinsenberg Startplatz",
+    "lat": 51.130313,
+    "lon": 8.163558,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rossnacken Startplatz",
+    "lat": 51.118056,
+    "lon": 8.185556,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Saal-Rönkhausen Startplatz",
+    "lat": 51.239449,
+    "lon": 7.957033,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Saalhausen - Dolberg Startplatz",
+    "lat": 51.107927,
+    "lon": 8.160873,
+    "windDirectionMin": 307.5,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schwaney-Hoppenberg",
+    "lat": 51.715833,
+    "lon": 8.901667,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sieseler Alm - Startplatz (Auf dem Kroppe)",
+    "lat": 51.215076,
+    "lon": 7.902056,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Skihang Ebbefeld/Nordhelle Startplatz Gleitschirm",
+    "lat": 51.151167,
+    "lon": 7.755146,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stachelhardt Startplatz",
+    "lat": 50.780884,
+    "lon": 7.376745,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stüppel Startplatz NW",
+    "lat": 51.313983,
+    "lon": 8.429088,
+    "windDirectionMin": 240,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stüppel Startplatz NO - Andreasberg",
+    "lat": 51.314312,
+    "lon": 8.429486,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wenholthausen Startplatz S/SW",
+    "lat": 51.302837,
+    "lon": 8.189728,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wildhang Übungshang",
+    "lat": 51.875034,
+    "lon": 8.895836,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wilnsdorf-Nord Startplatz",
+    "lat": 50.859915,
+    "lon": 8.097237,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wittekindsburg Startplatz",
+    "lat": 52.246925,
+    "lon": 8.883905,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wixberg Startplatz S-SO",
+    "lat": 51.318611,
+    "lon": 7.666667,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wixberg Startplatz West",
+    "lat": 51.32675,
+    "lon": 7.663393,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Adelberg Startplatz",
+    "lat": 49.216506,
+    "lon": 7.960167,
+    "windDirectionMin": 37.5,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auen-Eckweiler Startplatz",
+    "lat": 49.839244,
+    "lon": 7.604881,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auf dem unteren Mergesfeld Startplatz",
+    "lat": 49.871944,
+    "lon": 7.787222,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "HG-Übungsgelände Auf Hostert",
+    "lat": 50.246076,
+    "lon": 6.744859,
+    "windDirectionMin": 225,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bad Salzig Startplatz",
+    "lat": 50.193859,
+    "lon": 7.615242,
+    "windDirectionMin": 330,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bausenberg Startplatz",
+    "lat": 50.464785,
+    "lon": 7.222427,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Blättersberg Startplatz",
+    "lat": 49.265962,
+    "lon": 8.070074,
+    "windDirectionMin": 82.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Burgen Hauptstartplatz",
+    "lat": 49.876369,
+    "lon": 7.017176,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Burgen Übungshang NO",
+    "lat": 49.877599,
+    "lon": 7.027742,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Veldenz Süd-Ost Startplatz",
+    "lat": 49.887403,
+    "lon": 7.011311,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Burgen Übungshang NW",
+    "lat": 49.879967,
+    "lon": 7.016286,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Veldenz Nord-Ost Startplatz",
+    "lat": 49.886072,
+    "lon": 7.011228,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Calmont Startplatz",
+    "lat": 50.106814,
+    "lon": 7.114872,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Donnersberg SP 2",
+    "lat": 49.634404,
+    "lon": 7.931212,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Donnersberg SP 1",
+    "lat": 49.634439,
+    "lon": 7.931344,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Moltkefelsen Startplatz",
+    "lat": 49.620556,
+    "lon": 7.941389,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Duchroth Nord Startplatz",
+    "lat": 49.775468,
+    "lon": 7.722417,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Erden Startplatz",
+    "lat": 49.984903,
+    "lon": 7.017952,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Feilbingert Startplatz",
+    "lat": 49.770583,
+    "lon": 7.817586,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Finkenberg Startplatz",
+    "lat": 50.582617,
+    "lon": 7.411324,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Förlenberg Startplatz",
+    "lat": 49.19188,
+    "lon": 8.004517,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 97.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gangelsberg Startplatz",
+    "lat": 49.792444,
+    "lon": 7.740576,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gedeonseck Startplatz",
+    "lat": 50.243747,
+    "lon": 7.572777,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Graach Startplatz",
+    "lat": 49.944278,
+    "lon": 7.059056,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Großer Kopf / Römerturm Startplatz",
+    "lat": 50.369861,
+    "lon": 7.756472,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Haardskopf Startplatz",
+    "lat": 50.558597,
+    "lon": 7.434912,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heimborn-Knabenberg Übungshang",
+    "lat": 50.714276,
+    "lon": 7.772172,
+    "windDirectionMin": 180,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohenberg Startplatz",
+    "lat": 49.201141,
+    "lon": 8.001901,
+    "windDirectionMin": 270,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohenberg NW Startplatz Aussichtsturm",
+    "lat": 49.202648,
+    "lon": 8.004531,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hohenöllen Startplatz SW",
+    "lat": 49.624722,
+    "lon": 7.621389,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Höllenberg Startplatz",
+    "lat": 49.188302,
+    "lon": 7.888033,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hönningen Startplatz Süd",
+    "lat": 50.478656,
+    "lon": 6.947929,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hönningen Startplatz Ost",
+    "lat": 50.470394,
+    "lon": 6.941692,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Humberg Startplatz",
+    "lat": 49.768543,
+    "lon": 7.711233,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Im Borngrund Übungshang",
+    "lat": 50.215371,
+    "lon": 7.724165,
+    "windDirectionMin": 135,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Im Ruhescheid Startplatz",
+    "lat": 49.788468,
+    "lon": 7.701073,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Im Theiswieschen - In der Heckwies Startplatz",
+    "lat": 50.285718,
+    "lon": 7.188697,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kausen Übungshang",
+    "lat": 50.738298,
+    "lon": 7.869229,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Klüsserath Startplatz 1 Südwest",
+    "lat": 49.847669,
+    "lon": 6.871165,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Klüsserath Startplatz 2 Süd",
+    "lat": 49.847807,
+    "lon": 6.855758,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kronenberg Startplatz",
+    "lat": 49.855631,
+    "lon": 7.830886,
+    "windDirectionMin": 240,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Küppchen - Lasserg Startplatz",
+    "lat": 50.216843,
+    "lon": 7.384486,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Langer Berg Startplatz",
+    "lat": 49.763831,
+    "lon": 7.71369,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lautersheim Startplatz",
+    "lat": 49.583971,
+    "lon": 8.106853,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Longuich Startplatz",
+    "lat": 49.811944,
+    "lon": 6.780818,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Maring-Noviand Startplatz Südost Kaisereiche",
+    "lat": 49.943889,
+    "lon": 6.990278,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Maring-Noviand Startplatz Südwest",
+    "lat": 49.945863,
+    "lon": 7.003613,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Meddersheim Startplatz",
+    "lat": 49.778925,
+    "lon": 7.583569,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Meerfelder Maar Startplatz Ost",
+    "lat": 50.093412,
+    "lon": 6.746721,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Meerfelder Maar Startplatz Süd",
+    "lat": 50.10613,
+    "lon": 6.755991,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mehring Startplatz",
+    "lat": 49.781271,
+    "lon": 6.837562,
+    "windDirectionMin": 285,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mühlenfeld Landeplatz (Birkenbeul)",
+    "lat": 50.744154,
+    "lon": 7.60977,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nassauer Berg Startplatz",
+    "lat": 50.305778,
+    "lon": 7.803706,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neuberg Startplatz",
+    "lat": 49.766891,
+    "lon": 7.691824,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neumagen-Dhron Startplatz",
+    "lat": 49.877444,
+    "lon": 6.887694,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Neuwied-Rodenbach Startplatz",
+    "lat": 50.460646,
+    "lon": 7.438388,
+    "windDirectionMin": 105,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Nordwesthang Sassenroth Startplatz",
+    "lat": 50.76975,
+    "lon": 7.929139,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Oberweiler Startplatz",
+    "lat": 49.770511,
+    "lon": 7.719183,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ockfen/Bockstein Startplatz",
+    "lat": 49.624142,
+    "lon": 6.595117,
+    "windDirectionMin": 172.5,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Orensberg Startplatz",
+    "lat": 49.24045,
+    "lon": 8.026333,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Osthang Herdorf Startplatz",
+    "lat": 50.769444,
+    "lon": 7.934167,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Herzerberg Startplatz",
+    "lat": 49.5495,
+    "lon": 7.308222,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pünderich Startplatz",
+    "lat": 50.047078,
+    "lon": 7.126537,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Raumbach Startplatz",
+    "lat": 49.726754,
+    "lon": 7.658372,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Riol Startplatz Erdrampe",
+    "lat": 49.781278,
+    "lon": 6.800556,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rivenich Startplatz",
+    "lat": 49.869397,
+    "lon": 6.857845,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schoden Startplatz",
+    "lat": 49.641803,
+    "lon": 6.593311,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sehlem Startplatz",
+    "lat": 49.894528,
+    "lon": 6.826983,
+    "windDirectionMin": 240,
+    "windDirectionMax": 7.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Serrig und Hamm Startplatz",
+    "lat": 49.569001,
+    "lon": 6.615551,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sinnhöll Startplatz",
+    "lat": 49.622385,
+    "lon": 7.5416,
+    "windDirectionMin": 195,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Sponsheimer Berg Startplatz",
+    "lat": 49.929732,
+    "lon": 7.891145,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Boos / Staudernheim Startplatz",
+    "lat": 49.786397,
+    "lon": 7.714811,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stauf Startplatz Südost",
+    "lat": 49.54949,
+    "lon": 8.027519,
+    "windDirectionMin": 60,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stauf Startplatz West",
+    "lat": 49.549492,
+    "lon": 8.026414,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Strüther Wald Startplatz",
+    "lat": 49.79279,
+    "lon": 7.512288,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Valwiger Berg (Jeiersberg) Startplatz",
+    "lat": 50.149131,
+    "lon": 7.226536,
+    "windDirectionMin": 150,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Vor der Wesenbach Startplatz",
+    "lat": 49.751993,
+    "lon": 7.707639,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiler Startplatz",
+    "lat": 49.805407,
+    "lon": 7.566983,
+    "windDirectionMin": 195,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wingertsberg Startplatz",
+    "lat": 49.840161,
+    "lon": 7.674264,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Zeltingen-Rachtig Startplatz",
+    "lat": 49.961546,
+    "lon": 6.993141,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Bergehalde Ensdorf Startplatz",
+    "lat": 49.317031,
+    "lon": 6.785388,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Brotdorf Startplatz",
+    "lat": 49.470076,
+    "lon": 6.657629,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Galgenberg Startplatz",
+    "lat": 49.500507,
+    "lon": 6.740134,
+    "windDirectionMin": 330,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gösberg Übungshang",
+    "lat": 49.445696,
+    "lon": 6.816201,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "An der Muhl Übungshang",
+    "lat": 49.451406,
+    "lon": 6.809258,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wehingen Startplatz",
+    "lat": 49.4555,
+    "lon": 6.503389,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiskirchen Startplatz 2",
+    "lat": 49.547111,
+    "lon": 6.822944,
+    "windDirectionMin": 150,
+    "windDirectionMax": 322.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Weiskirchen Startplatz 1",
+    "lat": 49.543556,
+    "lon": 6.825889,
+    "windDirectionMin": 217.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Am Kirschberg Übungshang",
+    "lat": 51.135443,
+    "lon": 13.081799,
+    "windDirectionMin": 105,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Heimatturm Colditz Übungshang",
+    "lat": 51.116374,
+    "lon": 12.817655,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Fichtelberg Startplatz",
+    "lat": 50.42312,
+    "lon": 12.952366,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Übungshang Hartenstein",
+    "lat": 50.678,
+    "lon": 12.679722,
+    "windDirectionMin": 82.5,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Glauchberg Startplatz",
+    "lat": 50.798625,
+    "lon": 13.781469,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hänschberg Startplatz",
+    "lat": 51.001389,
+    "lon": 14.658889,
+    "windDirectionMin": 150,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Holzau Startplatz",
+    "lat": 50.729444,
+    "lon": 13.575833,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Irgersdorf Startplatz",
+    "lat": 51.116661,
+    "lon": 14.384372,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Pöhlbergalm SP",
+    "lat": 50.569958,
+    "lon": 13.030239,
+    "windDirectionMin": 82.5,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schauhübel Startplatz",
+    "lat": 50.748051,
+    "lon": 13.807025,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schwartenberg Startplatz Nord",
+    "lat": 50.659609,
+    "lon": 13.465676,
+    "windDirectionMin": 285,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schwartenberg Startplatz West",
+    "lat": 50.659377,
+    "lon": 13.464775,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wache Startplatz",
+    "lat": 50.755096,
+    "lon": 13.785566,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 97.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wachtelberg Startplatz",
+    "lat": 50.981182,
+    "lon": 13.667336,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 97.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Laucha - Westhang",
+    "lat": 51.24727,
+    "lon": 11.68682,
+    "windDirectionMin": 210,
+    "windDirectionMax": 290,
+    "windSpeedMin": 10,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Stohl",
+    "lat": 54.477213,
+    "lon": 10.150423,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Altenbeuthen - Stausee Startplatz",
+    "lat": 50.593503,
+    "lon": 11.593979,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Auf dem Harsberg Startplatz",
+    "lat": 51.074464,
+    "lon": 10.372617,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Beutnitz Übungshang 1",
+    "lat": 50.964373,
+    "lon": 11.664562,
+    "windDirectionMin": 15,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Beutnitz Übungshang 2",
+    "lat": 50.964644,
+    "lon": 11.67675,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Beutnitz Übungshang 3",
+    "lat": 50.958967,
+    "lon": 11.67469,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Blankenhain Übungshang",
+    "lat": 50.846296,
+    "lon": 11.347546,
+    "windDirectionMin": 330,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dachstein Startplatz",
+    "lat": 50.635458,
+    "lon": 10.176516,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Dackstal Übungshang",
+    "lat": 51.360741,
+    "lon": 10.92453,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Datenberg Startplatz",
+    "lat": 50.870833,
+    "lon": 10.503056,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Engerda Startplatz",
+    "lat": 50.792413,
+    "lon": 11.42445,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Feuerkuppe Startplatz",
+    "lat": 51.395369,
+    "lon": 10.749014,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Filzberg Übungsgelände",
+    "lat": 51.341481,
+    "lon": 10.942419,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Frauenberg Startplatz Nordnordost",
+    "lat": 51.377414,
+    "lon": 10.834442,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Frauenberg Startplatz Ost und Ostsüdost",
+    "lat": 51.376897,
+    "lon": 10.833935,
+    "windDirectionMin": 60,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Geba - Seeba Süd Startplatz",
+    "lat": 50.57825,
+    "lon": 10.294704,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Geba Südwest Startplatz",
+    "lat": 50.569167,
+    "lon": 10.255,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Gräfenthal Startplatz",
+    "lat": 50.5225,
+    "lon": 11.332222,
+    "windDirectionMin": 330,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Großneundorf Startplatz",
+    "lat": 50.537408,
+    "lon": 11.293516,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Halde Menteroda NW-Start",
+    "lat": 51.322733,
+    "lon": 10.564408,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Halde Menteroda SW-Start",
+    "lat": 51.320494,
+    "lon": 10.565056,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Halde Menteroda SO-Start",
+    "lat": 51.320486,
+    "lon": 10.568814,
+    "windDirectionMin": 105,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Halde Menteroda NO-Start",
+    "lat": 51.323106,
+    "lon": 10.572742,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+    {
+    "name": "Heideberg - die Wiese (GH)",
+    "lat": 51.573333,
+    "lon": 11.975917,
+    "windDirectionMin": 0,
+    "windDirectionMax": 360,
+    "windSpeedMin": 10,
+    "windSpeedMax": 20
+  },
+  {
+    "name": "Henneberg Startplatz",
+    "lat": 50.486115,
+    "lon": 10.340366,
+    "windDirectionMin": 285,
+    "windDirectionMax": 30,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Hockeroda Startplatz",
+    "lat": 50.598684,
+    "lon": 11.452475,
+    "windDirectionMin": 240,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jägerberg Startplatz",
+    "lat": 50.969782,
+    "lon": 11.619666,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jenzig Startplatz Nordwest",
+    "lat": 50.940056,
+    "lon": 11.62425,
+    "windDirectionMin": 285,
+    "windDirectionMax": 345,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Jenzig Startplatz Süd",
+    "lat": 50.938848,
+    "lon": 11.633052,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kaulsdorf Startplatz",
+    "lat": 50.631579,
+    "lon": 11.41546,
+    "windDirectionMin": 150,
+    "windDirectionMax": 232.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Kella-Berg Startplatz",
+    "lat": 51.243081,
+    "lon": 10.079815,
+    "windDirectionMin": 60,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Knobelsdorf Startplatz",
+    "lat": 50.606856,
+    "lon": 11.371171,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Laasan / Kunitz Übungshang",
+    "lat": 50.950343,
+    "lon": 11.666793,
+    "windDirectionMin": 150,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Leuchtenburg Startplatz",
+    "lat": 50.800805,
+    "lon": 11.610455,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Lindewerrablick Startplatz",
+    "lat": 51.326111,
+    "lon": 9.9475,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Mühlberg Übungshang",
+    "lat": 50.861028,
+    "lon": 10.848361,
+    "windDirectionMin": 150,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rauenstein Startplatz",
+    "lat": 50.424678,
+    "lon": 11.042708,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 300,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rauenstein Übungshang",
+    "lat": 50.42176,
+    "lon": 11.043587,
+    "windDirectionMin": 195,
+    "windDirectionMax": 255,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Rauenstein Startplatz 2",
+    "lat": 50.42381,
+    "lon": 11.049145,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 187.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Reichenhausen Startplatz",
+    "lat": 50.588658,
+    "lon": 10.126841,
+    "windDirectionMin": 150,
+    "windDirectionMax": 210,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Roter Berg - Werneburg Startplatz",
+    "lat": 50.635278,
+    "lon": 11.441111,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Scheibentalberg Übungshang",
+    "lat": 50.991556,
+    "lon": 11.974926,
+    "windDirectionMin": 15,
+    "windDirectionMax": 165,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Schmirchauer Höhe Startplatz",
+    "lat": 50.847222,
+    "lon": 12.170833,
+    "windDirectionMin": 45,
+    "windDirectionMax": null,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Spielberg Startplatz",
+    "lat": 50.659703,
+    "lon": 10.22375,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Ummerstadt Startplatz",
+    "lat": 50.267179,
+    "lon": 10.794454,
+    "windDirectionMin": 60,
+    "windDirectionMax": 120,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Wichmar Übungshang",
+    "lat": 51.042257,
+    "lon": 11.691341,
+    "windDirectionMin": 127.5,
+    "windDirectionMax": 277.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  },
+  {
+    "name": "Zopten Startplatz",
+    "lat": 50.517767,
+    "lon": 11.329436,
+    "windDirectionMin": 352.5,
+    "windDirectionMax": 97.5,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30
+  }
+]
