@@ -2,13 +2,54 @@ import express from "express";
 import { spawn } from "child_process";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
-import { watch } from "fs";
+import { watch, readFileSync, writeFileSync } from "fs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = 5000;
 
 app.use(express.static(join(__dirname, "public")));
+app.use(express.json());
+
+const SPOTS_FILE = join(__dirname, "spots.json");
+
+function readSpots() {
+  return JSON.parse(readFileSync(SPOTS_FILE, "utf-8"));
+}
+
+function writeSpots(spots) {
+  writeFileSync(SPOTS_FILE, JSON.stringify(spots, null, 2), "utf-8");
+}
+
+app.get("/api/spots", (req, res) => {
+  res.json(readSpots());
+});
+
+app.post("/api/spots", (req, res) => {
+  const spots = readSpots();
+  const spot = req.body;
+  spots.push(spot);
+  writeSpots(spots);
+  res.status(201).json(spot);
+});
+
+app.put("/api/spots/:index", (req, res) => {
+  const spots = readSpots();
+  const i = parseInt(req.params.index, 10);
+  if (i < 0 || i >= spots.length) return res.status(404).json({ error: "Not found" });
+  spots[i] = req.body;
+  writeSpots(spots);
+  res.json(spots[i]);
+});
+
+app.delete("/api/spots/:index", (req, res) => {
+  const spots = readSpots();
+  const i = parseInt(req.params.index, 10);
+  if (i < 0 || i >= spots.length) return res.status(404).json({ error: "Not found" });
+  spots.splice(i, 1);
+  writeSpots(spots);
+  res.status(204).end();
+});
 
 // Live-reload: SSE endpoint
 const reloadClients = new Set();

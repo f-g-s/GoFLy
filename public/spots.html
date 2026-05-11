@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoFly – Spots verwalten</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body { max-width: 40rem; }
+
+    .nav { margin-bottom: 1.5rem; }
+    .nav a { color: #1e293b; font-size: 0.9rem; text-decoration: none; opacity: 0.6; }
+    .nav a:hover { opacity: 1; }
+
+    .spot-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+
+    .spot-card {
+      background: #e9e9e9;
+      border-radius: 16px;
+      padding: 1rem 1.25rem;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    .spot-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .spot-card-header h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      color: #1e293b;
+    }
+    .spot-card-actions { display: flex; gap: 0.5rem; }
+    .spot-card-meta { font-size: 0.82rem; color: #475569; margin-top: 0.4rem; line-height: 1.6; }
+
+    .btn-sm {
+      padding: 0.35rem 0.85rem;
+      font-size: 0.82rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    .btn-danger { background: #b91c1c; }
+    .btn-danger:hover { background: #ef4444; }
+    .btn-secondary { background: #475569; }
+    .btn-secondary:hover { background: #64748b; }
+
+    /* Modal */
+    .modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+    .modal h2 { margin-bottom: 1.2rem; font-size: 1.25rem; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1rem;
+    }
+    .form-group { display: flex; flex-direction: column; gap: 0.25rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    label { font-size: 0.8rem; font-weight: 600; color: #475569; }
+    input[type="text"], input[type="number"] {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      background: #fff;
+      color: #1e293b;
+      transition: border-color 0.2s;
+    }
+    input:focus { outline: none; border-color: #1e293b; }
+
+    .modal-actions {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+
+    .status-msg {
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      min-height: 1.2em;
+      color: #b91c1c;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav"><a href="/">← Zurück zum Wettercheck</a></div>
+  <h1>📍 Spots verwalten</h1>
+
+  <button onclick="openModal()">+ Neuer Spot</button>
+  <div class="spot-list" id="spotList">Lade…</div>
+
+  <!-- Modal -->
+  <div class="modal-backdrop" id="modalBackdrop" onclick="closeModalOnBackdrop(event)">
+    <div class="modal">
+      <h2 id="modalTitle">Neuer Spot</h2>
+      <form id="spotForm" onsubmit="saveSpot(event)">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="f-lat">Breitengrad (lat)</label>
+            <input id="f-lat" name="lat" type="number" step="any" required />
+          </div>
+          <div class="form-group">
+            <label for="f-lon">Längengrad (lon)</label>
+            <input id="f-lon" name="lon" type="number" step="any" required />
+          </div>
+          <div class="form-group">
+            <label for="f-wdmin">Windrichtung min (°)</label>
+            <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" required />
+          </div>
+          <div class="form-group">
+            <label for="f-wdmax">Windrichtung max (°)</label>
+            <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" required />
+          </div>
+          <div class="form-group">
+            <label for="f-wsmin">Windgeschw. min (km/h)</label>
+            <input id="f-wsmin" name="windSpeedMin" type="number" min="0" required />
+          </div>
+          <div class="form-group">
+            <label for="f-wsmax">Windgeschw. max (km/h)</label>
+            <input id="f-wsmax" name="windSpeedMax" type="number" min="0" required />
+          </div>
+        </div>
+        <div class="status-msg" id="statusMsg"></div>
+        <div class="modal-actions">
+          <button type="button" class="btn-sm btn-secondary" onclick="closeModal()">Abbrechen</button>
+          <button type="submit" class="btn-sm" id="saveBtn">Speichern</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const lr = new EventSource("/livereload");
+    lr.onmessage = (e) => { if (e.data === "reload") location.reload(); };
+
+    let spots = [];
+    let editingIndex = null;
+
+    async function loadSpots() {
+      const res = await fetch("/api/spots");
+      spots = await res.json();
+      renderSpots();
+    }
+
+    function compassRange(min, max) {
+      const dirs = ["N","NO","O","SO","S","SW","W","NW"];
+      const label = (deg) => dirs[Math.round(deg / 45) % 8];
+      return `${label(min)}–${label(max)} (${min}°–${max}°)`;
+    }
+
+    function renderSpots() {
+      const list = document.getElementById("spotList");
+      if (spots.length === 0) {
+        list.innerHTML = "<p style='opacity:0.5'>Keine Spots vorhanden.</p>";
+        return;
+      }
+      list.innerHTML = spots.map((s, i) => `
+        <div class="spot-card">
+          <div class="spot-card-header">
+            <h2>${escHtml(s.name)}</h2>
+            <div class="spot-card-actions">
+              <button class="btn-sm btn-secondary" onclick="openModal(${i})">Bearbeiten</button>
+              <button class="btn-sm btn-danger" onclick="deleteSpot(${i})">Löschen</button>
+            </div>
+          </div>
+          <div class="spot-card-meta">
+            📍 ${s.lat}, ${s.lon}<br>
+            🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)}<br>
+            💨 ${s.windSpeedMin}–${s.windSpeedMax} km/h
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function escHtml(str) {
+      return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    }
+
+    function openModal(index = null) {
+      editingIndex = index;
+      const form = document.getElementById("spotForm");
+      document.getElementById("statusMsg").textContent = "";
+      document.getElementById("modalTitle").textContent = index === null ? "Neuer Spot" : "Spot bearbeiten";
+
+      form.reset();
+      if (index !== null) {
+        const s = spots[index];
+        form["name"].value = s.name;
+        form["lat"].value = s.lat;
+        form["lon"].value = s.lon;
+        form["windDirectionMin"].value = s.windDirectionMin;
+        form["windDirectionMax"].value = s.windDirectionMax;
+        form["windSpeedMin"].value = s.windSpeedMin;
+        form["windSpeedMax"].value = s.windSpeedMax;
+      }
+      document.getElementById("modalBackdrop").classList.add("open");
+      document.getElementById("f-name").focus();
+    }
+
+    function closeModal() {
+      document.getElementById("modalBackdrop").classList.remove("open");
+      editingIndex = null;
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target === document.getElementById("modalBackdrop")) closeModal();
+    }
+
+    async function saveSpot(e) {
+      e.preventDefault();
+      const form = e.target;
+      const saveBtn = document.getElementById("saveBtn");
+      const statusMsg = document.getElementById("statusMsg");
+      statusMsg.textContent = "";
+      saveBtn.disabled = true;
+
+      const spot = {
+        name: form["name"].value.trim(),
+        lat: parseFloat(form["lat"].value),
+        lon: parseFloat(form["lon"].value),
+        windDirectionMin: parseInt(form["windDirectionMin"].value, 10),
+        windDirectionMax: parseInt(form["windDirectionMax"].value, 10),
+        windSpeedMin: parseInt(form["windSpeedMin"].value, 10),
+        windSpeedMax: parseInt(form["windSpeedMax"].value, 10),
+      };
+
+      try {
+        let res;
+        if (editingIndex === null) {
+          res = await fetch("/api/spots", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
+        } else {
+          res = await fetch(`/api/spots/${editingIndex}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
+        }
+        if (!res.ok) throw new Error("Fehler beim Speichern.");
+        await loadSpots();
+        closeModal();
+      } catch (err) {
+        statusMsg.textContent = err.message;
+      } finally {
+        saveBtn.disabled = false;
+      }
+    }
+
+    async function deleteSpot(index) {
+      if (!confirm(`Spot „${spots[index].name}" wirklich löschen?`)) return;
+      const res = await fetch(`/api/spots/${index}`, { method: "DELETE" });
+      if (res.ok) await loadSpots();
+    }
+
+    loadSpots();
+  </script>
+</body>
+</html>
