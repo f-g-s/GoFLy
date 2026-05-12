@@ -64,5 +64,16 @@
     "windSpeedMax": 30,
     "city": "Hainichen",
     "state": "Thüringen"
+  },
+  {
+    "name": "Laucha Westhang Startplatz",
+    "lat": 51.24727,
+    "lon": 11.68682,
+    "windDirectionMin": 210,
+    "windDirectionMax": 290,
+    "windSpeedMin": 10,
+    "windSpeedMax": 30,
+    "city": "Laucha",
+    "state": "Sachsen-Anhalt"
   }
 ]

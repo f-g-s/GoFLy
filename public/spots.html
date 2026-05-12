@@ -85,7 +85,6 @@
       padding: 0.5rem;
       font-size: 0.9rem;
       border-radius: 20px;
-
     }
 
     /* Modal */
@@ -275,6 +274,14 @@
             <input id="f-name" name="name" type="text" required />
           </div>
           <div class="form-group">
+            <label for="f-city">In der Nähe der Stadt</label>
+            <input id="f-city" name="city" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="f-state">Bundesland</label>
+            <input id="f-state" name="state" type="text" required />
+          </div>
+          <div class="form-group">
             <label for="f-lat">Breitengrad (lat)</label>
             <input id="f-lat" name="lat" type="number" step="any" required />
           </div>
@@ -284,11 +291,11 @@
           </div>
           <div class="form-group">
             <label for="f-wdmin">Windrichtung min (°)</label>
-            <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" required />
+            <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" step="0.1" required />
           </div>
           <div class="form-group">
             <label for="f-wdmax">Windrichtung max (°)</label>
-            <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" required />
+            <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" step="0.1" required />
           </div>
           <div class="form-group">
             <label for="f-wsmin">Windgeschw. min (km/h)</label>
@@ -297,14 +304,6 @@
           <div class="form-group">
             <label for="f-wsmax">Windgeschw. max (km/h)</label>
             <input id="f-wsmax" name="windSpeedMax" type="number" min="0" required />
-          </div>
-          <div class="form-group">
-            <label for="f-city">Stadt</label>
-            <input id="f-city" name="city" type="text" required />
-          </div>
-          <div class="form-group">
-            <label for="f-state">Bundesland</label>
-            <input id="f-state" name="state" type="text" required />
           </div>
         </div>
         <div class="status-msg" id="statusMsg"></div>
@@ -421,7 +420,8 @@
     });
 
     let spots = [];
-    let editingIndex = null;
+    let editingId = null;  // UUID statt Index
+    let deleteId = null;   // UUID statt Index
 
     async function loadSpots() {
       const res = await fetch("/api/spots");
@@ -441,13 +441,13 @@
         list.innerHTML = "<p style='opacity:0.5'>Keine Spots vorhanden.</p>";
         return;
       }
-      list.innerHTML = spots.map((s, i) => `
+      list.innerHTML = spots.map((s) => `
         <div class="spot-card">
           <div class="spot-card-header">
             <h2>${escHtml(s.name)}</h2>
             <div class="spot-card-actions">
-              <button class="btn-icon" onclick="openModal(${i})">✏️</button>
-              <button class="btn-icon" onclick="openDeleteModal(${i})">🗑️</button>
+              <button class="btn-icon" onclick="openModal('${s.id}')">✏️</button>
+              <button class="btn-icon" onclick="openDeleteModal('${s.id}')">🗑️</button>
             </div>
           </div>
           <div class="spot-card-meta">
@@ -463,20 +463,20 @@
       return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
 
-    function openModal(index = null) {
-      editingIndex = index;
+    function openModal(id = null) {
+      editingId = id;
       const form = document.getElementById("spotForm");
       document.getElementById("statusMsg").textContent = "";
-      document.getElementById("modalTitle").textContent = index === null ? "Startplatz hinzufügen" : "Startplatz bearbeiten";
+      document.getElementById("modalTitle").textContent = id === null ? "Startplatz hinzufügen" : "Startplatz bearbeiten";
       const templateSearch = document.getElementById("templateSearch");
-      templateSearch.style.display = index === null ? "" : "none";
+      templateSearch.style.display = id === null ? "" : "none";
       document.getElementById("templateInput").value = "";
       document.getElementById("templateResults").style.display = "none";
-      if (index === null) loadAllSpots();
+      if (id === null) loadAllSpots();
 
       form.reset();
-      if (index !== null) {
-        const s = spots[index];
+      if (id !== null) {
+        const s = spots.find(s => s.id === id);
         form["name"].value = s.name;
         form["lat"].value = s.lat;
         form["lon"].value = s.lon;
@@ -493,7 +493,7 @@
 
     function closeModal() {
       document.getElementById("modalBackdrop").classList.remove("open");
-      editingIndex = null;
+      editingId = null;
     }
 
     async function saveSpot(e) {
@@ -518,10 +518,10 @@
 
       try {
         let res;
-        if (editingIndex === null) {
+        if (editingId === null) {
           res = await fetch("/api/spots", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
         } else {
-          res = await fetch(`/api/spots/${editingIndex}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
+          res = await fetch(`/api/spots/${editingId}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
         }
         if (!res.ok) throw new Error("Fehler beim Speichern.");
         await loadSpots();
@@ -533,28 +533,21 @@
       }
     }
 
-    async function deleteSpot(index) {
-      if (!confirm(`Startplatz „${spots[index].name}" wirklich löschen?`)) return;
-      const res = await fetch(`/api/spots/${index}`, { method: "DELETE" });
-      if (res.ok) await loadSpots();
-    }
-
-    // Delete confirmation modal
-    function openDeleteModal(index) {
-      deleteIndex = index;
-      const spotName = spots[index].name;
-      document.getElementById("deleteMessage").textContent = `„${spotName}“ wirklich löschen?`;
+    function openDeleteModal(id) {
+      deleteId = id;
+      const spot = spots.find(s => s.id === id);
+      document.getElementById("deleteMessage").textContent = `„${spot.name}" wirklich löschen?`;
       document.getElementById("deleteModalBackdrop").classList.add("open");
     }
 
     function closeDeleteModal() {
-      deleteIndex = null;
+      deleteId = null;
       document.getElementById("deleteModalBackdrop").classList.remove("open");
     }
 
     async function confirmDelete() {
-      if (deleteIndex === null) return;
-      const res = await fetch(`/api/spots/${deleteIndex}`, { method: "DELETE" });
+      if (deleteId === null) return;
+      const res = await fetch(`/api/spots/${deleteId}`, { method: "DELETE" });
       if (res.ok) await loadSpots();
       closeDeleteModal();
     }

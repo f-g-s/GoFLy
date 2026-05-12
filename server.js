@@ -1,53 +1,52 @@
+import "dotenv/config";
 import express from "express";
 import { spawn } from "child_process";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
-import { watch, readFileSync, writeFileSync } from "fs";
+import { watch } from "fs";
+import { createClient } from "@supabase/supabase-js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const app = express();
 const PORT = 5000;
 
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_ANON_KEY
+);
+
 app.use(express.static(join(__dirname, "public")));
 app.use(express.json());
 
-const SPOTS_FILE = join(__dirname, "spots.json");
-
-function readSpots() {
-  return JSON.parse(readFileSync(SPOTS_FILE, "utf-8"));
-}
-
-function writeSpots(spots) {
-  writeFileSync(SPOTS_FILE, JSON.stringify(spots, null, 2), "utf-8");
-}
-
-app.get("/api/spots", (req, res) => {
-  res.json(readSpots());
+app.get("/api/spots", async (req, res) => {
+  const { data, error } = await supabase.from("spots").select("*").order("created_at");
+  if (error) return res.status(500).json({ error: error.message });
+  res.json(data);
 });
 
-app.post("/api/spots", (req, res) => {
-  const spots = readSpots();
-  const spot = req.body;
-  spots.push(spot);
-  writeSpots(spots);
-  res.status(201).json(spot);
+app.post("/api/spots", async (req, res) => {
+  console.log("body:", req.body);
+  const { data, error } = await supabase.from("spots").insert(req.body).select().single();
+  console.log("data:", data, "error:", error);
+  if (error) return res.status(500).json({ error: error.message });
+  res.status(201).json(data);
 });
 
-app.put("/api/spots/:index", (req, res) => {
-  const spots = readSpots();
-  const i = parseInt(req.params.index, 10);
-  if (i < 0 || i >= spots.length) return res.status(404).json({ error: "Not found" });
-  spots[i] = req.body;
-  writeSpots(spots);
-  res.json(spots[i]);
+app.put("/api/spots/:id", async (req, res) => {
+  const { data, error } = await supabase
+    .from("spots")
+    .update(req.body)
+    .eq("id", req.params.id)
+    .select()
+    .single();
+  if (error) return res.status(500).json({ error: error.message });
+  if (!data) return res.status(404).json({ error: "Not found" });
+  res.json(data);
 });
 
-app.delete("/api/spots/:index", (req, res) => {
-  const spots = readSpots();
-  const i = parseInt(req.params.index, 10);
-  if (i < 0 || i >= spots.length) return res.status(404).json({ error: "Not found" });
-  spots.splice(i, 1);
-  writeSpots(spots);
+app.delete("/api/spots/:id", async (req, res) => {
+  const { error } = await supabase.from("spots").delete().eq("id", req.params.id);
+  if (error) return res.status(500).json({ error: error.message });
   res.status(204).end();
 });
 
@@ -68,7 +67,6 @@ function notifyReload() {
   }
 }
 
-// Watch project files for changes
 const watchDirs = [__dirname, join(__dirname, "public")];
 for (const dir of watchDirs) {
   watch(dir, (_, filename) => {

@@ -1,11 +1,14 @@
 import "dotenv/config";
-import { readFileSync } from "fs";
+import { createClient } from "@supabase/supabase-js";
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const DEBUG = process.env.DEBUG === "true";
 
-const spots = JSON.parse(readFileSync("./spots.json", "utf-8"));
+
+
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
+const { data: spots, error } = await supabase.from("spots").select("*");
 
 const DRY_RUN = false;
 
