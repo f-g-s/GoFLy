@@ -649,7 +649,7 @@
     "state": "Baden-Württemberg"
   },
   {
-    "name": "Heideberg - die Wiese",
+    "name": "Heideberg - die Wiese (Groundhandling)",
     "lat": 51.573333,
     "lon": 11.975917,
     "windDirectionMin": 0,
@@ -6933,9 +6933,9 @@
     "name": "Laucha Westhang Startplatz",
     "lat": 51.24727,
     "lon": 11.68682,
-    "windDirectionMin": 240,
-    "windDirectionMax": 300,
-    "windSpeedMin": 0,
+    "windDirectionMin": 210,
+    "windDirectionMax": 290,
+    "windSpeedMin": 10,
     "windSpeedMax": 30,
     "city": "Laucha",
     "state": "Sachsen-Anhalt"
@@ -7274,8 +7274,8 @@
     "name": "Knobelsdorf Startplatz",
     "lat": 50.606856,
     "lon": 11.371171,
-    "windDirectionMin": 15,
-    "windDirectionMax": 75,
+    "windDirectionMin": 10,
+    "windDirectionMax": 80,
     "windSpeedMin": 0,
     "windSpeedMax": 30,
     "city": "Saalfeld",

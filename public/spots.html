@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,74 +8,139 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    body { max-width: 40rem; }
+    body {
+      max-width: 40rem;
+    }
 
-    .nav { margin-bottom: 1.5rem; }
-    .nav a { color: #1e293b; font-size: 0.9rem; text-decoration: none; opacity: 0.6; }
-    .nav a:hover { opacity: 1; }
+    .nav {
+      margin-bottom: 1.5rem;
+    }
 
-    .spot-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+    .nav a {
+      color: #1e293b;
+      font-size: 0.9rem;
+      text-decoration: none;
+      opacity: 0.6;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+    }
+
+    .spot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
 
     .spot-card {
       background: #e9e9e9;
       border-radius: 16px;
       padding: 1rem 1.25rem;
-      box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     }
+
     .spot-card-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 0.5rem;
     }
+
     .spot-card-header h2 {
       margin: 0;
       font-size: 1.05rem;
       color: #1e293b;
     }
-    .spot-card-actions { display: flex; gap: 0.5rem; }
-    .spot-card-meta { font-size: 0.82rem; color: #475569; margin-top: 0.4rem; line-height: 1.6; }
+
+    .spot-card-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .spot-card-meta {
+      font-size: 0.82rem;
+      color: #475569;
+      margin-top: 0.4rem;
+      line-height: 1.6;
+    }
 
     .btn-sm {
-      padding: 0.35rem 0.85rem;
-      font-size: 0.82rem;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
       border-radius: 6px;
       font-weight: 600;
     }
-    .btn-danger { background: #b91c1c; }
-    .btn-danger:hover { background: #ef4444; }
-    .btn-secondary { background: #475569; }
-    .btn-secondary:hover { background: #64748b; }
+
+    .btn-secondary {
+      background: #495970;
+    }
+
+    .btn-secondary:hover {
+      background: #64748b;
+    }
+
+    .btn-icon {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+      border-radius: 20px;
+
+    }
 
     /* Modal */
     .modal-backdrop {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.45);
+      background: rgba(0, 0, 0, 0.45);
       z-index: 100;
       justify-content: center;
       align-items: center;
     }
-    .modal-backdrop.open { display: flex; }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
 
     .modal {
       background: #f1f5f9;
-      border-radius: 20px;
+      border-radius: 8px;
       padding: 2rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      min-width: 25rem;
     }
-    .modal h2 { margin-bottom: 1.2rem; font-size: 1.25rem; }
+
+    .modal h2 {
+      margin-bottom: 1.2rem;
+      font-size: 1.25rem;
+      margin-top: 0;
+    }
 
     .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0.75rem 1rem;
     }
-    .form-group { display: flex; flex-direction: column; gap: 0.25rem; }
-    .form-group.full { grid-column: 1 / -1; }
-    label { font-size: 0.8rem; font-weight: 600; color: #475569; }
-    input[type="text"], input[type="number"] {
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    input[type="text"],
+    input[type="number"] {
       border: 1.5px solid #cbd5e1;
       border-radius: 8px;
       padding: 0.45rem 0.7rem;
@@ -84,7 +150,11 @@
       color: #1e293b;
       transition: border-color 0.2s;
     }
-    input:focus { outline: none; border-color: #1e293b; }
+
+    input:focus {
+      outline: none;
+      border-color: #1e293b;
+    }
 
     .modal-actions {
       display: flex;
@@ -105,8 +175,19 @@
       padding-bottom: 1rem;
       border-bottom: 1.5px solid #cbd5e1;
     }
-    .template-search label { font-size: 0.8rem; font-weight: 600; color: #475569; display: block; margin-bottom: 0.25rem; }
-    .template-search-input-wrap { position: relative; }
+
+    .template-search label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #475569;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .template-search-input-wrap {
+      position: relative;
+    }
+
     .template-search-input-wrap input {
       width: 100%;
       border: 1.5px solid #cbd5e1;
@@ -119,19 +200,26 @@
       box-sizing: border-box;
       transition: border-color 0.2s;
     }
-    .template-search-input-wrap input:focus { outline: none; border-color: #1e293b; }
+
+    .template-search-input-wrap input:focus {
+      outline: none;
+      border-color: #1e293b;
+    }
+
     .template-results {
       position: absolute;
       top: calc(100% + 4px);
-      left: 0; right: 0;
+      left: 0;
+      right: 0;
       background: #fff;
       border: 1.5px solid #cbd5e1;
       border-radius: 8px;
       max-height: 200px;
       overflow-y: auto;
       z-index: 200;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     }
+
     .template-results li {
       padding: 0.5rem 0.75rem;
       cursor: pointer;
@@ -139,28 +227,42 @@
       list-style: none;
       border-bottom: 1px solid #f1f5f9;
     }
-    .template-results li:last-child { border-bottom: none; }
-    .template-results li:hover { background: #e9e9e9; }
-    .template-results li.active { background: #e9e9e9; }
-    .template-results li mark { background: none; font-weight: 700; color: #1e293b; }
+
+    .template-results li:last-child {
+      border-bottom: none;
+    }
+
+    .template-results li:hover {
+      background: #e9e9e9;
+    }
+
+    .template-results li.active {
+      background: #e9e9e9;
+    }
+
+    .template-results li mark {
+      background: none;
+      font-weight: 700;
+      color: #1e293b;
+    }
   </style>
 </head>
+
 <body>
   <div class="nav"><a href="/">← Zurück zum Wettercheck</a></div>
   <h1>🏔️ Startplätze verwalten</h1>
 
-  <button onclick="openModal()">+ Neuer Startplatz</button>
+  <button onclick="openModal()">+ Startplatz hinzufügen</button>
   <div class="spot-list" id="spotList">Lade…</div>
 
   <!-- Modal -->
   <div class="modal-backdrop" id="modalBackdrop">
     <div class="modal">
-      <h2 id="modalTitle">Neuer Startplatz</h2>
-
+      <h2 id="modalTitle"></h2>
       <div class="template-search" id="templateSearch">
         <label for="templateInput">🔍 Vorlage suchen</label>
         <div class="template-search-input-wrap">
-          <input id="templateInput" type="text" placeholder="Name eingeben…" autocomplete="off"
+          <input id="templateInput" type="text" placeholder="Name, Stadt oder Bundesland eingeben…" autocomplete="off"
             oninput="onTemplateInput(event)" onfocus="onTemplateInput(event)" onkeydown="onTemplateKeyDown(event)" />
           <ul class="template-results" id="templateResults" style="display:none"></ul>
         </div>
@@ -214,6 +316,18 @@
     </div>
   </div>
 
+  <!-- Delete Confirmation Modal -->
+  <div class="modal-backdrop" id="deleteModalBackdrop">
+    <div class="modal">
+      <h2>Startplatz löschen</h2>
+      <p id="deleteMessage">Möchten Sie diesen Startplatz wirklich löschen?</p>
+      <div class="modal-actions">
+        <button type="button" class="btn-sm btn-secondary" onclick="closeDeleteModal()">Abbrechen</button>
+        <button type="button" class="btn-sm btn-danger" id="confirmDeleteBtn">Löschen</button>
+      </div>
+    </div>
+  </div>
+
   <script>
     const lr = new EventSource("/livereload");
     lr.onmessage = (e) => { if (e.data === "reload") location.reload(); };
@@ -234,7 +348,7 @@
       if (query.length < 2) { ul.style.display = "none"; return; }
       await loadAllSpots();
       if (!allSpots || allSpots.length === 0) { ul.style.display = "none"; return; }
-      const matches = allSpots.filter(s => 
+      const matches = allSpots.filter(s =>
         s.name.toLowerCase().includes(query) ||
         s.city.toLowerCase().includes(query) ||
         s.state.toLowerCase().includes(query)
@@ -316,7 +430,7 @@
     }
 
     function compassRange(min, max) {
-      const dirs = ["N","NO","O","SO","S","SW","W","NW"];
+      const dirs = ["N", "NO", "O", "SO", "S", "SW", "W", "NW"];
       const label = (deg) => dirs[Math.round(deg / 45) % 8];
       return `${label(min)}–${label(max)} (${min}°–${max}°)`;
     }
@@ -332,12 +446,12 @@
           <div class="spot-card-header">
             <h2>${escHtml(s.name)}</h2>
             <div class="spot-card-actions">
-              <button class="btn-sm btn-secondary" onclick="openModal(${i})">Bearbeiten</button>
-              <button class="btn-sm btn-danger" onclick="deleteSpot(${i})">Löschen</button>
+              <button class="btn-icon" onclick="openModal(${i})">✏️</button>
+              <button class="btn-icon" onclick="openDeleteModal(${i})">🗑️</button>
             </div>
           </div>
           <div class="spot-card-meta">
-            📍 ${s.lat}, ${s.lon} (${escHtml(s.city)}, ${escHtml(s.state)})<br>
+            📍 ${s.lat}, ${s.lon} - ${escHtml(s.city)} (${escHtml(s.state)})<br>
             🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)}<br>
             💨 ${s.windSpeedMin}–${s.windSpeedMax} km/h
           </div>
@@ -346,14 +460,14 @@
     }
 
     function escHtml(str) {
-      return String(str).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
 
     function openModal(index = null) {
       editingIndex = index;
       const form = document.getElementById("spotForm");
       document.getElementById("statusMsg").textContent = "";
-      document.getElementById("modalTitle").textContent = index === null ? "Neuer Spot" : "Spot bearbeiten";
+      document.getElementById("modalTitle").textContent = index === null ? "Startplatz hinzufügen" : "Startplatz bearbeiten";
       const templateSearch = document.getElementById("templateSearch");
       templateSearch.style.display = index === null ? "" : "none";
       document.getElementById("templateInput").value = "";
@@ -425,7 +539,30 @@
       if (res.ok) await loadSpots();
     }
 
+    // Delete confirmation modal
+    function openDeleteModal(index) {
+      deleteIndex = index;
+      const spotName = spots[index].name;
+      document.getElementById("deleteMessage").textContent = `„${spotName}“ wirklich löschen?`;
+      document.getElementById("deleteModalBackdrop").classList.add("open");
+    }
+
+    function closeDeleteModal() {
+      deleteIndex = null;
+      document.getElementById("deleteModalBackdrop").classList.remove("open");
+    }
+
+    async function confirmDelete() {
+      if (deleteIndex === null) return;
+      const res = await fetch(`/api/spots/${deleteIndex}`, { method: "DELETE" });
+      if (res.ok) await loadSpots();
+      closeDeleteModal();
+    }
+
+    document.getElementById("confirmDeleteBtn").addEventListener("click", confirmDelete);
+
     loadSpots();
   </script>
 </body>
+
 </html>
