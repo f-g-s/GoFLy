@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,13 +8,29 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <h1>🪂 GoFly Wettercheck</h1>
-  <p style="margin-bottom:1rem;margin-top:-0.75rem;font-size:0.85rem;opacity:0.55"><a href="/spots.html" style="color:inherit">🏔️ Startplätze verwalten</a></p>
+  <p style="margin-bottom:1rem;margin-top:-0.75rem;font-size:0.85rem;opacity:0.55"><a href="/spots.html"
+      style="color:inherit">🏔️ Startplätze verwalten</a></p>
   <button id="btn" onclick="runCheck()">Daten abrufen</button>
   <div id="output"></div>
 
   <script>
+    async function loadLastResults() {
+      const res = await fetch("/api/results");
+      const data = await res.json();
+      if (!data?.messages?.length) return;
+      const output = document.getElementById("output");
+      output.innerHTML = "";
+      const meta = document.createElement("p");
+      meta.style = "font-size:0.8rem;opacity:0.5;margin-bottom:0.5rem";
+      meta.textContent = `Letzter Check: ${new Date(data.updated_at).toLocaleString("de-DE")}`;
+      output.appendChild(meta);
+      addCard(data.messages.map(m => m.text).join("\n\n\n"), "telegram");
+    }
+
+    loadLastResults();
     // Live-reload
     const lr = new EventSource("/livereload");
     lr.onmessage = (e) => { if (e.data === "reload") location.reload(); };
@@ -77,7 +94,8 @@
       es.onerror = () => {
         es.close();
         btn.disabled = false;
-        addCard("Fehler beim Abrufen der Daten.", "error");};
+        addCard("Fehler beim Abrufen der Daten.", "error");
+      };
     }
 
     function escapeHtml(str) {
@@ -123,4 +141,5 @@
     }
   </script>
 </body>
+
 </html>

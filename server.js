@@ -24,6 +24,11 @@ app.get("/api/spots", async (req, res) => {
   res.json(data);
 });
 
+app.get("/api/results", async (req, res) => {
+  const { data } = await supabase.from("check_results").select("*").single();
+  res.json(data ?? null);
+});
+
 app.post("/api/spots", async (req, res) => {
   console.log("body:", req.body);
   const { data, error } = await supabase.from("spots").insert(req.body).select().single();

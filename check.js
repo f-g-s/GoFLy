@@ -283,6 +283,7 @@ async function main() {
 
   if (messages.length > 0) {
     await sendTelegram(messages.map(m => m.text).join("\n\n\n"));
+    await supabase.from("check_results").upsert({ id: 1, messages, updated_at: new Date() });
     console.log("Nachricht gesendet.");
   } else {
     console.log("Keine geeigneten Bedingungen in den nächsten 7 Tagen – keine Nachricht gesendet.");
