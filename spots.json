@@ -1,11 +1,11 @@
 [
   {
-    "name": "Laucha - Westhang",
-    "lat": 51.24727,
-    "lon": 11.68682,
-    "windDirectionMin": 210,
-    "windDirectionMax": 290,
-    "windSpeedMin": 10,
+    "name": "Aasrücken Startplatz",
+    "lat": 48.751158,
+    "lon": 9.730456,
+    "windDirectionMin": 300,
+    "windDirectionMax": 80,
+    "windSpeedMin": 0,
     "windSpeedMax": 30
   }
 ]
