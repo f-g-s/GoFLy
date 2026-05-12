@@ -1,6 +1,6 @@
 # GoFly
 
-*Automated flying weather check for paraglider pilots with Telegram notifications*
+*Automated weather checks for selected launch sites for paragliders, with Telegram notifications*
 
 ## What it does
 
