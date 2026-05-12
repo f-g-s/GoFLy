@@ -147,7 +147,7 @@
 </head>
 <body>
   <div class="nav"><a href="/">← Zurück zum Wettercheck</a></div>
-  <h1>📍 Startplätze verwalten</h1>
+  <h1>🏔️ Startplätze verwalten</h1>
 
   <button onclick="openModal()">+ Neuer Startplatz</button>
   <div class="spot-list" id="spotList">Lade…</div>
@@ -196,6 +196,14 @@
             <label for="f-wsmax">Windgeschw. max (km/h)</label>
             <input id="f-wsmax" name="windSpeedMax" type="number" min="0" required />
           </div>
+          <div class="form-group">
+            <label for="f-city">Stadt</label>
+            <input id="f-city" name="city" type="text" required />
+          </div>
+          <div class="form-group">
+            <label for="f-state">Bundesland</label>
+            <input id="f-state" name="state" type="text" required />
+          </div>
         </div>
         <div class="status-msg" id="statusMsg"></div>
         <div class="modal-actions">
@@ -226,7 +234,11 @@
       if (query.length < 2) { ul.style.display = "none"; return; }
       await loadAllSpots();
       if (!allSpots || allSpots.length === 0) { ul.style.display = "none"; return; }
-      const matches = allSpots.filter(s => s.name.toLowerCase().includes(query)).slice(0, 8);
+      const matches = allSpots.filter(s => 
+        s.name.toLowerCase().includes(query) ||
+        s.city.toLowerCase().includes(query) ||
+        s.state.toLowerCase().includes(query)
+      );
       if (matches.length === 0) { ul.style.display = "none"; return; }
       templateActiveIndex = -1;
       ul.innerHTML = matches.map((s, i) => {
@@ -281,6 +293,8 @@
       form["windDirectionMax"].value = s.windDirectionMax;
       form["windSpeedMin"].value = s.windSpeedMin;
       form["windSpeedMax"].value = s.windSpeedMax;
+      form["city"].value = s.city;
+      form["state"].value = s.state;
       document.getElementById("templateInput").value = "";
       document.getElementById("templateResults").style.display = "none";
       document.getElementById("f-name").focus();
@@ -323,7 +337,7 @@
             </div>
           </div>
           <div class="spot-card-meta">
-            📍 ${s.lat}, ${s.lon}<br>
+            📍 ${s.lat}, ${s.lon} (${escHtml(s.city)}, ${escHtml(s.state)})<br>
             🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)}<br>
             💨 ${s.windSpeedMin}–${s.windSpeedMax} km/h
           </div>
@@ -356,6 +370,8 @@
         form["windDirectionMax"].value = s.windDirectionMax;
         form["windSpeedMin"].value = s.windSpeedMin;
         form["windSpeedMax"].value = s.windSpeedMax;
+        form["city"].value = s.city;
+        form["state"].value = s.state;
       }
       document.getElementById("modalBackdrop").classList.add("open");
       document.getElementById("templateInput").focus();
@@ -382,6 +398,8 @@
         windDirectionMax: parseInt(form["windDirectionMax"].value, 10),
         windSpeedMin: parseInt(form["windSpeedMin"].value, 10),
         windSpeedMax: parseInt(form["windSpeedMax"].value, 10),
+        city: form["city"].value.trim(),
+        state: form["state"].value.trim(),
       };
 
       try {

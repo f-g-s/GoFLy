@@ -1,11 +1,24 @@
 [
   {
-    "name": "Aasrücken Startplatz",
-    "lat": 48.751158,
-    "lon": 9.730456,
-    "windDirectionMin": 300,
-    "windDirectionMax": 80,
+    "name": "Laucha Westhang Startplatz",
+    "lat": 51.24727,
+    "lon": 11.68682,
+    "windDirectionMin": 240,
+    "windDirectionMax": 300,
     "windSpeedMin": 0,
-    "windSpeedMax": 30
+    "windSpeedMax": 30,
+    "city": "Laucha",
+    "state": "Sachsen-Anhalt"
+  },
+  {
+    "name": "Knobelsdorf Startplatz",
+    "lat": 50.606856,
+    "lon": 11.371171,
+    "windDirectionMin": 15,
+    "windDirectionMax": 75,
+    "windSpeedMin": 0,
+    "windSpeedMax": 30,
+    "city": "Saalfeld",
+    "state": "Thüringen"
   }
 ]
