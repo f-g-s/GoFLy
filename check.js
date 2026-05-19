@@ -5,8 +5,6 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 const DEBUG = process.env.DEBUG === "true";
 
-
-
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 const { data: spots, error } = await supabase.from("spots").select("*");
 
@@ -160,15 +158,30 @@ function getCompassDir(deg) {
 }
 
 function checkSpot(spot, hours) {
+  // Prüfe, ob irgendeine Stunde im Zeitraum Windböen über 35 km/h hat
+  const hasGusts = hours.some(hour => hour.windGusts10m > 35);
+
+  // Wenn ja, setze die Prüfung auf "nicht geeignet"
+  if (hasGusts) {
+    return [];
+  }
+
   const goodHours = hours.filter(
     (h) =>
+      // Windrichtung 
       isWindDirectionOk(h.windDirection80m, spot.windDirectionMin, spot.windDirectionMax) &&
+      // Windgeschwindigkeit 
       h.windSpeed80m <= spot.windSpeedMax &&
       h.windSpeed80m >= spot.windSpeedMin &&
+      // Windböen max. 10 km/h mehr als Windgeschwindigkeit
       h.windGusts10m <= h.windSpeed80m + 10 &&
+      // Windböen max. 30 km/h
       h.windGusts10m <= 30 &&
+      // CAPE-Wert muss unter 1000 sein (Stabilität)
       h.cape < 1000 &&
+      // Lifted Index muss positiv sein (Stabilität)
       h.liftedIndex > 0 &&
+      // Niederschlagswahrscheinlichkeit darf maximal 20% betragen
       h.precipitationProbability <= 20
   );
   if (DEBUG) {
@@ -231,8 +244,8 @@ function formatDaySummary(hours) {
 
   const thunderRisk =
     avgCape > 1000 || avgLi < 0 ? "Achtung! Hohe Gewittergefahr" :
-    avgCape > 500  || avgLi < 1 ? "Gewitter möglich" :
-                                   "Kein Gewitter";
+      avgCape > 500 || avgLi < 1 ? "Gewitter möglich" :
+        "Kein Gewitter";
 
   return (
     `☁️ Bewölkung: Ø ${avgCloud}%\n` +
