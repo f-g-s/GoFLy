@@ -7,7 +7,58 @@
   <title>GoFly – Wettercheck</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    #output {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .card {
+      background-color: #f3f3f3;
+      padding: 2rem 1.5rem 3rem 1.5rem;
+      border-radius: 20px;
+      white-space: pre-wrap;
+      line-height: 1.3;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .card.error {
+      border-color: #ef4444;
+      color: #fca5a5;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .card.today {
+      border-left: 4px solid #4CAF50;
+    }
+
+    .card.tomorrow {
+      border-left: 4px solid #81C784;
+    }
+
+    .card.day-after {
+      border-left: 4px solid #C8E6C9;
+    }
+
+    .meta {
+      font-size: 1rem;
+      color: #273241;
+      padding: 0.25rem 0 0 0.5rem;
+    }
+
+    .block-sep {
+      margin: 0.5rem 2rem 0.3rem 2rem;
+      background: rgb(213 213 213);
+      height: 1px;
+      border: 0;
+    }
+  </style>
 </head>
+
 
 <body>
   <h1>🪂 GoFly Wettercheck</h1>

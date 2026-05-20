@@ -76,7 +76,7 @@ async function fetchForecast(lat, lon, days, model = "") {
 async function getWeather(lat, lon) {
   const [shortTerm, longTerm] = await Promise.all([
     fetchForecast(lat, lon, 2, "dwd_icon_d2"),
-    fetchForecast(lat, lon, 5),
+    fetchForecast(lat, lon, 4),
   ]);
 
   const iconDates = new Set(shortTerm.daily.time);
@@ -260,7 +260,7 @@ async function main() {
   for (const spot of spots) {
     const data = await getWeather(spot.lat, spot.lon);
 
-    for (let offset = 0; offset < 7; offset++) {
+    for (let offset = 0; offset < 4; offset++) {
       const day = new Date();
       day.setDate(day.getDate() + offset);
       // Fix: Lokalzeit statt UTC verwenden
@@ -299,7 +299,7 @@ async function main() {
     await supabase.from("check_results").upsert({ id: 1, messages, updated_at: new Date() });
     console.log("Nachricht gesendet.");
   } else {
-    console.log("Keine geeigneten Bedingungen in den nächsten 7 Tagen – keine Nachricht gesendet.");
+    console.log("Keine geeigneten Bedingungen in den nächsten 4 Tagen – keine Nachricht gesendet.");
   }
 }
 
