@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GoFly – Startplätze suchen</title>
+  <title>GoFly – Startplätze verwalten</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
@@ -235,19 +235,20 @@
       color: #b91c1c;
     }
 
-    /* Template search */
-    .template-search {
+    .modal-alert {
+      background: #dbeafe;
+      border: 1.5px solid #93c5fd;
+      color: #1e40af;
+      border-radius: 8px;
+      padding: 0.55rem 0.85rem;
+      font-size: 0.85rem;
       margin-bottom: 1rem;
-      padding-bottom: 1rem;
-      border-bottom: 1.5px solid #cbd5e1;
     }
 
-    .template-search label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #475569;
-      display: block;
-      margin-bottom: 0.25rem;
+    /* Template search */
+    .page-search {
+      margin-bottom: 1.25rem;
+      max-width: 480px;
     }
 
     .template-search-input-wrap {
@@ -372,8 +373,16 @@
 <body>
   <div class="nav"><a href="/">← Zurück zum Wettercheck</a></div>
   <div class="page-header">
-    <h1>🏔️ Startplätze suchen</h1>
-    <button onclick="openModal()">+ Startplatz hinzufügen</button>
+    <h1>🏔️ Startplätze verwalten</h1>
+    <!-- <button onclick="openModal()">+ Startplatz hinzufügen</button> -->
+  </div>
+
+  <div class="page-search">
+    <div class="template-search-input-wrap">
+      <input id="templateInput" type="text" placeholder="🔍 Name, Ort oder Bundesland suchen" autocomplete="off"
+        oninput="onTemplateInput(event)" onfocus="onTemplateInput(event)" onkeydown="onTemplateKeyDown(event)" />
+      <ul class="template-results" id="templateResults" style="display:none"></ul>
+    </div>
   </div>
 
   <div class="layout">
@@ -391,15 +400,6 @@
   <div class="modal-backdrop" id="modalBackdrop">
     <div class="modal">
       <h2 id="modalTitle"></h2>
-      <div class="template-search" id="templateSearch">
-        <label for="templateInput">🔍 Vorlage suchen</label>
-        <div class="template-search-input-wrap">
-          <input id="templateInput" type="text" placeholder="Name, Stadt oder Bundesland…" autocomplete="off"
-            oninput="onTemplateInput(event)" onfocus="onTemplateInput(event)" onkeydown="onTemplateKeyDown(event)" />
-          <ul class="template-results" id="templateResults" style="display:none"></ul>
-        </div>
-      </div>
-
       <form id="spotForm" onsubmit="saveSpot(event)">
         <div class="form-grid">
           <div class="form-group full">
@@ -431,15 +431,16 @@
             <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" step="0.1" required />
           </div>
           <div class="form-group">
-            <label for="f-wsmin">Wind min (km/h)</label>
+            <label for="f-wsmin">Windgeschwindigkeit min (km/h)</label>
             <input id="f-wsmin" name="windSpeedMin" type="number" min="0" required />
           </div>
           <div class="form-group">
-            <label for="f-wsmax">Wind max (km/h)</label>
+            <label for="f-wsmax">Windgeschwindigkeit max (km/h)</label>
             <input id="f-wsmax" name="windSpeedMax" type="number" min="0" required />
           </div>
         </div>
         <div class="status-msg" id="statusMsg"></div>
+        <div class="modal-alert">ℹ️ Bitte Windrichtung und Windgeschwindigkeit überprüfen!</div>
         <div class="modal-actions">
           <button type="button" class="btn-sm btn-secondary" onclick="closeModal()">Abbrechen</button>
           <button type="submit" class="btn-sm" id="saveBtn">Speichern</button>
@@ -619,10 +620,9 @@
 
     function applyTemplate(index) {
       const s = allSpots[index];
-      fillForm(s);
       document.getElementById("templateInput").value = "";
       document.getElementById("templateResults").style.display = "none";
-      document.getElementById("f-name").focus();
+      openModalFromTemplate(s);
     }
 
     function fillForm(s) {
@@ -696,23 +696,16 @@
       editingId = id;
       document.getElementById("statusMsg").textContent = "";
       document.getElementById("modalTitle").textContent = id === null ? "Startplatz hinzufügen" : "Startplatz bearbeiten";
-      const templateSearch = document.getElementById("templateSearch");
-      templateSearch.style.display = id === null ? "" : "none";
-      document.getElementById("templateInput").value = "";
-      document.getElementById("templateResults").style.display = "none";
       document.getElementById("spotForm").reset();
       if (id !== null) fillForm(spots.find(s => s.id === id));
       document.getElementById("modalBackdrop").classList.add("open");
-      setTimeout(() => document.getElementById(id === null ? "templateInput" : "f-name").focus(), 50);
+      setTimeout(() => document.getElementById("f-name").focus(), 50);
     }
 
     function openModalFromTemplate(s) {
       editingId = null;
       document.getElementById("statusMsg").textContent = "";
       document.getElementById("modalTitle").textContent = "Startplatz hinzufügen";
-      document.getElementById("templateSearch").style.display = "";
-      document.getElementById("templateInput").value = "";
-      document.getElementById("templateResults").style.display = "none";
       document.getElementById("spotForm").reset();
       fillForm(s);
       document.getElementById("modalBackdrop").classList.add("open");
@@ -752,8 +745,10 @@
           res = await fetch(`/api/spots/${editingId}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
         }
         if (!res.ok) throw new Error("Fehler beim Speichern.");
+        const saved = await res.json();
         await loadSpots();
         closeModal();
+        flyToSpot(saved.id);
       } catch (err) {
         statusMsg.textContent = err.message;
       } finally {
