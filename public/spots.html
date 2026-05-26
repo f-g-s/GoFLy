@@ -364,6 +364,75 @@
         position: static;
       }
     }
+
+    /* Wind direction compass */
+    .wind-alert-compass {
+      display: flex;
+      justify-content: center;
+      padding: 0.25rem 0;
+    }
+
+    .wind-alert-compass-svg {
+      width: 180px;
+      height: 180px;
+    }
+
+    .compass-segment {
+      cursor: pointer;
+      transition: filter 0.1s;
+    }
+
+    .compass-segment:hover {
+      filter: brightness(0.85);
+    }
+
+    .compass-segment.off {
+      fill: #e2e8f0;
+    }
+
+    .compass-segment.on {
+      fill: #2196F3;
+    }
+
+    .compass-label {
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .verified-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #1e293b;
+      cursor: pointer;
+      margin-bottom: 0.75rem;
+    }
+
+    .verified-label input[type="checkbox"] {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #2196F3;
+      cursor: pointer;
+    }
+
+    .verified-badge {
+      font-size: 0.7rem;
+      background: #dcfce7;
+      color: #166534;
+      border-radius: 4px;
+      padding: 0.05rem 0.35rem;
+      font-weight: 600;
+    }
+
+    .leaflet-popup {
+      transition: opacity 0.1s ease;
+    }
+
+    .leaflet-fade-anim .leaflet-popup {
+      transition: opacity 0.1s linear;
+    }
   </style>
 </head>
 
@@ -386,11 +455,13 @@
       </div>
       <p class="map-hint" style="display:flex;align-items:center;gap:0.5rem;">
         <span
-          style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#546E7A;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>Vorhandene Startplätze
+          style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#546E7A;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>Vorhandene
+        Startplätze
       </p>
       <p class="map-hint" style="display:flex;align-items:center;gap:0.5rem;">
         <span
-          style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#2196F3;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span> Aktiver Wetter-Alert
+          style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#2196F3;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>
+        Aktiver Wetter-Alert
       </p>
       <!-- <button onclick="openModal()">+ Startplatz hinzufügen</button> -->
     </div>
@@ -404,7 +475,7 @@
       <form id="spotForm" onsubmit="saveSpot(event)">
         <div class="form-grid">
           <div class="form-group full">
-            <label for="f-name">Name</label>
+            <label for="f-name">Startplatz</label>
             <input id="f-name" name="name" type="text" required />
           </div>
           <div class="form-group">
@@ -423,13 +494,21 @@
             <label for="f-lon">Längengrad</label>
             <input id="f-lon" name="lon" type="number" step="any" required />
           </div>
-          <div class="form-group">
-            <label for="f-wdmin">Windrichtung min (°)</label>
-            <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" step="0.1" required />
-          </div>
-          <div class="form-group">
-            <label for="f-wdmax">Windrichtung max (°)</label>
-            <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" step="0.1" required />
+          <div class="form-group full">
+            <label>Windrichtung</label>
+            <div class="wind-alert-compass">
+              <svg id="windCompassSvg" viewBox="-20 -20 240 240" class="wind-alert-compass-svg"></svg>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 1rem;margin-top:0.25rem">
+              <div class="form-group">
+                <label for="f-wdmin">Min (°)</label>
+                <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" step="0.1" required />
+              </div>
+              <div class="form-group">
+                <label for="f-wdmax">Max (°)</label>
+                <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" step="0.1" required />
+              </div>
+            </div>
           </div>
           <div class="form-group">
             <label for="f-wsmin">Windgeschwindigkeit min (km/h)</label>
@@ -442,6 +521,10 @@
         </div>
         <div class="status-msg" id="statusMsg"></div>
         <div class="modal-alert">ℹ️ Bitte Windrichtung und Windgeschwindigkeit überprüfen!</div>
+        <label class="verified-label">
+          <input type="checkbox" name="verified" id="f-verified" />
+          Alle Daten wurden geprüft.
+        </label>
         <div class="modal-actions">
           <button type="button" class="btn-sm btn-secondary" onclick="closeModal()">Abbrechen</button>
           <button type="submit" class="btn-sm" id="saveBtn">Speichern</button>
@@ -544,6 +627,20 @@
           return div;
         });
 
+        let _hov = false, _hovTimer = null;
+        m.on("mouseover", function () {
+          clearTimeout(_hovTimer);
+          if (!this.isPopupOpen()) { this.openPopup(); _hov = true; }
+        });
+        m.on("mouseout", function () {
+          if (_hov) { const _m = this; _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 200); }
+        });
+        m.on("click", function () {
+          _hov = false;
+          clearTimeout(_hovTimer);
+          const _m = this;
+          map.once("moveend", function () { _m.openPopup(); });
+        });
         dhvMarkers.push(m);
       }
     }
@@ -555,6 +652,15 @@
       const savedSize = getMarkerSize(map.getZoom());
       for (const s of spots) {
         const m = L.marker([s.lat, s.lon], { icon: makeSavedIcon(savedSize, s.id), zIndexOffset: 100 }).addTo(map);
+        m.bindPopup(`<div class="popup-name">🪂 ${escHtml(s.name)}</div><div class="popup-meta">📍 ${escHtml(s.city)}, ${escHtml(s.state)}</div>`);
+        let _hov = false, _hovTimer = null;
+        m.on("mouseover", function () {
+          clearTimeout(_hovTimer);
+          if (!this.isPopupOpen()) { this.openPopup(); _hov = true; }
+        });
+        m.on("mouseout", function () {
+          if (_hov) { const _m = this; _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 200); }
+        });
         savedMarkers[s.id] = m;
       }
     }
@@ -637,10 +743,12 @@
       form["lon"].value = s.lon;
       form["windDirectionMin"].value = s.windDirectionMin;
       form["windDirectionMax"].value = s.windDirectionMax;
+      inputsToSectors();
       form["windSpeedMin"].value = s.windSpeedMin;
       form["windSpeedMax"].value = s.windSpeedMax;
       form["city"].value = s.city;
       form["state"].value = s.state ?? "";
+      form["verified"].checked = !!s.verified;
     }
 
     document.addEventListener("click", (e) => {
@@ -683,7 +791,7 @@
           </div>
           <div class="spot-card-meta">
             📍 ${escHtml(s.city)} (${escHtml(s.state)})<br>
-            🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)}<br>
+            🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)} ${s.verified ? ' <span class="verified-badge">✔ geprüft</span>' : ''}<br>
             💨 ${s.windSpeedMin}–${s.windSpeedMax} km/h
           </div>
         </div>
@@ -696,11 +804,7 @@
       highlightSpotCard(id);
       map.flyTo([s.lat, s.lon], 12, { duration: 1 });
       map.once("moveend", () => {
-        if (savedMarkers[id]) {
-          savedMarkers[id]
-            .bindPopup(`<div class="popup-name">🪂 ${escHtml(s.name)}</div><div class="popup-meta">📍 ${escHtml(s.city)}, ${escHtml(s.state)}</div>`)
-            .openPopup();
-        }
+        if (savedMarkers[id]) savedMarkers[id].openPopup();
       });
     }
 
@@ -712,8 +816,9 @@
     function openModal(id = null) {
       editingId = id;
       document.getElementById("statusMsg").textContent = "";
-      document.getElementById("modalTitle").textContent = id === null ? "Startplatz hinzufügen" : "Startplatz bearbeiten";
+      document.getElementById("modalTitle").textContent = id === null ? "Alert hinzufügen" : "Alert konfigurieren";
       document.getElementById("spotForm").reset();
+      clearCompass();
       if (id !== null) fillForm(spots.find(s => s.id === id));
       document.getElementById("modalBackdrop").classList.add("open");
       setTimeout(() => document.getElementById("f-name").focus(), 50);
@@ -722,8 +827,9 @@
     function openModalFromTemplate(s) {
       editingId = null;
       document.getElementById("statusMsg").textContent = "";
-      document.getElementById("modalTitle").textContent = "Startplatz hinzufügen";
+      document.getElementById("modalTitle").textContent = "Alert hinzufügen";
       document.getElementById("spotForm").reset();
+      clearCompass();
       fillForm(s);
       document.getElementById("modalBackdrop").classList.add("open");
       setTimeout(() => document.getElementById("f-name").focus(), 50);
@@ -752,6 +858,7 @@
         windSpeedMax: parseInt(form["windSpeedMax"].value, 10),
         city: form["city"].value.trim(),
         state: form["state"].value.trim(),
+        verified: form["verified"].checked,
       };
 
       try {
@@ -794,6 +901,109 @@
     }
 
     document.getElementById("confirmDeleteBtn").addEventListener("click", confirmDelete);
+
+    // ── Wind Compass ─────────────────────────────────────────────────────────
+    const SECTORS = [
+      { dir: "N", deg: 0 }, { dir: "NNO", deg: 22.5 },
+      { dir: "NO", deg: 45 }, { dir: "ONO", deg: 67.5 },
+      { dir: "O", deg: 90 }, { dir: "OSO", deg: 112.5 },
+      { dir: "SO", deg: 135 }, { dir: "SSO", deg: 157.5 },
+      { dir: "S", deg: 180 }, { dir: "SSW", deg: 202.5 },
+      { dir: "SW", deg: 225 }, { dir: "WSW", deg: 247.5 },
+      { dir: "W", deg: 270 }, { dir: "WNW", deg: 292.5 },
+      { dir: "NW", deg: 315 }, { dir: "NNW", deg: 337.5 }
+    ];
+    const MAIN_DIRS = new Set(["N", "NO", "O", "SO", "S", "SW", "W", "NW"]);
+    const selectedSectors = new Set();
+
+    function buildCompassSVG() {
+      const svg = document.getElementById("windCompassSvg");
+      const R = 90, r = 35, Rl = 102, cx = 100, cy = 100, toRad = Math.PI / 180;
+      let html = "";
+      SECTORS.forEach(({ dir, deg }, i) => {
+        const s = (deg - 11.25 - 90) * toRad, e = (deg + 11.25 - 90) * toRad, m = (deg - 90) * toRad;
+        const ox1 = cx + R * Math.cos(s), oy1 = cy + R * Math.sin(s);
+        const ox2 = cx + R * Math.cos(e), oy2 = cy + R * Math.sin(e);
+        const ix1 = cx + r * Math.cos(s), iy1 = cy + r * Math.sin(s);
+        const ix2 = cx + r * Math.cos(e), iy2 = cy + r * Math.sin(e);
+        const lx = cx + Rl * Math.cos(m), ly = cy + Rl * Math.sin(m);
+        const isMain = MAIN_DIRS.has(dir);
+        html += `<path class="compass-segment off" data-idx="${i}" d="M ${ox1} ${oy1} A ${R} ${R} 0 0 1 ${ox2} ${oy2} L ${ix2} ${iy2} A ${r} ${r} 0 0 0 ${ix1} ${iy1} Z" stroke="var(--wind-alert-compass-stroke,#666)" stroke-width="1"></path>`;
+        html += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="central" font-size="${isMain ? 11 : 8.5}" font-weight="${isMain ? 600 : 400}" fill="var(--wind-alert-compass-text,#333)" class="compass-label">${dir}</text>`;
+      });
+      html += `<circle cx="${cx}" cy="${cy}" r="${r}" fill="var(--wind-alert-compass-center,#f5f5f5)" stroke="var(--wind-alert-compass-stroke,#666)" stroke-width="1"></circle>`;
+      svg.innerHTML = html;
+      svg.addEventListener("click", e => {
+        const el = e.target.closest(".compass-segment");
+        if (!el) return;
+        const idx = +el.dataset.idx;
+        selectedSectors.has(idx) ? selectedSectors.delete(idx) : selectedSectors.add(idx);
+        renderCompass();
+        sectorsToInputs();
+      });
+    }
+
+    function renderCompass() {
+      const svg = document.getElementById("windCompassSvg");
+      if (!svg) return;
+      SECTORS.forEach((_, i) => {
+        const path = svg.querySelector(`.compass-segment[data-idx="${i}"]`);
+        if (path) {
+          path.classList.toggle("on", selectedSectors.has(i));
+          path.classList.toggle("off", !selectedSectors.has(i));
+        }
+      });
+    }
+
+    function sectorsToInputs() {
+      if (!selectedSectors.size) {
+        document.getElementById("f-wdmin").value = "";
+        document.getElementById("f-wdmax").value = "";
+        return;
+      }
+      if (selectedSectors.size === 16) {
+        document.getElementById("f-wdmin").value = 0;
+        document.getElementById("f-wdmax").value = 360;
+        return;
+      }
+      const sorted = [...selectedSectors].sort((a, b) => a - b);
+      const n = sorted.length;
+      let maxGap = -1, splitIdx = 0;
+      for (let i = 0; i < n; i++) {
+        const gap = (sorted[(i + 1) % n] - sorted[i] + 16) % 16;
+        if (gap > maxGap) { maxGap = gap; splitIdx = i; }
+      }
+      const firstIdx = sorted[(splitIdx + 1) % n];
+      const lastIdx = sorted[splitIdx];
+      const min = +((firstIdx * 22.5 - 11.25 + 360) % 360).toFixed(2);
+      const max = +(lastIdx * 22.5 + 11.25).toFixed(2);
+      document.getElementById("f-wdmin").value = min;
+      document.getElementById("f-wdmax").value = max;
+    }
+
+    function inputsToSectors() {
+      const minVal = parseFloat(document.getElementById("f-wdmin").value);
+      const maxVal = parseFloat(document.getElementById("f-wdmax").value);
+      selectedSectors.clear();
+      if (!isNaN(minVal) && !isNaN(maxVal)) {
+        SECTORS.forEach(({ deg }, i) => {
+          const active = minVal <= maxVal
+            ? deg >= minVal && deg <= maxVal
+            : deg >= minVal || deg <= maxVal;
+          if (active) selectedSectors.add(i);
+        });
+      }
+      renderCompass();
+    }
+
+    function clearCompass() {
+      selectedSectors.clear();
+      renderCompass();
+    }
+
+    buildCompassSVG();
+    document.getElementById("f-wdmin").addEventListener("input", inputsToSectors);
+    document.getElementById("f-wdmax").addEventListener("input", inputsToSectors);
 
     loadSpots();
   </script>
