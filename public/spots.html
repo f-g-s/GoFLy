@@ -57,7 +57,7 @@
       overflow: hidden;
       box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
       position: sticky;
-      top: 10rem;
+      top: 1.5rem;
     }
 
     /* Sidebar */
@@ -502,11 +502,11 @@
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 1rem;margin-top:0.25rem">
               <div class="form-group">
                 <label for="f-wdmin">Min (°)</label>
-                <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" step="0.1" required />
+                <input id="f-wdmin" name="windDirectionMin" type="number" min="0" max="360" step="any" required />
               </div>
               <div class="form-group">
                 <label for="f-wdmax">Max (°)</label>
-                <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" step="0.1" required />
+                <input id="f-wdmax" name="windDirectionMax" type="number" min="0" max="360" step="any" required />
               </div>
             </div>
           </div>
@@ -562,21 +562,23 @@
 
     function makeSavedIcon(size, spotId) {
       const onclick = spotId ? `onclick="flyToSpot('${spotId}')"` : "";
+      const hit = size + 10;
       return L.divIcon({
         className: "",
-        html: `<div ${onclick} style="width:${size}px;height:${size}px;border-radius:50%;background:#2196F3;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.5);cursor:pointer;"></div>`,
-        iconSize: [size, size],
-        iconAnchor: [size / 2, size / 2],
+        html: `<div ${onclick} style="width:${hit}px;height:${hit}px;display:flex;align-items:center;justify-content:center;cursor:pointer;"><div style="width:${size}px;height:${size}px;border-radius:50%;background:#2196F3;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.5);"></div></div>`,
+        iconSize: [hit, hit],
+        iconAnchor: [hit / 2, hit / 2],
       });
     }
 
     function makeDhvIcon(size, lat, lon) {
       const onclick = (lat != null) ? `onclick="map.flyTo([${lat},${lon}], 12, {duration:1})"` : "";
+      const hit = size + 10;
       return L.divIcon({
         className: "",
-        html: `<div ${onclick} style="width:${size}px;height:${size}px;border-radius:50%;background:#546E7A;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.5);cursor:pointer;"></div>`,
-        iconSize: [size, size],
-        iconAnchor: [size / 2, size / 2],
+        html: `<div ${onclick} style="width:${hit}px;height:${hit}px;display:flex;align-items:center;justify-content:center;cursor:pointer;"><div style="width:${size}px;height:${size}px;border-radius:50%;background:#546E7A;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.5);"></div></div>`,
+        iconSize: [hit, hit],
+        iconAnchor: [hit / 2, hit / 2],
       });
     }
 
@@ -628,12 +630,18 @@
         });
 
         let _hov = false, _hovTimer = null;
+        function _dhvClose(_m) { _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 300); }
         m.on("mouseover", function () {
           clearTimeout(_hovTimer);
-          if (!this.isPopupOpen()) { this.openPopup(); _hov = true; }
+          _hov = true;
+          if (!this.isPopupOpen()) this.openPopup();
         });
-        m.on("mouseout", function () {
-          if (_hov) { const _m = this; _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 200); }
+        m.on("mouseout", function () { const _m = this; _hov = false; _dhvClose(_m); });
+        m.on("popupopen", function () {
+          const el = this.getPopup().getElement();
+          if (!el) return;
+          el.addEventListener("mouseenter", function () { clearTimeout(_hovTimer); _hov = true; });
+          el.addEventListener("mouseleave", function () { const _m = m; _hov = false; _dhvClose(_m); });
         });
         m.on("click", function () {
           _hov = false;
@@ -654,12 +662,18 @@
         const m = L.marker([s.lat, s.lon], { icon: makeSavedIcon(savedSize, s.id), zIndexOffset: 100 }).addTo(map);
         m.bindPopup(`<div class="popup-name">🪂 ${escHtml(s.name)}</div><div class="popup-meta">📍 ${escHtml(s.city)}, ${escHtml(s.state)}</div>`);
         let _hov = false, _hovTimer = null;
+        function _savedClose(_m) { _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 300); }
         m.on("mouseover", function () {
           clearTimeout(_hovTimer);
-          if (!this.isPopupOpen()) { this.openPopup(); _hov = true; }
+          _hov = true;
+          if (!this.isPopupOpen()) this.openPopup();
         });
-        m.on("mouseout", function () {
-          if (_hov) { const _m = this; _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 200); }
+        m.on("mouseout", function () { const _m = this; _hov = false; _savedClose(_m); });
+        m.on("popupopen", function () {
+          const el = this.getPopup().getElement();
+          if (!el) return;
+          el.addEventListener("mouseenter", function () { clearTimeout(_hovTimer); _hov = true; });
+          el.addEventListener("mouseleave", function () { const _m = m; _hov = false; _savedClose(_m); });
         });
         savedMarkers[s.id] = m;
       }
@@ -780,7 +794,8 @@
         list.innerHTML = "<p class='spot-list-empty'>Wähle einen Startplatz auf der Karte aus, um das Flugwetter für diesen Ort zu beobachten.</p>";
         return;
       }
-      list.innerHTML = spots.map(s => `
+      const sorted = [...spots].sort((a, b) => a.name.localeCompare(b.name, "de"));
+      list.innerHTML = sorted.map(s => `
         <div class="spot-card" data-id="${s.id}" onclick="flyToSpot('${s.id}')">
           <div class="spot-card-header">
             <h2>${escHtml(s.name)}</h2>
@@ -852,8 +867,8 @@
         name: form["name"].value.trim(),
         lat: parseFloat(form["lat"].value),
         lon: parseFloat(form["lon"].value),
-        windDirectionMin: parseInt(form["windDirectionMin"].value, 10),
-        windDirectionMax: parseInt(form["windDirectionMax"].value, 10),
+        windDirectionMin: parseFloat(form["windDirectionMin"].value),
+        windDirectionMax: parseFloat(form["windDirectionMax"].value),
         windSpeedMin: parseInt(form["windSpeedMin"].value, 10),
         windSpeedMax: parseInt(form["windSpeedMax"].value, 10),
         city: form["city"].value.trim(),
