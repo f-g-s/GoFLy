@@ -433,6 +433,18 @@
     .leaflet-fade-anim .leaflet-popup {
       transition: opacity 0.1s linear;
     }
+
+    .spot-label {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2196F3;
+      white-space: nowrap;
+      text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff;
+    }
+    .spot-label::before { display: none; }
   </style>
 </head>
 
@@ -582,14 +594,24 @@
       });
     }
 
+    const LABEL_ZOOM_MIN = 10;
+
     let dhvMarkers = [];
     let savedMarkers = {};   // id → marker
     let highlightedCard = null;
 
     map.on("zoomend", () => {
-      const size = getMarkerSize(map.getZoom());
-      Object.entries(savedMarkers).forEach(([id, m]) => m.setIcon(makeSavedIcon(size, id)));
-      dhvSpotRefs.forEach(({ marker, lat, lon }) => marker.setIcon(makeDhvIcon(size, lat, lon)));
+      const zoom = map.getZoom();
+      const size = getMarkerSize(zoom);
+      const showLabel = zoom >= LABEL_ZOOM_MIN;
+      Object.entries(savedMarkers).forEach(([id, m]) => {
+        m.setIcon(makeSavedIcon(size, id));
+        const tt = m.getTooltip();
+        if (tt) tt.setOpacity(showLabel ? 1 : 0);
+      });
+      dhvSpotRefs.forEach(({ marker, lat, lon }) => {
+        marker.setIcon(makeDhvIcon(size, lat, lon));
+      });
     });
 
     // DHV marker spot-reference for icon rebuild on zoom
@@ -661,6 +683,8 @@
       for (const s of spots) {
         const m = L.marker([s.lat, s.lon], { icon: makeSavedIcon(savedSize, s.id), zIndexOffset: 100 }).addTo(map);
         m.bindPopup(`<div class="popup-name">🪂 ${escHtml(s.name)}</div><div class="popup-meta">📍 ${escHtml(s.city)}, ${escHtml(s.state)}</div>`);
+        m.bindTooltip(s.name, { permanent: true, direction: "right", offset: [8, 0], className: "spot-label" });
+        if (map.getZoom() < LABEL_ZOOM_MIN) { const tt = m.getTooltip(); if (tt) tt.setOpacity(0); }
         let _hov = false, _hovTimer = null;
         function _savedClose(_m) { _hovTimer = setTimeout(function () { _m.closePopup(); _hov = false; }, 300); }
         m.on("mouseover", function () {
