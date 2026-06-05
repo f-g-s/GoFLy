@@ -94,7 +94,9 @@ async function getWeather(lat, lon) {
       const date = t.slice(0, 10);
       if (iconDates.has(date)) {
         const j = iconTimeIndex.get(t);
-        return j !== undefined ? shortTerm.hourly[key][j] : longTerm.hourly[key][i];
+        const iconVal = j !== undefined ? shortTerm.hourly[key][j] : null;
+        // ICON-D2 liefert manche Parameter nicht (z.B. lifted_index, cape) → Fallback auf globales Modell
+        return iconVal !== null && iconVal !== undefined ? iconVal : longTerm.hourly[key][i];
       }
       return longTerm.hourly[key][i];
     });
@@ -158,8 +160,8 @@ function getCompassDir(deg) {
 }
 
 function checkSpot(spot, hours) {
-  // Prüfe, ob irgendeine Stunde im Zeitraum Windböen über 35 km/h hat
-  const hasGusts = hours.some(hour => hour.windGusts10m > 35);
+  // Prüfe, ob irgendeine Stunde im Zeitraum Windböen über 40 km/h hat
+  const hasGusts = hours.some(hour => hour.windGusts10m > 40);
 
   // Wenn ja, setze die Prüfung auf "nicht geeignet"
   if (hasGusts) {
@@ -175,8 +177,8 @@ function checkSpot(spot, hours) {
       h.windSpeed80m >= spot.windSpeedMin &&
       // Windböen max. 10 km/h mehr als Windgeschwindigkeit
       h.windGusts10m <= h.windSpeed80m + 10 &&
-      // Windböen max. 30 km/h
-      h.windGusts10m <= 30 &&
+      // Windböen max. 35 km/h
+      h.windGusts10m <= 35 &&
       // CAPE-Wert muss unter 1000 sein (Stabilität)
       h.cape < 1000 &&
       // Lifted Index muss positiv sein (Stabilität)
@@ -214,43 +216,78 @@ async function sendTelegram(message) {
   }
 }
 
-function formatBlock(block) {
-  const start = block[0].hour;
-  const end = block[block.length - 1].hour;
-  const timeLabel = start === end ? `${start}:00 Uhr` : `${start}–${end} Uhr`;
-
+function summarizeBlock(block) {
+  const startHour = block[0].hour;
+  const endHour = block[block.length - 1].hour;
   const avgWind = Math.round(block.reduce((s, h) => s + h.windSpeed80m, 0) / block.length);
-  const avgDir = Math.round(avgWindDirection(block));
+  const avgDirection = Math.round(avgWindDirection(block));
   const maxGusts = Math.max(...block.map(h => h.windGusts10m));
-  const avgPrecip = (block.reduce((s, h) => s + h.precipitation, 0) / block.length).toFixed(1);
-  const avgCape = Math.round(block.reduce((s, h) => s + h.cape, 0) / block.length);
-  const avgCloud = Math.round(block.reduce((s, h) => s + h.cloudCover, 0) / block.length);
-  const avgVis = Math.round(block.reduce((s, h) => s + h.visibility, 0) / block.length / 1000);
-  const avgLi = (block.reduce((s, h) => s + h.liftedIndex, 0) / block.length).toFixed(1);
-
-  return (
-    `🕐 ${timeLabel} Ø ${avgWind} km/h 💨 ${getCompassDir(avgDir)}\n` +
-    `🌬️ Böen: max ${maxGusts} km/h`
-  );
+  return {
+    startHour,
+    endHour,
+    avgWind,
+    avgDirection,
+    avgDirectionLabel: getCompassDir(avgDirection),
+    maxGusts,
+  };
 }
 
-function formatDaySummary(hours) {
-  const avgPrecip = (hours.reduce((s, h) => s + h.precipitation, 0) / hours.length).toFixed(1);
+function summarizeDay(hours) {
+  const avgPrecip = Number((hours.reduce((s, h) => s + h.precipitation, 0) / hours.length).toFixed(1));
   const avgCape = Math.round(hours.reduce((s, h) => s + h.cape, 0) / hours.length);
   const avgCloud = Math.round(hours.reduce((s, h) => s + h.cloudCover, 0) / hours.length);
-  const avgLi = (hours.reduce((s, h) => s + h.liftedIndex, 0) / hours.length).toFixed(1);
+  const avgLi = Number((hours.reduce((s, h) => s + h.liftedIndex, 0) / hours.length).toFixed(1));
 
-  const rainRisk = avgPrecip > 0 ? `Niederschlag: Ø ${avgPrecip} mm` : "Kein Regen";
+  const rainRisk = avgPrecip > 0 ? `Niederschlag: Ø ${avgPrecip.toFixed(1)} mm` : "Kein Regen";
 
   const thunderRisk =
     avgCape > 1000 || avgLi < 0 ? "Achtung! Hohe Gewittergefahr" :
       avgCape > 500 || avgLi < 1 ? "Gewitter möglich" :
         "Kein Gewitter";
 
+  return {
+    avgCloud,
+    avgPrecip,
+    avgCape,
+    avgLiftedIndex: avgLi,
+    rainRisk,
+    thunderRisk,
+  };
+}
+
+function getRelativeDay(offset) {
+  if (offset === 0) return "today";
+  if (offset === 1) return "tomorrow";
+  if (offset === 2) return "day_after";
+  return "later";
+}
+
+function formatBlockFromSummary(block) {
+  const timeLabel = block.startHour === block.endHour
+    ? `${block.startHour}:00 Uhr`
+    : `${block.startHour}–${block.endHour} Uhr`;
   return (
-    `☁️ Bewölkung: Ø ${avgCloud}%\n` +
-    `🌧️ ${rainRisk}\n` +
-    `⛈️ ${thunderRisk}`
+    `🕐 ${timeLabel} Ø ${block.avgWind} km/h 💨 ${block.avgDirectionLabel}\n` +
+    `🌬️ Böen: max ${block.maxGusts} km/h`
+  );
+}
+
+function formatSummaryFromSummary(summary) {
+  return (
+    `☁️ Bewölkung: Ø ${summary.avgCloud}%\n` +
+    `🌧️ ${summary.rainRisk}\n` +
+    `⛈️ ${summary.thunderRisk}`
+  );
+}
+
+function buildTelegramText(message) {
+  const blockLines = message.blocks.map(formatBlockFromSummary).join("\n\n");
+  const summaryText = formatSummaryFromSummary(message.summary);
+  return (
+    `🪂 <b>${message.spotName}</b>\n` +
+    `📅 ${message.dateLabel}\n` +
+    blockLines + "\n\n" +
+    summaryText
   );
 }
 
@@ -277,17 +314,23 @@ async function main() {
 
       // Aufteilen in stabile Windrichtungsblöcke
       const blocks = splitByWindStability(goodHours, 10);
+      const blockSummaries = blocks.map(summarizeBlock);
+      const summary = summarizeDay(goodHours);
 
-      const blockLines = blocks.map(formatBlock).join("\n\n");
-      const summary = formatDaySummary(goodHours);
+      const message = {
+        dateStr,
+        dateLabel,
+        relativeDay: getRelativeDay(offset),
+        spotId: spot.id ?? null,
+        spotName: spot.name,
+        blocks: blockSummaries,
+        summary,
+      };
 
       messages.push({
-        dateStr,
-        text:
-          `🪂 <b>${spot.name}</b>\n` +
-          `📅 ${dateLabel}\n` +
-          blockLines + "\n\n" +
-          summary,
+        ...message,
+        // Legacy-Kompatibilität: bestehende UI/Clients können weiter text verwenden.
+        text: buildTelegramText(message),
       });
     }
   }
@@ -295,7 +338,7 @@ async function main() {
   messages.sort((a, b) => a.dateStr.localeCompare(b.dateStr));
 
   if (messages.length > 0) {
-    await sendTelegram(messages.map(m => m.text).join("\n\n\n"));
+    await sendTelegram(messages.map(buildTelegramText).join("\n\n\n"));
     await supabase.from("check_results").upsert({ id: 1, messages, updated_at: new Date() });
     console.log("Nachricht gesendet.");
   } else {

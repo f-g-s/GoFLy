@@ -41,7 +41,7 @@
     }
 
     .card.day-after {
-      border-left: 4px solid #C8E6C9;
+      border-left: 4px solid #A5D6A7;
     }
 
     .meta {
@@ -78,7 +78,7 @@
       meta.style = "font-size:0.8rem;opacity:0.5;margin-bottom:0.5rem";
       meta.textContent = `Letzter Check: ${new Date(data.updated_at).toLocaleString("de-DE")}`;
       output.appendChild(meta);
-      addCard(data.messages.map(m => m.text).join("\n\n\n"), "telegram");
+      renderStructuredMessages(data.messages);
     }
 
     loadLastResults();
@@ -93,8 +93,6 @@
       output.innerHTML = "";
 
       const es = new EventSource("/run");
-      let telegramBuffer = "";
-      let inTelegram = false;
 
       es.onmessage = (e) => {
         const msg = JSON.parse(e.data);
@@ -102,40 +100,21 @@
         if (msg.type === "done") {
           es.close();
           btn.disabled = false;
-          // Flush remaining telegram buffer
-          if (telegramBuffer.trim()) {
-            addCard(telegramBuffer.trim(), "telegram");
-            telegramBuffer = "";
-          }
+          loadLastResults().catch(() => {
+            addTextCard("Fehler beim Laden der aktualisierten Ergebnisse.", "error");
+          });
           return;
         }
 
         const text = msg.text;
 
         if (msg.type === "error") {
-          addCard(text, "error");
+          addTextCard(text, "error");
           return;
         }
 
-        // Detect Telegram message block
-        if (text.startsWith("=== Telegram-Nachricht ===")) {
-          inTelegram = true;
-          telegramBuffer = "";
-          return;
-        }
-        if (text.startsWith("[DRY RUN]") || text === "Nachricht gesendet." || text.startsWith("Keine geeigneten")) {
-          if (telegramBuffer.trim()) {
-            addCard(telegramBuffer.trim(), "telegram");
-            telegramBuffer = "";
-          }
-          inTelegram = false;
-          if (text.startsWith("Keine geeigneten")) {
-            addCard(text, "log");
-          }
-          return;
-        }
-        if (inTelegram) {
-          telegramBuffer += text + "\n";
+        if (text.startsWith("Keine geeigneten")) {
+          addTextCard(text, "log");
           return;
         }
 
@@ -145,7 +124,7 @@
       es.onerror = () => {
         es.close();
         btn.disabled = false;
-        addCard("Fehler beim Abrufen der Daten.", "error");
+        addTextCard("Fehler beim Abrufen der Daten.", "error");
       };
     }
 
@@ -158,46 +137,80 @@
         .replace(/&lt;\/b&gt;/g, "</b>");
     }
 
-    function addCard(text, type) {
-      const output = document.getElementById("output");
-      if (type === "telegram") {
-        const dateOpts = { weekday: "long", day: "numeric", month: "long" };
-        const todayLabel = new Date().toLocaleDateString("de-DE", dateOpts);
-        const tomorrowLabel = new Date(Date.now() + 86400000).toLocaleDateString("de-DE", dateOpts);
-        const dayAfterLabel = new Date(Date.now() + 2 * 86400000).toLocaleDateString("de-DE", dateOpts);
+    function relativeDayToClass(relativeDay) {
+      if (relativeDay === "today") return "today";
+      if (relativeDay === "tomorrow") return "tomorrow";
+      if (relativeDay === "day_after") return "day-after";
+      return "";
+    }
 
-        const spots = text.split(/\n\n\n/);
-        for (const spot of spots) {
-          if (!spot.trim()) continue;
-          const parts = spot.trim().split(/\n\n/);
-          const card = document.createElement("div");
-          const isToday = spot.includes(`${todayLabel}`);
-          const isTomorrow = spot.includes(`${tomorrowLabel}`);
-          const isDayAfter = spot.includes(`${dayAfterLabel}`);
-          const extraClass = isToday ? " today" : isTomorrow ? " tomorrow" : isDayAfter ? " day-after" : "";
-          card.className = "card telegram" + extraClass;
-          let html = "";
-          for (let pi = 0; pi < parts.length; pi++) {
-            if (pi > 0) html += `<hr class="block-sep">`;
-            const lines = parts[pi].trim().split("\n");
-            for (const line of lines) {
-              if (line.startsWith("🪂")) {
-                const escaped = escapeHtml(line.replace(/🪂\s*/, ""));
-                html += `<h2>🪂 ${escaped}</h2>`;
-              } else {
-                html += `<p class="meta">${escapeHtml(line)}</p>`;
-              }
-            }
-          }
-          card.innerHTML = html;
-          output.appendChild(card);
-        }
-      } else {
+    function getRelativeDayLabel(relativeDay) {
+      if (relativeDay === "today") return "Heute";
+      if (relativeDay === "tomorrow") return "Morgen";
+      if (relativeDay === "day_after") return "Übermorgen";
+      return "";
+    }
+
+    function extractShortDateLabel(message) {
+      if (message?.dateLabel) {
+        return message.dateLabel.replace(/^[^,]+,\s*/, "").trim();
+      }
+      if (message?.dateStr) {
+        const d = new Date(`${message.dateStr}T00:00:00`);
+        return d.toLocaleDateString("de-DE", { day: "numeric", month: "long" });
+      }
+      return "";
+    }
+
+    function formatDisplayDateLabel(message) {
+      const rel = getRelativeDayLabel(message.relativeDay);
+      const datePart = extractShortDateLabel(message);
+      if (rel && datePart) return `📅 ${rel}, ${datePart}`;
+      if (rel) return `📅 ${rel}`;
+      if (datePart) return `📅 ${datePart}`;
+      return "";
+    }
+
+    function renderStructuredMessages(messages) {
+      const output = document.getElementById("output");
+      for (const msg of messages) {
+        if (!msg || !Array.isArray(msg.blocks) || !msg.summary) continue;
+        const extraClass = relativeDayToClass(msg.relativeDay);
         const card = document.createElement("div");
-        card.className = `card ${type}`;
-        card.textContent = text;
+        card.className = `card telegram${extraClass ? ` ${extraClass}` : ""}`;
+
+        let html = `<h2>🪂 ${escapeHtml(msg.spotName || "Unbekannter Spot")}</h2>`;
+        const dateLine = formatDisplayDateLabel(msg);
+        if (dateLine) {
+          html += `<p class="meta">${escapeHtml(dateLine)}</p>`;
+        }
+
+        for (let i = 0; i < msg.blocks.length; i++) {
+          const b = msg.blocks[i];
+          if (i > 0) html += `<hr class="block-sep">`;
+          const timeLabel = b.startHour === b.endHour
+            ? `${b.startHour}:00 Uhr`
+            : `${b.startHour}–${b.endHour} Uhr`;
+          html += `<p class="meta">${escapeHtml(`🕐 ${timeLabel} Ø ${b.avgWind} km/h 💨 ${b.avgDirectionLabel}`)}</p>`;
+          html += `<p class="meta">${escapeHtml(`🌬️ Böen: max ${b.maxGusts} km/h`)}</p>`;
+        }
+
+        html += `<hr class="block-sep">`;
+        html += `<p class="meta">${escapeHtml(`☁️ Bewölkung: Ø ${msg.summary.avgCloud}%`)}</p>`;
+        html += `<p class="meta">${escapeHtml(`🌧️ ${msg.summary.rainRisk}`)}</p>`;
+        html += `<p class="meta">${escapeHtml(`⛈️ ${msg.summary.thunderRisk}`)}</p>`;
+
+        card.innerHTML = html;
         output.appendChild(card);
       }
+    }
+
+    function addTextCard(text, type) {
+      const output = document.getElementById("output");
+      const card = document.createElement("div");
+      card.className = `card ${type}`;
+      card.textContent = text;
+      output.appendChild(card);
     }
   </script>
 </body>
