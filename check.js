@@ -8,7 +8,7 @@ const DEBUG = process.env.DEBUG === "true";
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 const { data: spots, error } = await supabase.from("spots").select("*");
 
-const DRY_RUN = false;
+const DRY_RUN = process.env.DRY_RUN === "true";
 
 function isWindDirectionOk(direction, min, max) {
   if (min <= max) {
@@ -20,8 +20,8 @@ function isWindDirectionOk(direction, min, max) {
 
 // Korrekter Kreisdurchschnitt für Windrichtung
 function avgWindDirection(hours) {
-  const sinSum = hours.reduce((s, h) => s + Math.sin(h.windDirection80m * Math.PI / 180), 0);
-  const cosSum = hours.reduce((s, h) => s + Math.cos(h.windDirection80m * Math.PI / 180), 0);
+  const sinSum = hours.reduce((s, h) => s + Math.sin(h.windDirection10m * Math.PI / 180), 0);
+  const cosSum = hours.reduce((s, h) => s + Math.cos(h.windDirection10m * Math.PI / 180), 0);
   const avg = Math.atan2(sinSum, cosSum) * 180 / Math.PI;
   return (avg + 360) % 360;
 }
@@ -30,7 +30,7 @@ function avgWindDirection(hours) {
 function windDirectionSpread(hours) {
   const avg = avgWindDirection(hours);
   const diffs = hours.map(h => {
-    const diff = Math.abs(h.windDirection80m - avg);
+    const diff = Math.abs(h.windDirection10m - avg);
     return diff > 180 ? 360 - diff : diff;
   });
   return Math.max(...diffs);
@@ -55,7 +55,7 @@ function splitByWindStability(hours, maxSpread = 30) {
   return blocks;
 }
 
-const HOURLY_PARAMS = `windspeed_80m,winddirection_80m,windgusts_10m,precipitation,precipitation_probability,weathercode,cape,cloudcover,visibility,lifted_index`;
+const HOURLY_PARAMS = `windspeed_10m,winddirection_10m,windgusts_10m,precipitation,precipitation_probability,weathercode,cape,cloudcover,visibility,lifted_index`;
 
 async function fetchForecast(lat, lon, days, model = "") {
   const url =
@@ -135,8 +135,8 @@ function getHoursForDate(data, dateStr) {
     result.push({
       time: t,
       hour,
-      windSpeed80m: data.hourly.windspeed_80m[i],
-      windDirection80m: data.hourly.winddirection_80m[i],
+      windSpeed10m: data.hourly.windspeed_10m[i],
+      windDirection10m: data.hourly.winddirection_10m[i],
       windGusts10m: data.hourly.windgusts_10m[i],
       precipitation: data.hourly.precipitation[i],
       precipitationProbability: data.hourly.precipitation_probability[i],
@@ -171,12 +171,12 @@ function checkSpot(spot, hours) {
   const goodHours = hours.filter(
     (h) =>
       // Windrichtung 
-      isWindDirectionOk(h.windDirection80m, spot.windDirectionMin, spot.windDirectionMax) &&
+      isWindDirectionOk(h.windDirection10m, spot.windDirectionMin, spot.windDirectionMax) &&
       // Windgeschwindigkeit 
-      h.windSpeed80m <= spot.windSpeedMax &&
-      h.windSpeed80m >= spot.windSpeedMin &&
+      h.windSpeed10m <= spot.windSpeedMax &&
+      h.windSpeed10m >= spot.windSpeedMin &&
       // Windböen max. 10 km/h mehr als Windgeschwindigkeit
-      h.windGusts10m <= h.windSpeed80m + 10 &&
+      h.windGusts10m <= h.windSpeed10m + 10 &&
       // Windböen max. 35 km/h
       h.windGusts10m <= 35 &&
       // CAPE-Wert muss unter 1000 sein (Stabilität)
@@ -219,7 +219,7 @@ async function sendTelegram(message) {
 function summarizeBlock(block) {
   const startHour = block[0].hour;
   const endHour = block[block.length - 1].hour;
-  const avgWind = Math.round(block.reduce((s, h) => s + h.windSpeed80m, 0) / block.length);
+  const avgWind = Math.round(block.reduce((s, h) => s + h.windSpeed10m, 0) / block.length);
   const avgDirection = Math.round(avgWindDirection(block));
   const maxGusts = Math.max(...block.map(h => h.windGusts10m));
   return {
@@ -327,11 +327,7 @@ async function main() {
         summary,
       };
 
-      messages.push({
-        ...message,
-        // Legacy-Kompatibilität: bestehende UI/Clients können weiter text verwenden.
-        text: buildTelegramText(message),
-      });
+      messages.push(message);
     }
   }
 

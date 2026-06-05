@@ -12,7 +12,6 @@
   <style>
     body {
       max-width: 100%;
-      padding: 1.5rem 2rem;
       min-width: unset;
     }
 
@@ -43,17 +42,16 @@
     /* Two-column layout */
     .layout {
       display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 1.25rem;
+      grid-template-columns: 440px 1fr;
+      gap: 0;
       align-items: start;
     }
 
     /* Map */
     #map {
       width: 100%;
-      height: calc(100vh - 3rem);
+      height: calc(100vh);
       min-height: 500px;
-      border-radius: 16px;
       overflow: hidden;
       box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
       position: sticky;
@@ -65,6 +63,8 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
+      height: 100vh;
+      padding: 1rem;
     }
 
     .map-hint {
@@ -85,6 +85,90 @@
       font-size: 0.9rem;
     }
 
+    .spot-inline-details {
+      margin-top: 0.7rem;
+      padding-top: 0.7rem;
+      border-top: 1px solid #cbd5e1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .spot-details-updated {
+      font-size: 0.74rem;
+      color: #64748b;
+      margin: 0;
+    }
+
+    .spot-details-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      align-items: flex-start;
+    }
+
+    .spot-details-actions.spot-card-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25rem 0.5rem;
+      align-items: center;
+    }
+
+    .spot-details-actions.spot-card-header .spot-refresh-status {
+      grid-column: 1 / -1;
+    }
+
+    .spot-refresh-status {
+      font-size: 0.74rem;
+      margin: 0;
+      color: #64748b;
+      min-height: 1.1em;
+    }
+
+    .spot-weather-output {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .spot-weather-empty {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.55rem 0.7rem;
+      font-size: 0.82rem;
+      color: #475569;
+      line-height: 1.4;
+    }
+
+    .spot-weather-card {
+      background-color: #f3f3f3;
+      padding: 0.85rem 0.8rem 1rem 0.8rem;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      line-height: 1.25;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    .spot-weather-meta {
+      font-size: 0.82rem;
+      color: #273241;
+      padding: 0.18rem 0 0 0;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .spot-weather-date {
+      font-weight: 700;
+    }
+
+    .spot-weather-sep {
+      margin: 0.45rem 0;
+      background: rgb(213 213 213);
+      height: 1px;
+      border: 0;
+    }
+
     .spot-card {
       background: #ffffff;
       border-radius: 6px;
@@ -96,12 +180,11 @@
     }
 
     .spot-card:hover {
-      background: #e7e7e7;
+      background: #f9f9f9;
     }
 
     .spot-card.highlighted {
-      background: #c8d8f0;
-      box-shadow: 0 0 0 2px #1e293b;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)
     }
 
     .spot-card-header {
@@ -363,6 +446,10 @@
         min-height: 280px;
         position: static;
       }
+
+      .spot-weather-card {
+        padding: 0.8rem;
+      }
     }
 
     /* Wind direction compass */
@@ -444,7 +531,10 @@
       white-space: nowrap;
       text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff, 1px -1px 1px #fff, -1px 1px 1px #fff;
     }
-    .spot-label::before { display: none; }
+
+    .spot-label::before {
+      display: none;
+    }
   </style>
 </head>
 
@@ -599,6 +689,9 @@
     let dhvMarkers = [];
     let savedMarkers = {};   // id → marker
     let highlightedCard = null;
+    let selectedSpotId = null;
+    let latestResultsMessages = [];
+    let latestResultsUpdatedAt = null;
 
     map.on("zoomend", () => {
       const zoom = map.getZoom();
@@ -682,7 +775,12 @@
       const savedSize = getMarkerSize(map.getZoom());
       for (const s of spots) {
         const m = L.marker([s.lat, s.lon], { icon: makeSavedIcon(savedSize, s.id), zIndexOffset: 100 }).addTo(map);
-        m.bindPopup(`<div class="popup-name">🪂 ${escHtml(s.name)}</div><div class="popup-meta">📍 ${escHtml(s.city)}, ${escHtml(s.state)}</div>`);
+        m.bindPopup(`
+          <div class="popup-name">🪂 ${escHtml(s.name)}</div>
+          <div class="popup-meta">
+            📍 ${escHtml(s.city)}, ${escHtml(s.state)}<br>
+            🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)}<br>
+            </div>`);
         m.bindTooltip(s.name, { permanent: true, direction: "right", offset: [8, 0], className: "spot-label" });
         if (map.getZoom() < LABEL_ZOOM_MIN) { const tt = m.getTooltip(); if (tt) tt.setOpacity(0); }
         let _hov = false, _hovTimer = null;
@@ -711,6 +809,204 @@
         card.scrollIntoView({ behavior: "smooth", block: "nearest" });
         highlightedCard = card;
       }
+    }
+
+    function relativeDayToClass(relativeDay) {
+      if (relativeDay === "today") return "today";
+      if (relativeDay === "tomorrow") return "tomorrow";
+      if (relativeDay === "day_after") return "day-after";
+      return "";
+    }
+
+    function getRelativeDayLabel(relativeDay) {
+      if (relativeDay === "today") return "heute 👍";
+      if (relativeDay === "tomorrow") return "morgen 👍";
+      if (relativeDay === "day_after") return "übermorgen";
+      return "";
+    }
+
+    function extractShortDateLabel(message) {
+      if (message?.dateLabel) {
+        return message.dateLabel.replace(/^[^,]+,\s*/, "").trim();
+      }
+      if (message?.dateStr) {
+        const d = new Date(`${message.dateStr}T00:00:00`);
+        return d.toLocaleDateString("de-DE", { day: "numeric", month: "long" });
+      }
+      return "";
+    }
+
+    function formatDisplayDateLabel(message) {
+      const rel = getRelativeDayLabel(message.relativeDay);
+      const datePart = extractShortDateLabel(message);
+      if (rel && datePart) return `${datePart} - ${rel}`;
+      if (rel) return rel;
+      if (datePart) return datePart;
+      return "";
+    }
+
+    function renderSpotWeatherHtml(messages) {
+      if (!Array.isArray(messages) || !messages.length) {
+        return `<p class="spot-weather-empty">Keine geeigneten Bedingungen.</p>`;
+      }
+
+      let htmlOutput = "";
+      for (const msg of messages) {
+        if (!msg || !Array.isArray(msg.blocks) || !msg.summary) continue;
+        const extraClass = relativeDayToClass(msg.relativeDay);
+        let html = "";
+        const dateLine = formatDisplayDateLabel(msg);
+        if (dateLine) {
+          html += `<p class="spot-weather-meta spot-weather-date">${escHtml(dateLine)}</p>`;
+        }
+
+        for (let i = 0; i < msg.blocks.length; i++) {
+          const b = msg.blocks[i];
+          if (i > 0) html += `<hr class="spot-weather-sep">`;
+          const timeLabel = b.startHour === b.endHour
+            ? `${b.startHour}:00 Uhr`
+            : `${b.startHour}–${b.endHour} Uhr`;
+          html += `<p class="spot-weather-meta">${escHtml(`🕐 ${timeLabel} Ø ${b.avgWind} km/h 💨 ${b.avgDirectionLabel}`)}</p>`;
+          html += `<p class="spot-weather-meta">${escHtml(`🌬️ Böen: max ${b.maxGusts} km/h`)}</p>`;
+        }
+
+        html += `<hr class="spot-weather-sep">`;
+        html += `<p class="spot-weather-meta">${escHtml(`☁️ Bewölkung: Ø ${msg.summary.avgCloud}%`)}</p>`;
+        html += `<p class="spot-weather-meta">${escHtml(`🌧️ ${msg.summary.rainRisk}`)}</p>`;
+        html += `<p class="spot-weather-meta">${escHtml(`⛈️ ${msg.summary.thunderRisk}`)}</p>`;
+
+        htmlOutput += `<div class="spot-weather-card${extraClass ? ` ${extraClass}` : ""}">${html}</div>`;
+      }
+
+      if (!htmlOutput) {
+        return `<p class="spot-weather-empty">Für diesen Startplatz gibt es im letzten Check keine vollständigen Wetterdaten.</p>`;
+      }
+
+      return htmlOutput;
+    }
+
+    function renderSpotInlineDetails(spot) {
+      const updated = latestResultsUpdatedAt
+        ? `Letzter Check: ${new Date(latestResultsUpdatedAt).toLocaleString("de-DE")}`
+        : "Noch keine Wetter-Ergebnisse gespeichert.";
+
+      const weatherHtml = renderSpotWeatherHtml(getSpotMessages(spot));
+
+      return `
+        <div class="spot-inline-details">
+          <div class="spot-details-actions spot-card-header">
+            <p class="spot-details-updated">${escHtml(updated)}</p>
+            <button type="button" class="btn-icon" data-refresh-weather="1">🔄</button>
+            <p class="spot-refresh-status"></p>
+          </div>
+          <div class="spot-weather-output">${weatherHtml}</div>
+        </div>
+      `;
+    }
+
+    function getSelectedRefreshStatusElement() {
+      if (!selectedSpotId) return null;
+      const selectedCard = document.querySelector(`.spot-card[data-id="${selectedSpotId}"]`);
+      return selectedCard?.querySelector(".spot-refresh-status") ?? null;
+    }
+
+    function getSelectedRefreshButton() {
+      if (!selectedSpotId) return null;
+      const selectedCard = document.querySelector(`.spot-card[data-id="${selectedSpotId}"]`);
+      return selectedCard?.querySelector("[data-refresh-weather]") ?? null;
+    }
+
+    function renderSelectedSpotWeather() {
+      if (!selectedSpotId) return;
+      const spot = spots.find(s => String(s.id) === String(selectedSpotId));
+      if (!spot) {
+        selectedSpotId = null;
+        if (highlightedCard) {
+          highlightedCard.classList.remove("highlighted");
+          highlightedCard = null;
+        }
+        renderSpots();
+        return;
+      }
+
+      renderSpots();
+      highlightSpotCard(selectedSpotId);
+    }
+
+    function getSpotMessages(spot) {
+      if (!spot) return [];
+      const id = String(spot.id);
+      const byId = latestResultsMessages.filter(m => m?.spotId != null && String(m.spotId) === id);
+      if (byId.length) return byId;
+
+      const normalizedName = String(spot.name ?? "").trim().toLowerCase();
+      if (!normalizedName) return [];
+      return latestResultsMessages.filter(m => {
+        if (!m || m.spotId != null || typeof m.spotName !== "string") return false;
+        return m.spotName.trim().toLowerCase() === normalizedName;
+      });
+    }
+
+    async function loadLastResults() {
+      try {
+        const res = await fetch("/api/results");
+        const data = await res.json();
+        latestResultsMessages = Array.isArray(data?.messages) ? data.messages : [];
+        latestResultsUpdatedAt = data?.updated_at ?? null;
+      } catch {
+        latestResultsMessages = [];
+        latestResultsUpdatedAt = null;
+      }
+      renderSelectedSpotWeather();
+    }
+
+    function setRefreshStatus(text, isError = false) {
+      const el = getSelectedRefreshStatusElement();
+      if (!el) return;
+      el.textContent = text;
+      el.style.color = isError ? "#b91c1c" : "#64748b";
+    }
+
+    async function refreshWeatherNow(btnOverride = null) {
+      if (!selectedSpotId) return;
+      const btn = btnOverride || getSelectedRefreshButton();
+      if (!btn || btn.disabled) return;
+
+      btn.disabled = true;
+      setRefreshStatus("Wettercheck läuft …");
+
+      const es = new EventSource("/run");
+
+      es.onmessage = async (e) => {
+        let msg;
+        try {
+          msg = JSON.parse(e.data);
+        } catch {
+          return;
+        }
+
+        if (msg.type === "error") {
+          setRefreshStatus("Fehler beim Wettercheck.", true);
+          return;
+        }
+
+        if (msg.type === "done") {
+          es.close();
+          btn.disabled = false;
+          if (msg.code && msg.code !== 0) {
+            setRefreshStatus("Wettercheck fehlgeschlagen.", true);
+            return;
+          }
+          await loadLastResults();
+          setRefreshStatus("Wetterdaten aktualisiert.");
+        }
+      };
+
+      es.onerror = () => {
+        es.close();
+        btn.disabled = false;
+        setRefreshStatus("Verbindung zum Wettercheck fehlgeschlagen.", true);
+      };
     }
 
     // ── Template search ──────────────────────────────────────────────────────
@@ -808,6 +1104,9 @@
     async function loadSpots() {
       const res = await fetch("/api/spots");
       spots = await res.json();
+      if (selectedSpotId && !spots.some(s => String(s.id) === String(selectedSpotId))) {
+        selectedSpotId = null;
+      }
       renderSpots();
       updateSavedMarkers();
     }
@@ -833,13 +1132,16 @@
             🧭 ${compassRange(s.windDirectionMin, s.windDirectionMax)} ${s.verified ? ' <span class="verified-badge">✔ geprüft</span>' : ''}<br>
             💨 ${s.windSpeedMin}–${s.windSpeedMax} km/h
           </div>
+          ${String(selectedSpotId) === String(s.id) ? renderSpotInlineDetails(s) : ""}
         </div>
       `).join("");
     }
 
     function flyToSpot(id) {
-      const s = spots.find(s => s.id === id);
+      const s = spots.find(s => String(s.id) === String(id));
       if (!s) return;
+      selectedSpotId = String(id);
+      renderSpots();
       highlightSpotCard(id);
       map.flyTo([s.lat, s.lon], 12, { duration: 1 });
       map.once("moveend", () => {
@@ -886,7 +1188,7 @@
       const statusMsg = document.getElementById("statusMsg");
       statusMsg.textContent = "";
       saveBtn.disabled = true;
-
+      const isNewSpot = editingId === null;
       const spot = {
         name: form["name"].value.trim(),
         lat: parseFloat(form["lat"].value),
@@ -903,7 +1205,11 @@
       try {
         let res;
         if (editingId === null) {
-          res = await fetch("/api/spots", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
+          res = await fetch("/api/spots?runWeatherOnce=1", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(spot)
+          });
         } else {
           res = await fetch(`/api/spots/${editingId}`, { method: "PUT", headers: { "Content-Type": "application/json" }, body: JSON.stringify(spot) });
         }
@@ -912,6 +1218,18 @@
         await loadSpots();
         closeModal();
         flyToSpot(saved.id);
+
+        if (isNewSpot) {
+          await loadLastResults();
+          if (saved.weatherCheckStatus === "ok") {
+            setRefreshStatus("Wetterdaten einmalig aktualisiert.");
+          } else if (saved.weatherCheckStatus === "failed") {
+            setRefreshStatus("Spot gespeichert, aber Wettercheck fehlgeschlagen.", true);
+          } else {
+            setRefreshStatus("Spot gespeichert. Starte Wettercheck …");
+            refreshWeatherNow();
+          }
+        }
       } catch (err) {
         statusMsg.textContent = err.message;
       } finally {
@@ -940,6 +1258,12 @@
     }
 
     document.getElementById("confirmDeleteBtn").addEventListener("click", confirmDelete);
+    document.getElementById("spotList").addEventListener("click", (e) => {
+      const refreshBtn = e.target.closest("[data-refresh-weather]");
+      if (!refreshBtn) return;
+      e.stopPropagation();
+      refreshWeatherNow(refreshBtn);
+    });
 
     // ── Wind Compass ─────────────────────────────────────────────────────────
     const SECTORS = [
@@ -1045,6 +1369,7 @@
     document.getElementById("f-wdmax").addEventListener("input", inputsToSectors);
 
     loadSpots();
+    loadLastResults();
   </script>
 </body>
 

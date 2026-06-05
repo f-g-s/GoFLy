@@ -18,6 +18,33 @@ const supabase = createClient(
 app.use(express.static(join(__dirname, "public")));
 app.use(express.json());
 
+function runCheckScript(options = {}) {
+  const { dryRun = false, onStdout, onStderr } = options;
+  return new Promise((resolve, reject) => {
+    const child = spawn("node", ["check.js"], {
+      cwd: __dirname,
+      env: {
+        ...process.env,
+        ...(dryRun ? { DRY_RUN: "true" } : {}),
+      },
+    });
+
+    child.on("error", reject);
+
+    child.stdout.on("data", (data) => {
+      if (onStdout) onStdout(data.toString());
+    });
+
+    child.stderr.on("data", (data) => {
+      if (onStderr) onStderr(data.toString());
+    });
+
+    child.on("close", (code) => {
+      resolve(code ?? 1);
+    });
+  });
+}
+
 app.get("/api/spots", async (req, res) => {
   const { data, error } = await supabase.from("spots").select("*").order("created_at");
   if (error) return res.status(500).json({ error: error.message });
@@ -34,7 +61,20 @@ app.post("/api/spots", async (req, res) => {
   const { data, error } = await supabase.from("spots").insert(req.body).select().single();
   console.log("data:", data, "error:", error);
   if (error) return res.status(500).json({ error: error.message });
-  res.status(201).json(data);
+
+  const shouldRunWeatherOnce = req.query.runWeatherOnce === "1";
+  if (!shouldRunWeatherOnce) {
+    return res.status(201).json(data);
+  }
+
+  try {
+    const code = await runCheckScript({ dryRun: true });
+    const weatherCheckStatus = code === 0 ? "ok" : "failed";
+    return res.status(201).json({ ...data, weatherCheckStatus });
+  } catch (checkError) {
+    console.error("One-time weather check failed:", checkError);
+    return res.status(201).json({ ...data, weatherCheckStatus: "failed" });
+  }
 });
 
 app.put("/api/spots/:id", async (req, res) => {
