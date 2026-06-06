@@ -7,6 +7,9 @@ const DEBUG = process.env.DEBUG === "true";
 
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_ANON_KEY);
 const { data: spots, error } = await supabase.from("spots").select("*");
+if (error) {
+  throw new Error(`Spots konnten nicht geladen werden: ${error.message}`);
+}
 
 const DRY_RUN = process.env.DRY_RUN === "true";
 
@@ -293,8 +296,9 @@ function buildTelegramText(message) {
 
 async function main() {
   const messages = [];
+  const spotList = Array.isArray(spots) ? spots : [];
 
-  for (const spot of spots) {
+  for (const spot of spotList) {
     const data = await getWeather(spot.lat, spot.lon);
 
     for (let offset = 0; offset < 4; offset++) {
@@ -333,9 +337,12 @@ async function main() {
 
   messages.sort((a, b) => a.dateStr.localeCompare(b.dateStr));
 
+  // Persistiere den letzten Check immer, damit alte Ergebnisse bei leerer Spot-Liste
+  // oder ohne passende Bedingungen nicht weiter angezeigt werden.
+  await supabase.from("check_results").upsert({ id: 1, messages, updated_at: new Date() });
+
   if (messages.length > 0) {
     await sendTelegram(messages.map(buildTelegramText).join("\n\n\n"));
-    await supabase.from("check_results").upsert({ id: 1, messages, updated_at: new Date() });
     console.log("Nachricht gesendet.");
   } else {
     console.log("Keine geeigneten Bedingungen in den nächsten 4 Tagen – keine Nachricht gesendet.");

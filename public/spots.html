@@ -13,6 +13,7 @@
     body {
       max-width: 100%;
       min-width: unset;
+      line-height: 1.5;
     }
 
     a {
@@ -39,23 +40,129 @@
       margin-bottom: 0;
     }
 
-    /* Two-column layout */
     .layout {
       display: grid;
       grid-template-columns: 440px 1fr;
       gap: 0;
-      align-items: start;
+      height: 100vh;
+      overflow: hidden;
+      align-items: stretch;
+    }
+
+    .main-panel {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      height: 100%;
+      min-width: 0;
+      position: relative;
+    }
+
+    .main-view {
+      width: 100%;
+      min-height: 0;
+      display: none;
+    }
+
+    .main-view.active {
+      display: block;
+    }
+
+    #output.main-view.active {
+      display: flex;
+    }
+
+    .view-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.45rem;
+    }
+
+    .view-btn {
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #1e293b;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      box-shadow: none;
+    }
+
+    .view-btn:hover {
+      background: #e2e8f0;
+    }
+
+    .view-btn.active {
+      background: #1e293b;
+      color: #fff;
+      border-color: #1e293b;
     }
 
     /* Map */
-    #map {
+    #map,
+    #output {
       width: 100%;
-      height: calc(100vh);
-      min-height: 500px;
-      overflow: hidden;
+      height: 100%;
       box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-      position: sticky;
-      top: 1.5rem;
+    }
+
+    #output {
+      overflow-y: auto;
+      padding: 1rem;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: #eef2f7;
+    }
+
+    .card {
+      background-color: #f3f3f3;
+      padding: 1rem;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      line-height: 1.3;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .card.error {
+      border-color: #ef4444;
+      color: #b91c1c;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+
+    .card.today {
+      border-left: 4px solid #4CAF50;
+    }
+
+    .card.tomorrow {
+      border-left: 4px solid #81C784;
+    }
+
+    .card.day-after {
+      border-left: 4px solid #A5D6A7;
+    }
+
+    .result-meta {
+      font-size: 0.84rem;
+      color: #273241;
+      opacity: 0.75;
+      margin: 0;
+    }
+
+    .result-meta-line {
+      font-size: 0.92rem;
+      color: #273241;
+      margin: 0;
+      line-height: 1.35;
+    }
+
+    .result-sep {
+      margin: 0.5rem 0;
+      background: rgb(213 213 213);
+      height: 1px;
+      border: 0;
     }
 
     /* Sidebar */
@@ -63,8 +170,24 @@
       display: flex;
       flex-direction: column;
       gap: 0.75rem;
-      height: 100vh;
       padding: 1rem;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .spot-list {
+      flex: 1;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      padding-right: 4px;
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid #e2e8f0;
     }
 
     .map-hint {
@@ -83,6 +206,9 @@
     .spot-list-empty {
       opacity: 0.5;
       font-size: 0.9rem;
+      border: 1px dashed #707070;
+      padding: 1rem;
+      border-radius: 8px;
     }
 
     .spot-inline-details {
@@ -212,6 +338,8 @@
       margin-top: 0.35rem;
       line-height: 1.6;
     }
+
+    #btn {}
 
     .btn-sm {
       padding: 0.5rem 1rem;
@@ -439,12 +567,12 @@
 
       .layout {
         grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
       }
 
       #map {
-        height: 55vw;
-        min-height: 280px;
-        position: static;
+        height: 100%;
+        min-height: 220px;
       }
 
       .spot-weather-card {
@@ -541,7 +669,6 @@
 <body>
   <div class="layout">
     <div class="sidebar">
-      <a href="/">← Zurück zum Wettercheck</a>
       <div class="page-search">
         <label for="templateInput"
           style="display:block;font-size:0.8rem;font-weight:600;color:#475569;margin-bottom:0.3rem;">Startplatz
@@ -552,22 +679,28 @@
           <ul class="template-results" id="templateResults" style="display:none"></ul>
         </div>
       </div>
+
+      <!-- Scrollable Area -->
       <div class="spot-list" id="spotList">
         <p class="spot-list-empty">Lade…</p>
       </div>
-      <p class="map-hint" style="display:flex;align-items:center;gap:0.5rem;">
-        <span
-          style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#546E7A;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>Vorhandene
-        Startplätze
-      </p>
-      <p class="map-hint" style="display:flex;align-items:center;gap:0.5rem;">
-        <span
-          style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#2196F3;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>
-        Aktiver Wetter-Alert
-      </p>
-      <!-- <button onclick="openModal()">+ Startplatz hinzufügen</button> -->
+
+
+      <!-- Fixed Footer Area -->
+      <div class="sidebar-footer">
+
+        <!-- <button onclick="openModal()">+ Startplatz hinzufügen</button> -->
+        <button id="btn" onclick="runCheck()">Wetter prüfen</button>
+      </div>
     </div>
-    <div id="map"></div>
+    <div class="main-panel">
+      <div class="view-toggle">
+        <button type="button" id="viewMapBtn" class="view-btn active" onclick="setMainView('map')">Karte</button>
+        <button type="button" id="viewResultsBtn" class="view-btn" onclick="setMainView('results')">Ergebnisse</button>
+      </div>
+      <div id="map" class="main-view active"></div>
+      <div id="output" class="main-view"></div>
+    </div>
   </div>
 
   <!-- Edit/Add Modal -->
@@ -629,7 +762,7 @@
         </label>
         <div class="modal-actions">
           <button type="button" class="btn-sm btn-secondary" onclick="closeModal()">Abbrechen</button>
-          <button type="submit" class="btn-sm" id="saveBtn">Speichern</button>
+          <button type="submit" class="btn-sm" id="saveBtn">Hinzufügen</button>
         </div>
       </form>
     </div>
@@ -652,11 +785,19 @@
     lr.onmessage = (e) => { if (e.data === "reload") location.reload(); };
 
     // ── Map ──────────────────────────────────────────────────────────────────
-    const map = L.map("map", { zoomControl: true }).setView([50.5, 10.5], 8);
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors",
-      maxZoom: 15,
-    }).addTo(map);
+    const mapElement = document.getElementById("map");
+    const map = mapElement ? L.map("map", { zoomControl: true }).setView([50.5, 10.5], 8) : null;
+
+    if (map) {
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+        maxZoom: 15,
+      }).addTo(map);
+    } else {
+      document.querySelectorAll(".map-hint").forEach((el) => {
+        el.style.display = "none";
+      });
+    }
 
     function getMarkerSize(zoom) {
       return Math.max(12, Math.min(18, Math.round(10 * Math.pow(1.1, zoom - 7))));
@@ -692,20 +833,43 @@
     let selectedSpotId = null;
     let latestResultsMessages = [];
     let latestResultsUpdatedAt = null;
+    let currentMainView = "map";
 
-    map.on("zoomend", () => {
-      const zoom = map.getZoom();
-      const size = getMarkerSize(zoom);
-      const showLabel = zoom >= LABEL_ZOOM_MIN;
-      Object.entries(savedMarkers).forEach(([id, m]) => {
-        m.setIcon(makeSavedIcon(size, id));
-        const tt = m.getTooltip();
-        if (tt) tt.setOpacity(showLabel ? 1 : 0);
+    function setMainView(view) {
+      if (view !== "map" && view !== "results") return;
+      currentMainView = view;
+
+      const mapView = document.getElementById("map");
+      const resultsView = document.getElementById("output");
+      const mapBtn = document.getElementById("viewMapBtn");
+      const resultsBtn = document.getElementById("viewResultsBtn");
+
+      const showMap = view === "map";
+      if (mapView) mapView.classList.toggle("active", showMap);
+      if (resultsView) resultsView.classList.toggle("active", !showMap);
+      if (mapBtn) mapBtn.classList.toggle("active", showMap);
+      if (resultsBtn) resultsBtn.classList.toggle("active", !showMap);
+
+      if (showMap && map) {
+        setTimeout(() => map.invalidateSize(), 50);
+      }
+    }
+
+    if (map) {
+      map.on("zoomend", () => {
+        const zoom = map.getZoom();
+        const size = getMarkerSize(zoom);
+        const showLabel = zoom >= LABEL_ZOOM_MIN;
+        Object.entries(savedMarkers).forEach(([id, m]) => {
+          m.setIcon(makeSavedIcon(size, id));
+          const tt = m.getTooltip();
+          if (tt) tt.setOpacity(showLabel ? 1 : 0);
+        });
+        dhvSpotRefs.forEach(({ marker, lat, lon }) => {
+          marker.setIcon(makeDhvIcon(size, lat, lon));
+        });
       });
-      dhvSpotRefs.forEach(({ marker, lat, lon }) => {
-        marker.setIcon(makeDhvIcon(size, lat, lon));
-      });
-    });
+    }
 
     // DHV marker spot-reference for icon rebuild on zoom
     const dhvSpotRefs = [];
@@ -717,6 +881,7 @@
     }
 
     function addDhvMarkers(allSpots) {
+      if (!map) return;
       dhvMarkers.forEach(m => map.removeLayer(m));
       dhvMarkers = [];
       dhvSpotRefs.length = 0;
@@ -738,7 +903,7 @@
           `;
           const btn = document.createElement("button");
           btn.className = "popup-btn";
-          btn.textContent = "+ Alert hinzufügen";
+          btn.textContent = "+ Startplatz auswählen";
           btn.onclick = () => { map.closePopup(); openModalFromTemplate(s); };
           div.appendChild(btn);
           return div;
@@ -769,6 +934,10 @@
     }
 
     function updateSavedMarkers() {
+      if (!map) {
+        savedMarkers = {};
+        return;
+      }
       // remove old
       Object.values(savedMarkers).forEach(m => map.removeLayer(m));
       savedMarkers = {};
@@ -843,6 +1012,65 @@
       if (rel) return rel;
       if (datePart) return datePart;
       return "";
+    }
+
+    function getOutputRelativeDayLabel(relativeDay) {
+      if (relativeDay === "today") return "Heute";
+      if (relativeDay === "tomorrow") return "Morgen";
+      if (relativeDay === "day_after") return "Ubermorgen";
+      return "";
+    }
+
+    function formatOutputDateLabel(message) {
+      const rel = getOutputRelativeDayLabel(message.relativeDay);
+      const datePart = extractShortDateLabel(message);
+      if (rel && datePart) return `📅 ${rel}, ${datePart}`;
+      if (rel) return `📅 ${rel}`;
+      if (datePart) return `📅 ${datePart}`;
+      return "";
+    }
+
+    function renderResultsPanel() {
+      const output = document.getElementById("output");
+      if (!output) return;
+
+      output.innerHTML = "";
+      const updated = latestResultsUpdatedAt
+        ? `Letzter Check: ${new Date(latestResultsUpdatedAt).toLocaleString("de-DE")}`
+        : "Noch keine Wetter-Ergebnisse gespeichert.";
+      output.insertAdjacentHTML("beforeend", `<p class="result-meta">${escHtml(updated)}</p>`);
+
+      if (!latestResultsMessages.length) {
+        output.insertAdjacentHTML("beforeend", `<p class="card">Keine gespeicherten Wetter-Ergebnisse vorhanden.</p>`);
+        return;
+      }
+
+      for (const msg of latestResultsMessages) {
+        if (!msg || !Array.isArray(msg.blocks) || !msg.summary) continue;
+        const extraClass = relativeDayToClass(msg.relativeDay);
+        let html = `<h2>🪂 ${escHtml(msg.spotName || "Unbekannter Spot")}</h2>`;
+        const dateLine = formatOutputDateLabel(msg);
+        if (dateLine) {
+          html += `<p class="result-meta-line">${escHtml(dateLine)}</p>`;
+        }
+
+        for (let i = 0; i < msg.blocks.length; i++) {
+          const b = msg.blocks[i];
+          if (i > 0) html += `<hr class="result-sep">`;
+          const timeLabel = b.startHour === b.endHour
+            ? `${b.startHour}:00 Uhr`
+            : `${b.startHour}–${b.endHour} Uhr`;
+          html += `<p class="result-meta-line">${escHtml(`🕐 ${timeLabel} Ø ${b.avgWind} km/h 💨 ${b.avgDirectionLabel}`)}</p>`;
+          html += `<p class="result-meta-line">${escHtml(`🌬️ Boen: max ${b.maxGusts} km/h`)}</p>`;
+        }
+
+        html += `<hr class="result-sep">`;
+        html += `<p class="result-meta-line">${escHtml(`☁️ Bewoelkung: Ø ${msg.summary.avgCloud}%`)}</p>`;
+        html += `<p class="result-meta-line">${escHtml(`🌧️ ${msg.summary.rainRisk}`)}</p>`;
+        html += `<p class="result-meta-line">${escHtml(`⛈️ ${msg.summary.thunderRisk}`)}</p>`;
+
+        output.insertAdjacentHTML("beforeend", `<div class="card${extraClass ? ` ${extraClass}` : ""}">${html}</div>`);
+      }
     }
 
     function renderSpotWeatherHtml(messages) {
@@ -958,6 +1186,71 @@
         latestResultsUpdatedAt = null;
       }
       renderSelectedSpotWeather();
+      renderResultsPanel();
+    }
+
+    function addOutputTextCard(text, type) {
+      const output = document.getElementById("output");
+      if (!output) return;
+      const card = document.createElement("div");
+      card.className = `card ${type}`;
+      card.textContent = text;
+      output.appendChild(card);
+    }
+
+    function runCheck() {
+      if (!spots.length) {
+        addOutputTextCard("Keine Startplätze vorhanden. Bitte zuerst einen Spot anlegen.", "log");
+        setMainView("results");
+        return;
+      }
+
+      const btn = document.getElementById("btn");
+      const output = document.getElementById("output");
+
+      btn.disabled = true;
+      if (output) {
+        output.innerHTML = "";
+      }
+
+      const es = new EventSource("/run");
+
+      es.onmessage = (e) => {
+        let msg;
+        try {
+          msg = JSON.parse(e.data);
+        } catch {
+          return;
+        }
+
+        if (msg.type === "done") {
+          es.close();
+          btn.disabled = false;
+          loadLastResults().catch(() => {
+            addOutputTextCard("Fehler beim Laden der aktualisierten Ergebnisse.", "error");
+          });
+          setMainView("results");
+          return;
+        }
+
+        if (msg.type === "error") {
+          addOutputTextCard(msg.text || "Fehler beim Abrufen der Daten.", "error");
+          setMainView("results");
+          return;
+        }
+
+        if (typeof msg.text === "string" && msg.text.startsWith("Keine geeigneten")) {
+          addOutputTextCard(msg.text, "log");
+          setMainView("results");
+        }
+      };
+
+      es.onerror = () => {
+        es.close();
+        btn.disabled = false;
+        addOutputTextCard("Fehler beim Abrufen der Daten.", "error");
+        setMainView("results");
+      };
     }
 
     function setRefreshStatus(text, isError = false) {
@@ -1016,7 +1309,7 @@
       try {
         const res = await fetch("/all_spots.json");
         allSpots = await res.json();
-        addDhvMarkers(allSpots);
+        if (map) addDhvMarkers(allSpots);
       } catch { allSpots = []; }
     }
     loadAllSpots();
@@ -1065,6 +1358,10 @@
       const s = allSpots[index];
       document.getElementById("templateInput").value = "";
       document.getElementById("templateResults").style.display = "none";
+      if (!map) {
+        openModalFromTemplate(s);
+        return;
+      }
       map.flyTo([s.lat, s.lon], 12, { duration: 1 });
       const ref = dhvSpotRefs.find(r => r.lat === s.lat && r.lon === s.lon);
       if (ref) map.once("moveend", () => ref.marker.openPopup());
@@ -1111,10 +1408,27 @@
       updateSavedMarkers();
     }
 
+    function updateRunButtonState() {
+      const btn = document.getElementById("btn");
+      if (!btn) return;
+      const hasSpots = spots.length > 0;
+      btn.disabled = !hasSpots;
+      btn.title = hasSpots ? "" : "Bitte zuerst mindestens einen Startplatz hinzufügen.";
+    }
+
     function renderSpots() {
       const list = document.getElementById("spotList");
       if (!spots.length) {
-        list.innerHTML = "<p class='spot-list-empty'>Wähle einen Startplatz auf der Karte aus, um das Flugwetter für diesen Ort zu beobachten.</p>";
+        list.innerHTML = `<p class='spot-list-empty'>Wähle einen Startplatz auf der Karte aus, um das Flugwetter für diesen Ort zu überprüfen.</p>
+          <p class="map-hint" style="display:flex;align-items:center;gap:0.5rem;">
+            <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#546E7A;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>Vorhandene
+        Startplätze
+          </p>
+          <p class="map-hint" style="display:flex;align-items:center;gap:0.5rem;">
+            <span style="display:inline-block;width:14px;height:14px;border-radius:50%;background:#2196F3;border:1px solid #fff;box-shadow:0px 2px 5px rgba(0,0,0,0.45);cursor:default;"></span>
+            Wetter-Prüfung aktiv
+          </p>`;
+        updateRunButtonState();
         return;
       }
       const sorted = [...spots].sort((a, b) => a.name.localeCompare(b.name, "de"));
@@ -1135,6 +1449,7 @@
           ${String(selectedSpotId) === String(s.id) ? renderSpotInlineDetails(s) : ""}
         </div>
       `).join("");
+      updateRunButtonState();
     }
 
     function flyToSpot(id) {
@@ -1143,6 +1458,7 @@
       selectedSpotId = String(id);
       renderSpots();
       highlightSpotCard(id);
+      if (!map) return;
       map.flyTo([s.lat, s.lon], 12, { duration: 1 });
       map.once("moveend", () => {
         if (savedMarkers[id]) savedMarkers[id].openPopup();
@@ -1157,7 +1473,7 @@
     function openModal(id = null) {
       editingId = id;
       document.getElementById("statusMsg").textContent = "";
-      document.getElementById("modalTitle").textContent = id === null ? "Alert hinzufügen" : "Alert konfigurieren";
+      document.getElementById("modalTitle").textContent = id === null ? "Startplatz hinzufügen" : "Startplatz bearbeiten";
       document.getElementById("spotForm").reset();
       clearCompass();
       if (id !== null) fillForm(spots.find(s => s.id === id));
@@ -1168,7 +1484,7 @@
     function openModalFromTemplate(s) {
       editingId = null;
       document.getElementById("statusMsg").textContent = "";
-      document.getElementById("modalTitle").textContent = "Alert hinzufügen";
+      document.getElementById("modalTitle").textContent = "Startplatz hinzufügen";
       document.getElementById("spotForm").reset();
       clearCompass();
       fillForm(s);
